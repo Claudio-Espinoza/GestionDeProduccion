@@ -1,4 +1,4 @@
-package com.proyectoaplicacion.GestionProduccion;
+package com.ufro.gestionproduccion;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
