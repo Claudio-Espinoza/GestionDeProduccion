@@ -1,10 +1,10 @@
-package com.ufro.gestionproduccion;
+package com.ufro.gestionapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GestionProduccionApplicationTests {
+class GestionAppApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,13 +1,13 @@
-package com.ufro.gestionproduccion;
+package com.ufro.gestionapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GestionProduccionApplication {
+public class GestionAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GestionProduccionApplication.class, args);
+		SpringApplication.run(GestionAppApplication.class, args);
 	}
 
 }
