@@ -1,0 +1,64 @@
+*{
+    font-family: monospace;
+    margin: 0px;
+    padding: 0px;
+}
+.background{
+    background-color: #B70A0A;
+}
+.background-image{
+    /*background-image: url("../images/background-logo.jpg");*/ /* POR AGREGAR*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+}
+.form-content {
+    border-radius: 15px 15px 15px 15px;
+    background: #F0EDE8;
+    width: 25vw;
+    height: 40vh;
+    margin-top: 30vh;
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+}
+input[type=text] {
+    background-color: #f2f2f2;
+    text-align: right;
+    font-size: 2vh;
+    width: 15vw;
+    border: 2px solid #121212;
+    padding: 0.6vw 3vh;
+    border-radius: 15px 15px 15px 15px;
+    margin: 3.3vh;
+}
+input[type=password] {
+    background-color: #f2f2f2;
+    text-align: right;
+    font-size: 2vh;
+    width: 15vw;
+    border: 2px solid #121212;
+    padding: 0.6vw 3vh;
+    border-radius: 15px 15px 15px 15px;
+    margin: 3.3vh;
+}
+.btn {
+    background-color: #121212;
+    color: #f2f2f2;
+    padding: 1vh 2vw;
+    border: none;
+    cursor: pointer;
+    width: 10vw;
+    font-size: 1.5vh;
+    border-radius: 15px 15px 15px 15px;
+    margin: 3.5vh 0;
+}
+.btn:hover {
+    background-color: black;
+    color: white;
+}
+.container-position{
+    position: fixed;
+    left: 60%;
+}
