@@ -1,4 +1,4 @@
-package com.ufro.gestionapp.model;
+package ufro.dci.gestionapp.model;
 
 //A la hora de usar import, evitar el uso de * por el fin de optimizacion
 import jakarta.persistence.Column;
@@ -15,7 +15,7 @@ import lombok.Setter;
 //Con la etiqueta @Entity tiene la funcionalidad de señalar una clase para ser idenficada por EntityManager y poder ser manejado por JPA
 //En otras palabras convierte la clase en un tabla de la base de datos y genera las columnas con los atributos de la clase
 @Entity
-public class Admin extends User{
+public class Admin extends User {
 
     //Con la etiqueta @Entity tiene la funcionalidad de señalar una clase para ser idenficada por EntityManager y poder ser manejado por JPA
     @Id

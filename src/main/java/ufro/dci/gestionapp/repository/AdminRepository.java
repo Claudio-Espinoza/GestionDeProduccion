@@ -1,9 +1,8 @@
-package com.ufro.gestionapp.repository;
+package ufro.dci.gestionapp.repository;
 
-import com.ufro.gestionapp.model.Admin;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
+import ufro.dci.gestionapp.model.Admin;
 
 
 //@Repository: es una anotación de primavera que indica que la clase decorada es un repositorio.

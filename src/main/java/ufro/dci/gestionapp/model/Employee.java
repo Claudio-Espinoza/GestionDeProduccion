@@ -1,4 +1,4 @@
-package com.ufro.gestionapp.model;
+package ufro.dci.gestionapp.model;
 
 //A la hora de usar import, evitar el uso de * por el fin de optimizacion
 import jakarta.persistence.Column;
