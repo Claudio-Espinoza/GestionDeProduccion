@@ -1,4 +1,4 @@
-package ufro.dci.gestionapp.model;
+package ufro.dci.gestionapp.model.employees;
 
 //A la hora de usar import, evitar el uso de * por el fin de optimizacion
 import jakarta.persistence.Column;
@@ -6,6 +6,8 @@ import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
 
+//"@MappedSuperclass" es semejante a la etiqueta embebible o el uso de los diferentes inserciones de tablas
+//la he elegido por su simplicidad
 @MappedSuperclass
 //La etiqueta @Setter y @Getter, genera las funcionalidades sin la necesidad de acumular code Smell
 //Con lombok se debe evitar el uso de la etiqueta @Data, puesto que esta conlleva demaciados subprocesos que generar un alto comunsumo de memoria}
@@ -14,17 +16,17 @@ import lombok.Setter;
 @Getter
 public class User {
     //Column: Te permite personalizar las columnas de las tablas referente al atributo bajo la misma (Solo varchar puede modificar su lengh)
-    @Column(length = 11, nullable = false)
+    @Column(name = "rut", length = 11, nullable = false)
     private String rut;
-    @Column(length = 20)
+    @Column(name = "job",length = 20, nullable = false)
     private String job;
-    @Column(length = 25)
+    @Column(name = "name",length = 25, nullable = false)
     private String name;
-    @Column(length = 25)
+    @Column(name = "last_name",length = 25, nullable = false)
     private String lastName;
-    @Column(length = 25)
-    private String SecondName;
-    @Column(length = 25)
+    @Column(name = "second_name",length = 25, nullable = false)
+    private String secondName;
+    @Column(name = "type_contract",length = 25, nullable = false)
     private String typeContract;
 
     public User() {
