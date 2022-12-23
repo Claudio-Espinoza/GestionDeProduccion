@@ -16,4 +16,9 @@ public class LoginController {
     public String initian(){
         return "login/employee/login-employee";
     }
+
+    @GetMapping("/login-admin")
+    public String loginAdmin(){
+        return "login/admin/login-admin";
+    }
 }
