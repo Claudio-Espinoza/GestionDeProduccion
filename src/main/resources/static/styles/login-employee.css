@@ -4,7 +4,7 @@
     padding: 0vw;
 }
 .background{
-    background-color: #CF240A;
+    background-color: #B70A0A;
 }
 .background-image{
     background-repeat: no-repeat;
@@ -52,8 +52,8 @@ input[type=password] {
     margin-left: 3vh;
 }
 .btn:hover {
-    background-color: #FEC208;
-    color: #121212;
+    background-color:  #B70A0A;
+    color: #f2f2f2;
 }
 .container-position{
     margin: 1vh;
