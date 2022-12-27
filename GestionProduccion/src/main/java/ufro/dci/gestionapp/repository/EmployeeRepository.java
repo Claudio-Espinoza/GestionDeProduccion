@@ -12,4 +12,5 @@ public interface EmployeeRepository extends CrudRepository<Employee, String> {
                                           //CrudRepository proporciona principalmente funciones CRUD.
                                           //PagingAndSortingRepository proporciona métodos para realizar paginaciones y ordenar registros.
                                           //JpaRepository proporciona algunos métodos relacionados con JPA, como vaciar el contexto de persistencia y eliminar registros en un lote.
+     Employee findByPin(String pin);
 }

@@ -11,6 +11,7 @@
 <body class="background">
 <div class="container">
     <div class="row">
+        <form th:action=@"/autenticationEmployee" method="post">
         <div class="container-position">
             <div class="selection-div">
                 <button type="button" id="employee" class="btn">Employee</button>
@@ -24,11 +25,12 @@
                     <input type="text" name="id" placeholder="rut" required>
                     <input type="password"name="login" placeholder="pin" required>
                     <div>
-                        <button type="button" class="btn">Log-In</button>
+                        <button type="submit" class="btn">Log-In</button>
                     </div>
                 </div>
             </div>
         </div>
+        </form>
     </div>
 </div>
 </body>

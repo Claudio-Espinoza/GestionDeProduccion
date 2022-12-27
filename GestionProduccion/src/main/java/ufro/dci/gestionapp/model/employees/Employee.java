@@ -24,7 +24,10 @@ public class Employee extends User {
 
     //El constructor es sumamente necesario para poder preveer de interaccion con el programa
     //No es necesario usar constructor con parametros
-    public Employee() {
+    public Employee(String pin) {
     }
 
+    public Employee() {
+
+    }
 }
