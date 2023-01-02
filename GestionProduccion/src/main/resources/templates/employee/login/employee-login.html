@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/login-employee.css}">
+    <title>Log-In Admin | Gestor de producción</title>
+</head>
+<body class="background">
+<div class="container">
+    <h2>employee Login</h2>
+    <form th:action="@{/employee/login}" method="post">
+        <table>
+            <tr>
+                <td>E-Mail: </td>
+                <td><input type="text" name="rut" required></td>
+            </tr>
+            <tr>
+                <td>Password: </td>
+                <td><input type="password" name="password" required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Login"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

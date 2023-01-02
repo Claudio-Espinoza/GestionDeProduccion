@@ -2,8 +2,7 @@ package ufro.dci.gestionapp.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import ufro.dci.gestionapp.model.employees.Admin;
-import ufro.dci.gestionapp.model.employees.Employee;
+import ufro.dci.gestionapp.model.Employee;
 
 import java.util.Optional;
 
@@ -11,9 +10,6 @@ import java.util.Optional;
 //Un repositorio es un mecanismo para encapsular el almacenamiento, la recuperación y la búsqueda.
 //Comportamiento que emula una colección de objetos.
 @Repository                                           //Name Clase/ Tipo de dato de la clave primaria
-public interface EmployeeRepository extends CrudRepository<Employee, String> {
-                                          //CrudRepository proporciona principalmente funciones CRUD.
-                                          //PagingAndSortingRepository proporciona métodos para realizar paginaciones y ordenar registros.
-                                          //JpaRepository proporciona algunos métodos relacionados con JPA, como vaciar el contexto de persistencia y eliminar registros en un lote.
-    Optional<Employee> findByRut(String rut);
+public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
+    Employee findByRut(String rut);
 }

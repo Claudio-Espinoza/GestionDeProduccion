@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34807fd-92d0-4697-8aa2-de5993cbb0c6" name="Changes" comment="" />
+    <list default="true" id="b34807fd-92d0-4697-8aa2-de5993cbb0c6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/GestionDeProduccion.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/model/employees/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/model/employees/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/model/employees/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/model/User.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,9 +32,18 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Dev/Java/SpringBoot/GestionDeProduccion/GestionProduccion",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dev\Java\SpringBoot\GestionDeProduccion\GestionProduccion\src\main\java\ufro\dci\gestionapp\model" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -33,6 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672436424254</updated>
       <workItem from="1672436426100" duration="15000" />
+      <workItem from="1672677468757" duration="628000" />
     </task>
     <servers />
   </component>
