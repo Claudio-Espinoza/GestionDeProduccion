@@ -5,7 +5,10 @@
     background: #B70A0A;
 }
 .background{
-    background-color: #B70A0A;
+    background: linear-gradient(to bottom,#8C0303, #B70A0A);
+}
+.container{
+    background-color: transparent;
 }
 .background-image{
     background-repeat: no-repeat;
