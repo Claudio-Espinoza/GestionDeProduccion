@@ -1,15 +1,17 @@
 package ufro.dci.gestionapp;
 
-import org.springframework.boot.CommandLineRunner;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+/*
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import ufro.dci.gestionapp.model.Employee;
 import ufro.dci.gestionapp.model.Role;
 import ufro.dci.gestionapp.repository.EmployeeRepository;
-
+ */
 @SpringBootApplication
 public class GestionProduccionApplication {
 	public static void main(String[] args) {
