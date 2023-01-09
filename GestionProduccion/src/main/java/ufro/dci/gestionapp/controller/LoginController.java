@@ -21,8 +21,6 @@ public class LoginController {
     public String viewEmployeeLogin(){
         return "employee/login/employee-login";
     }
-
-
     @GetMapping("/manager/home")
     public String viewManagerHome(){
         return "manager/menu/manager-home";
@@ -31,6 +29,4 @@ public class LoginController {
     public String viewEmployeeHome(){
         return "employee/menu/employee-home";
     }
-
-
 }

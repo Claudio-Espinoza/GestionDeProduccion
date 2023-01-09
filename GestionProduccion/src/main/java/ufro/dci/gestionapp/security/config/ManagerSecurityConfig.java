@@ -5,10 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -25,8 +23,10 @@ public class ManagerSecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
+        return new BCryptPasswordEncoder();
+
     }
+
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
@@ -44,7 +44,7 @@ public class ManagerSecurityConfig {
         http.authenticationProvider(authenticationProvider());
         http.authorizeHttpRequests().requestMatchers("/","/styles/**").permitAll();
 
-        http.csrf().disable().authorizeHttpRequests()
+        http.csrf().disable().cors().disable().authorizeHttpRequests()
                 .requestMatchers("/manager/**","/styles/**").hasAuthority("MANAGER")
                 .and()
                 .formLogin()

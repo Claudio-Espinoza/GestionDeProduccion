@@ -20,7 +20,6 @@ public class EmployeeSecurityService implements UserDetailsService {
         if (user == null) {
             throw new UsernameNotFoundException("No user found with the given email");
         }
-
         return new EmployeeSecurity(user);
     }
 
