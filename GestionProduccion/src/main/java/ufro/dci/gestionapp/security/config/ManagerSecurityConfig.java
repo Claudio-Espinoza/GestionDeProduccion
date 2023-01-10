@@ -17,11 +17,13 @@ import ufro.dci.gestionapp.security.service.EmployeeSecurityService;
 @Order(1)
 public class ManagerSecurityConfig {
     @Bean
+    @Order(1)
     public UserDetailsService userDetailsService() {
         return new EmployeeSecurityService();
     }
 
     @Bean
+    @Order(1)
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
 
@@ -29,6 +31,7 @@ public class ManagerSecurityConfig {
 
 
     @Bean
+    @Order(1)
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService());
@@ -40,6 +43,7 @@ public class ManagerSecurityConfig {
 
 
     @Bean
+    @Order(1)
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authenticationProvider(authenticationProvider());
         http.authorizeHttpRequests().requestMatchers("/","/styles/**").permitAll();

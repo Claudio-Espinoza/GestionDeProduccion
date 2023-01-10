@@ -2,19 +2,32 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" th:href="@{/styles/login-employee.css}">
-    <link rel="stylesheet" th:href="@{/styles/bootstrap.min.css}">
-    <title>Log-In Employee | Gestor de producción</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/employee-login-style.css}">
+    <title>Log-In</title>
 </head>
-<body class="background">
-<div class="container">
-    <form th:action="@{/employee/home}" method="post" class="form-content">
-            <div class="items-center">
-                <input type="text" name="rut" required>
-                <input type="password" name="password" required>
+<body>
+<main class="container">
+    <form th:action="@{/employee/login}" method="post" class="form-content">
+        <div class="container__items">
+            <h1 class="item__input--titulo">Employee Log-In</h1>
+            <div>
+                <p class="error" th:if="${param.error}">Cuenta invalida</p>
             </div>
-        <button class="btn mt-3" type="submit" value="login">Login</button>
+            <div class="input--info">
+                <input class="item--input" type="text" name="rut"
+                       required="" placeholder="Rut">
+                <input class="item--input" type="password"
+                       name="password" required="" placeholder="Password">
+            </div>
+            <div class="item__button">
+                <button class="item__button--submit" type="submit"
+                     value="Login">ingresar</button>
+                <button class="item__button--submit" type="submit"
+                     href="/index">Volver</button>
+            </div>
+        </div>
     </form>
-</div>
+</main>
 </body>
+
 </html>
