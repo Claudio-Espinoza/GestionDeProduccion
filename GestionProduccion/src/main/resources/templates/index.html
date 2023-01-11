@@ -2,16 +2,21 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Menu</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/style-index.css}">
+    <title>Log-In</title>
 </head>
-<body class="Center">
-    <div align="center">
-        <h2>Welcome</h2>
-        <h4><a th:href="@{/employee/login}">employee Login</a></h4>
-        <h4><a th:href="@{/manager/login}">manager Login</a></h4>
+
+<body>
+<main class="container">
+    <div class="container__options">
+        <h1 class="title">Log-In</h1>
+        <div class="options--input">
+            <a class="title--input" th:href="@{/employee/login}">Employee</a>
+            <a class="title--input" th:href="@{/manager/login}">Manager</a>
+        </div>
     </div>
+</main>
 </body>
-<style>
 
 
 </style>

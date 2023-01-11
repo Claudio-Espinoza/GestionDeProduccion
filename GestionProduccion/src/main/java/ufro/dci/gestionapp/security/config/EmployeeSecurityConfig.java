@@ -5,53 +5,46 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import ufro.dci.gestionapp.security.service.EmployeeSecurityService;
 
 @Configuration
-@Order(2)
 public class EmployeeSecurityConfig {
     @Bean
-    public UserDetailsService customerUserDetailsService2() {
+    public UserDetailsService UserDetailsService() {
         return new EmployeeSecurityService();
     }
 
-    /*
     @Bean
-    PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
-    */
-
-    @Bean
-    public PasswordEncoder passwordEncoder2() {
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
-    public DaoAuthenticationProvider authenticationProvider2() {
+    public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(customerUserDetailsService2());
-        authProvider.setPasswordEncoder(passwordEncoder2());
+        authProvider.setUserDetailsService(UserDetailsService());
+        authProvider.setPasswordEncoder(passwordEncoder());
 
         return authProvider;
     }
 
     @Bean
     @Order(2)
-    public SecurityFilterChain filterChain2(HttpSecurity http) throws Exception {
-        http.authenticationProvider(authenticationProvider2());
+    public SecurityFilterChain filterChainEmployee(HttpSecurity http) throws Exception {
+        http.authenticationProvider(authenticationProvider());
         http.authorizeHttpRequests().requestMatchers("/","/styles/**").permitAll();
 
-        http.csrf().disable().cors().disable().authorizeHttpRequests()
-                .requestMatchers("/employee/**","/styles/**").hasAuthority("EMPLOYEE")
-                .and()
+        http.securityMatcher("/employee/login")
+                .authorizeHttpRequests(
+                        authConfig ->{
+                            authConfig.requestMatchers("/employee/**").hasAuthority("EMPLOYEE");
+                            authConfig.anyRequest().authenticated();
+                        }
+                )
                 .formLogin()
                 .loginPage("/employee/login")
                 .usernameParameter("rut")
@@ -60,8 +53,35 @@ public class EmployeeSecurityConfig {
                 .permitAll()
                 .and()
                 .logout()
-                .logoutUrl("/employee/logout")
-                .logoutSuccessUrl("/employee/home");
+                .logoutUrl("/")
+                .logoutSuccessUrl("/");
+
+        return http.build();
+    }
+
+    @Bean
+    @Order(1)
+    public SecurityFilterChain filterChainManager(HttpSecurity http) throws Exception {
+        http.authenticationProvider(authenticationProvider());
+        http.authorizeHttpRequests().requestMatchers("/","/styles/**").permitAll();
+
+        http.securityMatcher("/manager/login")
+                .authorizeHttpRequests(
+                        authConfig ->{
+                            authConfig.requestMatchers("/manager/**").hasAuthority("MANAGER");
+                            authConfig.anyRequest().authenticated();
+                        }
+                )
+                .formLogin()
+                .loginPage("/manager/login")
+                .usernameParameter("rut")
+                .loginProcessingUrl("/manager/login")
+                .defaultSuccessUrl("/manager/home")
+                .permitAll()
+                .and()
+                .logout()
+                .logoutUrl("/")
+                .logoutSuccessUrl("/");
 
         return http.build();
     }

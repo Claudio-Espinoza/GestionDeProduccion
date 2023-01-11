@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" type="text/css" th:href="@{/styles/manager-login-style.css}">
     <meta charset="UTF-8">
@@ -23,8 +23,8 @@
             <div class="item__button">
                 <button class="item__button--submit" type="submit"
                         value="Login">ingresar</button>
-                <button class="item__button--submit" type="submit"
-                        href="/index">Volver</button>
+                <a class="item__button--submit"
+                        th:href="@{/}">Volver</a>
             </div>
         </div>
     </form>
