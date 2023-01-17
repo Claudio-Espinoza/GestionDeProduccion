@@ -93,7 +93,7 @@ input::placeholder {
     border: 1px solid ;
 }
 
-.error{
+.error {
     display: flex;
     align-items: center;
     justify-content: center;
