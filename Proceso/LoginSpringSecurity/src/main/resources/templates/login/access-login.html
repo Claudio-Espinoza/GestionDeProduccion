@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" th:href="@{/styles/employee-login-style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/login-style.css}">
     <title>Log-In</title>
 </head>
 <body>
 <main class="container">
-    <form th:action="@{/employee/login}" method="post" class="form-content">
+    <form th:action="@{/login}" method="post" class="form-content">
         <div class="container__items">
-            <h1 class="item__input--titulo">Employee Log-In</h1>
+            <h1 class="item__input--titulo">Log-In</h1>
             <div>
                 <p class="error" th:if="${param.error}">Cuenta invalida</p>
             </div>
@@ -19,15 +19,18 @@
                 <input class="item--input" type="password"
                        name="password" required="" placeholder="Password">
             </div>
+
             <div class="item__button">
                 <button class="item__button--submit" type="submit"
                      value="Login">ingresar</button>
 
-                <a class="item__button--submit"
-                     th:href="@{/}">Volver</a>
+                <button class="item__button--submit" type="submit"
+                        value="logout">ingresar</button>
             </div>
         </div>
+
     </form>
+
 </main>
 </body>
 

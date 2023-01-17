@@ -23,11 +23,9 @@
     background-color: #F0F2F2;
 }
 
-.item__input--titulo {
-    color: #2D402E;
-}
 
 .item__input--titulo {
+    color: #2D402E;
     display: flex;
     align-items: center;
     justify-content: center;

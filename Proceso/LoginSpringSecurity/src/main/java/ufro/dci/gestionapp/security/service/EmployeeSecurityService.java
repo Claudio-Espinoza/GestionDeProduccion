@@ -16,11 +16,11 @@ public class EmployeeSecurityService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Employee user = employeeRepository.findByRut(username);
-        if (user == null) {
+        Employee employee = employeeRepository.findByRut(username);
+        if (employee == null) {
             throw new UsernameNotFoundException("No user found with the given email");
         }
-        return new EmployeeSecurity(user);
+        return new EmployeeSecurity(employee);
     }
 
 }
