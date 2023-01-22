@@ -2,15 +2,27 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/employee-menu.css}">
     <title>Menu</title>
 </head>
-<body>
-<div>
-    <h2>Welcome a la cum zone del empleado</h2>
-    <a th:href="@{/makeline}">AL MAKEKEKEKEKE</a>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Logout" />
-    </form>
+<body class="body">
+
+<div class="container">
+    <div>
+        <form th:action="@{/logout}" method="post">
+            </a>
+            <input  class="content__option--input" type="submit" value="Logout"/>
+        </form>
+    </div>
+    <div  class="container__content">
+        <a href="#" class="content--option option1">
+            <h2>Crear pedido</h2>
+        </a>
+        <a href="#" class="content--option">
+            <h2>Ver Historial</h2>
+        </a>
+    </div>
 </div>
+
 </body>
 </html>

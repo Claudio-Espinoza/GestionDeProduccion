@@ -2,7 +2,6 @@ package ufro.dci.gestionapp.security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -38,9 +37,9 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChainEmployee(HttpSecurity http) throws Exception {
-        http.authenticationProvider(authenticationProvider());
+            http.authenticationProvider(authenticationProvider());
             http
-                    .authorizeHttpRequests().requestMatchers("/","/styles/**").permitAll()
+                    .authorizeHttpRequests().requestMatchers("/","/img/**","/styles/**").permitAll()
                     .anyRequest().authenticated()
                     .and()
                     .formLogin()
@@ -56,8 +55,6 @@ public class SecurityConfig {
                     .and()
                     .exceptionHandling()
                     .accessDeniedPage("/login");
-
-
 
         return http.build();
     }
