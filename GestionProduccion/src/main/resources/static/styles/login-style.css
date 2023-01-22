@@ -1,7 +1,7 @@
 * {
-    padding: 0px;
-    margin: 0px;
-    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
 .container {
@@ -21,6 +21,7 @@
     width: 30vw;
     height: 60vh;
     background-color: #F0F2F2;
+    box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -85,6 +86,13 @@ input::placeholder {
     height: 50%;
     background-color: #BF4141;
     color: #F0F2F2;
+    border: none;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: #F0F2F2;
+    font-size: 0.7vw;
 }
 
 .item__button--submit:hover{

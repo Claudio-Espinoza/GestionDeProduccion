@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Menu</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles/login-style.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles/style-make-line.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles/bootstrap.min.css}">
+  <title>Menu</title>
+</head>
+<body>
+<div class="container-items">
+  <div class="container-nav">
+    <nav class="navbar">
+      <!--AQUI VAN IMÁGENES DEPENDIENDO DE CADA SECCION PARA HACER LA SEPARACIÓN teniendo en cuenta que es pensado para pantalla touch-->
+      <div>
+        <a href="#ancla1">un ancla</a>
+      </div>
+      <div>
+        <a href="#ancla2">otra ancla</a>
+      </div>
+      <div>
+        <a href="#ancla3">otra ancla</a>
+      </div>
+      <div>
+        <a href="#ancla4">otra ancla</a>
+      </div>
+    </nav>
+  </div>
+  <div class="container-list">
+    <!-- AQUI HACER UN FOR EACH DE THYMELEAF CON LA CLASE DE SECCION PARA AHORRAR CÓDIGO -->
+    <div class="section-pedidos">pedido6</div>
+    <div class="section-pedidos">pedido5</div>
+    <div class="section-pedidos">pedido4</div>
+    <div class="section-pedidos">pedido3</div>
+    <div class="section-pedidos">pedido2</div>
+    <div class="section-pedidos">pedido1</div>
+  </div>
+  <div class="container-makeline">
+    <div class="encabezado1" >
+      <p id="ancla1">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+
+      <h1>General information:</h1>
+    </div>
+    <form th:action="@{/}" th:method="post" >
+      <div class="mb-3">
+
+        <label class="form-label">Client name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter name here" required>
+
+        <label class="form-label">Contact phone:</label>
+        <input type="text" class="form-control" id="phone-number" placeholder="Enter contact phone number here" required>
+
+        <label class="form-label">Order details:</label>
+        <input type="text" class="form-control" id="order-details" placeholder="Enter order details">
+
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" >
+          Money
+        </label>
+
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <label class="form-check-label" >
+          Debit
+        </label>
+
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <label class="form-check-label" >
+          Credit
+        </label>
+      </div>
+      <div class="encabezado2" >
+        <p id="ancla2">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+        <h1>Order Maker:</h1>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
+</body>
+</html>

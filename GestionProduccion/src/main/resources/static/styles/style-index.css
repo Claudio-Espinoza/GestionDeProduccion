@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: monospace;
+    font-family: 'gill-sans', sans-serif;
 }
 
 .container {
@@ -22,11 +22,12 @@
 
 .container__options {
     display: grid;
-    grid-template-rows: 0.5fr 2fr;
+    grid-template-rows: 0.5fr 1.5fr;
     background-color: #F0F2F2;
     width: 30vw;
     height: 60vh;
     border-radius: 5%;
+    box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.2);
 }
 
 .options--input {
@@ -56,6 +57,4 @@
     color: #2D402E;
     border: 1px solid;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
