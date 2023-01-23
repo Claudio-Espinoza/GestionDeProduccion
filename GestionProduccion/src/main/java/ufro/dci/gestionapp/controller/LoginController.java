@@ -28,11 +28,6 @@ public class LoginController {
     public String logout(){
         return "index";
     }
-
-    @GetMapping("/makeline")
-    public String viewMakeLine(){
-        return "/employee/menu/make-line";
-    }
     @PreAuthorize("hasAuthority('MANAGER')")
     @GetMapping("/manager/home")
     public String viewManagerHome(){
@@ -42,5 +37,10 @@ public class LoginController {
     @GetMapping("/employee/home")
     public String viewEmployeeHome(){
         return "employee/menu/employee-home";
+    }
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @GetMapping("/employee/makeline")
+    public String viewMakeLine(){
+        return "/employee/menu/make-line";
     }
 }

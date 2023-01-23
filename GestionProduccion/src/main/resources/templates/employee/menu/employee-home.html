@@ -7,21 +7,31 @@
 </head>
 <body class="body">
 
-<div class="container">
-    <div>
+<div class="container__back">
+    <div class="button--exit">
         <form th:action="@{/logout}" method="post">
-            </a>
-            <input  class="content__option--input" type="submit" value="Logout"/>
+            <input type="submit" value="Logout">
         </form>
     </div>
-    <div  class="container__content">
-        <a th:href="@{/makeline}" class="content--option option1">
-            <h2>Crear pedido</h2>
-        </a>
-        <a href="#" class="content--option">
-            <h2>Ver Historial</h2>
-        </a>
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="final"></div>
+</div>
+
+<div class="container__img">
+    <div class="container__img--left">
+        <img class="img" src="/img/pizza-2.png" alt="">
     </div>
+    <div class="container__img--right">
+    </div>
+</div>
+
+<div class="container__options">
+    <a  th:href="@{/employee/makeline}" class="options--MakeLine"></a>
+    <div class="options--list"></div>
 </div>
 
 </body>
