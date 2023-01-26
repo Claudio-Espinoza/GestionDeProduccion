@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ufro.dci.gestionapp.model.Employee;
+import ufro.dci.gestionapp.model.employee.Employee;
 import ufro.dci.gestionapp.repository.EmployeeRepository;
 import ufro.dci.gestionapp.security.model.EmployeeSecurity;
 

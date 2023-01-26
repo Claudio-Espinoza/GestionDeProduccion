@@ -1,4 +1,4 @@
-package ufro.dci.gestionapp.model;
+package ufro.dci.gestionapp.model.employee;
 
 import jakarta.persistence.*;
 

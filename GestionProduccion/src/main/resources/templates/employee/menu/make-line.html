@@ -9,83 +9,89 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="ISO-8859-1">
-  <link rel="stylesheet" type="text/css" th:href="@{/styles/login-style.css}">
   <link rel="stylesheet" type="text/css" th:href="@{/styles/style-make-line.css}">
-  <link rel="stylesheet" type="text/css" th:href="@{/styles/bootstrap.min.css}">
   <title>Menu</title>
 </head>
 <body>
-<div class="container-items">
-  <div class="container-nav">
-    <nav class="navbar">
-      <!--AQUI VAN IMÁGENES DEPENDIENDO DE CADA SECCION PARA HACER LA SEPARACIÓN teniendo en cuenta que es pensado para pantalla touch-->
-      <div>
-        <a href="#ancla1">un ancla</a>
-      </div>
-      <div>
-        <a href="#ancla2">otra ancla</a>
-      </div>
-      <div>
-        <a href="#ancla3">otra ancla</a>
-      </div>
-      <div>
-        <a href="#ancla4">otra ancla</a>
-      </div>
-    </nav>
-  </div>
-  <div class="container-list">
-    <!-- AQUI HACER UN FOR EACH DE THYMELEAF CON LA CLASE DE SECCION PARA AHORRAR CÓDIGO -->
-    <div class="section-pedidos">pedido6</div>
-    <div class="section-pedidos">pedido5</div>
-    <div class="section-pedidos">pedido4</div>
-    <div class="section-pedidos">pedido3</div>
-    <div class="section-pedidos">pedido2</div>
-    <div class="section-pedidos">pedido1</div>
-  </div>
-  <div class="container-makeline">
-    <div class="encabezado1" >
-      <p id="ancla1">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<div class="container">
 
-      <h1>General information:</h1>
-      <a th:href="@{/logout}">boton provicional para salir xd</a>
+  <nav class="navbar">
+    <div class="navbar__container ">
+      <a href="#register" class="options--register"></a>
     </div>
-    <form th:action="@{/}" th:method="post" >
-      <div class="mb-3">
+    <div class="navbar__container">
+      <a href="#maker" class="options--maker"></a>
+    </div>
+    <div class="navbar__container">
+      <a href="#drinks" class="options--drinks"></a>
+    </div>
+    <div class="navbar__container">
+      <a href="#breads" class="options--breads "></a>
+    </div>
+    <div class="navbar__container ">
+      <a href="#paid" class="options--paid"></a>
+    </div>
+    <div class="navbar__container ">
+      <a th:href="@{/employee/home}" class="options--back"></a>
+    </div>
+  </nav>
 
-        <label class="form-label">Client name:</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter name here" required>
-
-        <label class="form-label">Contact phone:</label>
-        <input type="text" class="form-control" id="phone-number" placeholder="Enter contact phone number here" required>
-
-        <label class="form-label">Order details:</label>
-        <input type="text" class="form-control" id="order-details" placeholder="Enter order details">
-
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" >
-          Money
-        </label>
-
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" >
-          Debit
-        </label>
-
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" >
-          Credit
-        </label>
-      </div>
-      <div class="encabezado2" >
-        <p id="ancla2">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-        <h1>Order Maker:</h1>
-      </div>
+  <main>
     </form>
-  </div>
+    <section id="register" class="register">
+      <div class="container__register">
+        <div class="information">
+          <div class="contact">
+            <h2 class="title--principal ">Informacion de cliente</h2>
+            <input class="input__contact" type="text" name="name" placeholder="Nombre">
+            <input class="input__contact" type="text" name="phone" placeholder="Telefono">
+          </div>
+          <div class="individual">
+            <h2 class="title--principal ">Medio de entraga</h2>
+            <div class="container__input">
+              <input class="input--individual Dine" type="radio" id="service1" name="service" value="Dine-in">
+              <input  class="input--individual Carry" type="radio" id="service2" name="service" value="Carry-out">
+              <input class="input--individual Delivery"  type="radio" id="service3" name="service" value="Delivery">
+            </div>
+
+          </div>
+        </div>
+        <div class="message">
+          <div class="message__input">
+            <h2 class="title--principal ">Comentarios</h2>
+            <input class="input__commit" type="text" name="commentary">
+            <a class="menssage--submit" href="#maker" placeholder="Avanzar"></a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="maker" class="maker">
+      <div class="container__maker">
+
+      </div>
+    </section>
+
+
+    <section id="drinks" class="drinks">
+      <div class="container__drinks">
+
+      </div>
+    </section>
+    <section id="breads" class="breads">
+      <div class="container__breads">
+
+      </div>
+    </section>
+    <section id="paid" class="paid">
+      <div class="container__paid">
+
+      </div>
+    </section>
+    </form>
+  </main>
 </div>
-</body>
-</html>
 </body>
 </html>
