@@ -1,13 +1,6 @@
 package ufro.dci.gestionapp.model.production;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import ufro.dci.gestionapp.model.shooper.Shooper;
 
@@ -19,6 +12,14 @@ public class Pizza {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "size", length =10, nullable = false)
+    private String size;
+    @Column(name = "edgy", length =10, nullable = false)
+    private String edgy;
+    @Column(name = "cheese", length =10, nullable = false)
+    private String cheese;
+    @Column(name = "contador")
+    private int contador;
     @OneToMany(mappedBy="pizza")
     private List<Ingredient> ingredientList;
     @ManyToOne

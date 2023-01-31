@@ -26,16 +26,22 @@ public class Shooper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "name", length = 25, nullable = false)
+    @Column(name = "name", length = 50, nullable = false)
     private String name;
     @Column(name = "phone", length = 25, nullable = false)
     private String phone;
     @Column(name = "means_delivery", length = 25, nullable = false)
     private String meansDelivery;
-    @Column(name = "commentary", length = 25, nullable = false)
+    @Column(name = "commentary", length =200, nullable = false)
     private String commentary;
 
     @OneToMany(mappedBy="shooper")
     private List<Pizza> pizzaList;
 
+    public Shooper(String name, String phone, String meansDelivery, String commentary) {
+        this.name = name;
+        this.phone = phone;
+        this.meansDelivery = meansDelivery;
+        this.commentary = commentary;
+    }
 }

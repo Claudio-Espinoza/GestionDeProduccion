@@ -15,7 +15,7 @@
 
 
 .container__items {
-    border-radius: 10%;
+    border-radius: 5%;
     display: grid;
     grid-template-rows: 1fr 0.3fr 3fr 1fr;
     width: 30vw;

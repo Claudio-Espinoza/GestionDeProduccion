@@ -9,7 +9,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="ISO-8859-1">
-  <link rel="stylesheet" type="text/css" th:href="@{/styles/style-make-line.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles/style-register.css}">
   <title>Menu</title>
 </head>
 <body>
@@ -37,21 +37,21 @@
   </nav>
 
   <main>
-    </form>
+    <form th:action="@{/employee/make-line}" method="post" class="form-content">
     <section id="register" class="register">
       <div class="container__register">
         <div class="information">
           <div class="contact">
             <h2 class="title--principal ">Informacion de cliente</h2>
-            <input class="input__contact" type="text" name="name" placeholder="Nombre">
-            <input class="input__contact" type="text" name="phone" placeholder="Telefono">
+            <input class="input__contact" type="text" name="name" placeholder="Nombre" required>
+            <input class="input__contact" type="text" name="phone" placeholder="Telefono" required>
           </div>
           <div class="individual">
             <h2 class="title--principal ">Medio de entraga</h2>
             <div class="container__input">
-              <input class="input--individual Dine" type="radio" id="service1" name="service" value="Dine-in">
-              <input  class="input--individual Carry" type="radio" id="service2" name="service" value="Carry-out">
-              <input class="input--individual Delivery"  type="radio" id="service3" name="service" value="Delivery">
+              <input class="input--individual Dine" type="radio" id="service1" name="meansDelivery" value="Dine-in" required>
+              <input  class="input--individual Carry" type="radio" id="service2" name="meansDelivery" value="Carry-out" required>
+              <input class="input--individual Delivery"  type="radio" id="service3" name="meansDelivery" value="Delivery" required>
             </div>
 
           </div>
@@ -59,35 +59,10 @@
         <div class="message">
           <div class="message__input">
             <h2 class="title--principal ">Comentarios</h2>
-            <input class="input__commit" type="text" name="commentary">
-            <a class="menssage--submit" href="#maker" placeholder="Avanzar"></a>
-
+            <input class="input__commit" type="text" name="commentary" required>
+            <button class="menssage--submit" href="#maker" type="submit"></button>
           </div>
         </div>
-      </div>
-    </section>
-
-
-    <section id="maker" class="maker">
-      <div class="container__maker">
-
-      </div>
-    </section>
-
-
-    <section id="drinks" class="drinks">
-      <div class="container__drinks">
-
-      </div>
-    </section>
-    <section id="breads" class="breads">
-      <div class="container__breads">
-
-      </div>
-    </section>
-    <section id="paid" class="paid">
-      <div class="container__paid">
-
       </div>
     </section>
     </form>
