@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/style-drinks.css}">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar__container ">
+                <p class="options--register"></p>
+            </div>
+            <div class="navbar__container">
+                <p class="options--maker"></p>
+            </div>
+            <div class="navbar__container">
+                <p class="options--drinks"></p>
+            </div>
+            <div class="navbar__container">
+                <p class="options--breads "></p>
+            </div>
+            <div class="navbar__container ">
+                <p class="options--paid"></p>
+            </div>
+            <div class="navbar__container ">
+                <a th:href="@{/employee/home}" class="options--back"></a>
+            </div>
+        </nav>
+        <main>
+            <form th:action="@{/employee/drinks}" method="post" class="form-content">
+                <section id="drinks" class="drinks">
+                    <div class="container__drinks">
+
+                            <div class="drink__size">
+                                <h2 class="title--principal ">Tamaño de bebida</h2>
+                                <div class="container__input">
+                                    <input class="input--size Small" type="radio" id="service1" name="drinkSize" value="Small" required>
+                                    <input  class="input--size Medium" type="radio" id="service2" name="drinkSize" value="Medium" required>
+                                    <input class="input--size Large"  type="radio" id="service3" name="drinkSize" value="Large" required>
+                                </div>
+                                <div class="container__label">
+                                    <h2 class="label--size">Pequeña </h2>
+                                    <h2 class="label--size">Mediana </h2>
+                                    <h2 class="label--size">Grande </h2>
+                                </div>
+                            </div>
+                            <div class="container__flavor">
+                                <h2 class="title--principal ">Sabor de bebida</h2>
+                                <div class="container__input--flavor">
+                                    <input class="input__flavor--size Cola" type="radio" id="drink1" name="drinkFlavor" value="cola" required>
+                                    <input  class="input__flavor--size Pineapple" type="radio" id="drink2" name="drinkFlavor" value="pineapple" required>
+                                    <input class="input__flavor--size Coconut"  type="radio" id="drink3" name="drinkFlavor" value="coconut" required>
+                                    <input class="input__flavor--size Soda"  type="radio" id="drink4" name="drinkFlavor" value="soda" required>
+                                    <input class="input__flavor--size Water"  type="radio" id="drink5" name="drinkFlavor" value="water" required>
+                                </div>
+                                <button class="message--submit" href="#maker" type="submit"></button>
+                            </div>
+                    </div>
+                </section>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

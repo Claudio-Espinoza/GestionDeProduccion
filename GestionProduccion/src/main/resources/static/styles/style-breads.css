@@ -1,0 +1,174 @@
+/*--|Generales|-----------------------------------------------------------------------------------------------------*/
+:root {
+    --rojo: #BF4141;
+    --amarillo: #FFDB4F;
+    --blanco: #F0F2F2;
+    --verde: #2D402E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--verde);
+    overflow-y: hidden;
+}
+
+
+/*--|Barra de navegacion|------------------------------------------------------------------------------------------ */
+
+.navbar {
+    margin: 1% 1% 1% 1.5%;
+    border-radius: 15px;
+    width: 8vw;
+    position: fixed;
+    height: 95%;
+    display: grid;
+    background-color: var(--blanco);
+
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.options--breads{
+    background: var(--amarillo);
+    border-radius: 15px;
+}
+
+.options--register {
+    width: 90%;
+    height: 90%;
+    background-image: url("../img/agregar-verde.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.options--maker {
+    width: 90%;
+    height: 90%;
+    background-image: url("../img/pizza.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.options--drinks {
+    width: 90%;
+    height: 90%;
+    background-image: url("../img/soda-verde.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.options--breads {
+    width: 90%;
+    height: 90%;
+    background-image: url("../img/bread.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.options--paid {
+    width: 90%;
+    height: 90%;
+    background-image: url("../img/paid.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+.options--back {
+    width: 90%;
+    height: 90%;
+    background-image: url("../img/back.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+.options--back:hover{
+    border-radius: 5%;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+/*--|Secciones|---------------------------------------------------------------------------------------------------- */
+
+section {
+    height: 100vh;
+    width: 90vw;
+    left: 10vw;
+    position: relative;
+}
+/*---------------|Bebidas|---------------*/
+.container__breads {
+    width: 90%;
+    height: 90%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+/*---|Tamaño bebida|--------------------------------- */
+.size {
+    background-color: var(--blanco);
+    width: 90%;
+    height: 90%;
+    margin: 1% 0 0 10%;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    align-items: center;
+}
+
+.title--principal {
+    text-align: center;
+    color: var(--verde);
+    margin-top: 5%;
+    font-size: 2.5vw;
+    font-weight: bolder;
+}
+
+input::placeholder {
+    background: none;
+    color: var(--verde);
+    font-size: 200%;
+    font-weight: 400;
+}
+
+input {
+    border: 1px var(--verde) solid;
+}
+
+input[type="radio"] {
+    appearance: none;
+}
+
+.input--size {
+    background-color: var(--verde);
+    width: 50%;
+    height: 90%;
+    margin: 9%;
+}
+
+.input--size:checked {
+    background-color: var(--amarillo);
+
+}
+
+.container__input {
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 80%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

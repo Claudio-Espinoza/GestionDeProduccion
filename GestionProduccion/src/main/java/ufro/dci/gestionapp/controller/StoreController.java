@@ -51,4 +51,9 @@ public class StoreController {
         shooperService.createObject(name, phone, meansDelivery, commentary);
         return "employee/production/make-line";
     }
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @PostMapping("/employee/drinks")
+    public String viewMakeLine(){
+        return "employee/production/drinks";
+    }
 }

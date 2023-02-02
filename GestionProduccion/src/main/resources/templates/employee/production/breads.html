@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles/style-breads.css}">
+  <title>Title</title>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar">
+    <div class="navbar__container ">
+      <p class="options--register"></p>
+    </div>
+    <div class="navbar__container">
+      <p class="options--maker"></p>
+    </div>
+    <div class="navbar__container">
+      <p class="options--drinks"></p>
+    </div>
+    <div class="navbar__container">
+      <p class="options--breads "></p>
+    </div>
+    <div class="navbar__container ">
+      <p class="options--paid"></p>
+    </div>
+    <div class="navbar__container ">
+      <a th:href="@{/employee/home}" class="options--back"></a>
+    </div>
+  </nav>
+  <main>
+    <form th:action="@{/employee/breads}" method="post" class="form-content">
+      <section id="drinks" class="drinks">
+        <div class="container__breads">
+          
+        </div>
+      </section>
+    </form>
+  </main>
+
+</div>
+</body>
+</html>
