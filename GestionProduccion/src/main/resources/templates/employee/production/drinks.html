@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" th:href="@{/styles/style-drinks.css}">
-    <title>Title</title>
+    <title>Drinks</title>
 </head>
 <body>
     <div class="container">
         <nav class="navbar">
             <div class="navbar__container ">
-                <p class="options--register"></p>
+                <a class="options--register"></a>
             </div>
             <div class="navbar__container">
-                <p class="options--maker"></p>
+                <a class="options--maker"></a>
             </div>
             <div class="navbar__container">
-                <p class="options--drinks"></p>
+                <a th:href="@{/employee/drinks}" class="options--drinks"></a>
             </div>
             <div class="navbar__container">
-                <p class="options--breads "></p>
+                <a th:href="@{/employee/breads}" class="options--breads "></a>
             </div>
             <div class="navbar__container ">
-                <p class="options--paid"></p>
+                <a th:href="@{/employee/paid}" class="options--paid"></a>
             </div>
             <div class="navbar__container ">
                 <a th:href="@{/employee/home}" class="options--back"></a>

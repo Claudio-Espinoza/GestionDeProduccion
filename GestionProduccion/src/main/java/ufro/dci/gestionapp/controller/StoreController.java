@@ -52,9 +52,9 @@ public class StoreController {
         return "employee/production/make-line";
     }
     @PreAuthorize("hasAuthority('EMPLOYEE')")
-    @PostMapping("/employee/drinks")
+    @GetMapping("/employee/drinks")
     public String viewMakeLine() {
-        return "employee/production/drinks";
+        return "employee/production/drinks"; //Cambiar
     }
     @PostMapping("/employee/save-pizza")
     public String savePizza(){

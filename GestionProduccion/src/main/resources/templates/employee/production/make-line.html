@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" th:href="@{/styles/style-make-line.css}">
-   <title>Document</title>
+    <title>Make-Line</title>
 </head>
 
 <body>
@@ -38,12 +38,16 @@
         </div>
 
     </nav>
-    <form th:action="@{/employee/save-pizza}" method="post" class="form-content">
-        <main>
-            <section id="maker" class="maker">
+    <main>
+        <section id="maker" class="maker">
+
+
                 <div class="container__maker">
                     <h1 class="container--title">Pizzas disponibles</h1>
                     <div class="container__interno">
+
+                        <form th:action="@{/employee/save-pizza}" method="post" class="form-content">
+
                         <div class="divisor">
                             <div class="container__pizza pecado">
                                 <h3 class="title">Pecado</h3>
@@ -84,6 +88,9 @@
                                 </div>
                             </div>
                         </div>
+                        </form>
+
+                        <form th:action="@{/employee/save-pizza}" method="post" class="form-content">
 
                         <div class="divisor">
                             <div class="container__pizza bolonesa">
@@ -128,13 +135,16 @@
                                 </div>
                             </div>
                         </div>
+                        </form>
+
+                        <form th:action="@{/employee/save-pizza}" method="post" class="form-content">
 
                         <div class="divisor">
                             <div class="container__pizza vegetariana">
                                 <h3 class="title">Vegetariana</h3>
                                 <div class="informacion">
 
-                                    <p class="info__text">Ingredientes</p>
+                                    <p class="info__text">Tomate, mozarella, rodajas de tomate, pimiento verde</p>
                                     <p class="precio">Precio</p>
                                     <button class="button__select" type="submit" name="name"></button>
 
@@ -167,23 +177,33 @@
                                 <h3 class="title">Carbonara</h3>
                                 <div class="informacion">
 
-                                    <p class="info__text">Ingredientes</p>
+                                    <p class="info__text">Tomate, mozarella, rodajas de tomate, pimiento verde</p>
                                     <p class="precio">Precio</p>
                                     <button class="button__select" type="submit" name="name"></button>
 
                                 </div>
                             </div>
                         </div>
+                        </form>
                     </div>
 
-                </div>
-                <div class="container__list">
+
 
                 </div>
-            </section>
-        </main>
 
-    </form>
+            <div class="container__list">
+                <div class="container__list--tr">
+
+                </div>
+                <div class="container__button">
+                    <a  class="menssage--submit" th:href="@{/employee/drinks}">  </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+
 </div>
 </body>
 
