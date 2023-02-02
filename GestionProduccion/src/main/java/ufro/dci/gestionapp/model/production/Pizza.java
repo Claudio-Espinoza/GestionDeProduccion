@@ -12,16 +12,11 @@ public class Pizza {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "size", length =10, nullable = false)
-    private String size;
-    @Column(name = "edgy", length =10, nullable = false)
-    private String edgy;
-    @Column(name = "cheese", length =10, nullable = false)
-    private String cheese;
+    @Column(name = "name_pizza", length =10, nullable = false)
+    private String name;
     @Column(name = "contador")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int contador;
-    @OneToMany(mappedBy="pizza")
-    private List<Ingredient> ingredientList;
     @ManyToOne
     @JoinColumn(name = "shopper_id")
     private Shooper shooper;

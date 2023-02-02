@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="ISO-8859-1">
-  <title>Menu</title>
-</head>
-<body>
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" th:href="@{/styles/style-register.css}">
-  <title>Menu</title>
+
+  <title>Register</title>
 </head>
+
 <body>
 <div class="container">
 
@@ -38,35 +36,36 @@
 
   <main>
     <form th:action="@{/employee/make-line}" method="post" class="form-content">
-    <section id="register" class="register">
-      <div class="container__register">
-        <div class="information">
-          <div class="contact">
-            <h2 class="title--principal ">Informacion de cliente</h2>
-            <input class="input__contact" type="text" name="name" placeholder="Nombre" required>
-            <input class="input__contact" type="text" name="phone" placeholder="Telefono" required>
-          </div>
-          <div class="individual">
-            <h2 class="title--principal ">Medio de entraga</h2>
-            <div class="container__input">
-              <input class="input--individual Dine" type="radio" id="service1" name="meansDelivery" value="Dine-in" required>
-              <input  class="input--individual Carry" type="radio" id="service2" name="meansDelivery" value="Carry-out" required>
-              <input class="input--individual Delivery"  type="radio" id="service3" name="meansDelivery" value="Delivery" required>
+      <section id="register" class="register">
+        <div class="container__register">
+          <div class="information">
+            <div class="contact">
+              <h2 class="title--principal ">Informacion de cliente</h2>
+              <input class="input__contact" type="text" name="name" placeholder="Nombre" required>
+              <input class="input__contact" type="text" name="phone" placeholder="Telefono" required>
             </div>
+            <div class="individual">
+              <h2 class="title--principal ">Medio de entraga</h2>
+              <div class="container__input">
+                <input class="input--individual Dine" type="radio" id="service1" name="meansDelivery" value="Dine-in" required>
+                <input  class="input--individual Carry" type="radio" id="service2" name="meansDelivery" value="Carry-out" required>
+                <input class="input--individual Delivery"  type="radio" id="service3" name="meansDelivery" value="Delivery" required>
+              </div>
 
+            </div>
+          </div>
+          <div class="message">
+            <div class="message__input">
+              <h2 class="title--principal ">Comentarios</h2>
+              <input class="input__commit" type="text" name="commentary" required>
+              <button class="menssage--submit" href="#maker" type="submit"></button>
+            </div>
           </div>
         </div>
-        <div class="message">
-          <div class="message__input">
-            <h2 class="title--principal ">Comentarios</h2>
-            <input class="input__commit" type="text" name="commentary" required>
-            <button class="menssage--submit" href="#maker" type="submit"></button>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
     </form>
   </main>
 </div>
 </body>
+
 </html>

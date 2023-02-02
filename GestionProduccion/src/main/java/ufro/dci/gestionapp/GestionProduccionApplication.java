@@ -16,7 +16,7 @@ public class GestionProduccionApplication {
 		SpringApplication.run(GestionProduccionApplication.class, args);
 	}
 
-/*
+	/*
 	@Bean
 	CommandLineRunner commandLineRunner(EmployeeRepository employeeRepository, PasswordEncoder passwordEncoder){
 		return args -> {
@@ -26,9 +26,7 @@ public class GestionProduccionApplication {
 		};
 	}
 
-
- */
-
+*/
 
 
 

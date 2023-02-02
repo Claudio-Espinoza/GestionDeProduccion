@@ -1,0 +1,332 @@
+/*--|Generales|-----------------------------------------------------------------------------------------------------*/
+:root {
+    --rojo: #BF4141;
+    --amarillo: #FFDB4F;
+    --blanco: #F0F2F2;
+    --verde: #2D402E;
+}
+
+input[type="radio"] {
+    appearance: none;
+}
+
+h2 {
+    font-size: 200%;
+    font-weight: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: var(--verde);
+}
+
+body {
+    background-color: var(--verde);
+    overflow-y: hidden;
+}
+
+/*--|Barra de navegacion|------------------------------------------------------------------------------------------ */
+
+.navbar {
+    margin: 1% 1% 1% 1.5%;
+    border-radius: 15px;
+    background-color: var(--blanco);
+    width: 8vw;
+    position: fixed;
+    height: 95%;
+    display: grid;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.options--back:hover,
+.options--paid:hover,
+.options--breads:hover,
+.options--drinks:hover,
+.options--register:hover {
+    border-radius: 5%;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.options--maker {
+    border-radius: 15px;
+    background-color: var(--amarillo);
+}
+
+.options--register {
+    width: 90%;
+    height: 90%;
+    background-image: url(../img/agregar-verde.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.options--maker {
+    width: 90%;
+    height: 90%;
+    background-image: url(../img/pizza.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.options--drinks {
+    width: 90%;
+    height: 90%;
+    background-image: url(../img/soda-verde.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.options--breads {
+    width: 90%;
+    height: 90%;
+    background-image: url(../img/bread.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.options--paid {
+    width: 90%;
+    height: 90%;
+    background-image: url(../img/paid.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.options--back {
+    width: 90%;
+    height: 90%;
+    background-image: url(../img/back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+/*--|Secciones|---------------------------------------------------------------------------------------------------- */
+
+section {
+    height: 100vh;
+    width: 90vw;
+    left: 10vw;
+    position: relative;
+}
+
+/*---------------|container|---------------*/
+.maker,
+.drinks,
+.breads,
+.paid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__maker {
+    border-radius: 15px;
+    width: 75%;
+    height: 90%;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+    background-color: var(--blanco);
+    display: grid;
+    grid-template-rows: 0.5fr 4fr;
+
+}
+
+.container--title {
+    margin-top: 2%;
+    text-align: center;
+}
+
+.container__list {
+    width: 12%;
+    margin-left: 3%;
+    height: 90%;
+    border-radius: 15px;
+    background-color: var(--blanco);
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+/*---------------|internal|---------------*/
+
+.container__interno {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+
+}
+
+.divisor {
+    margin-left: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+.container__pizza {
+    width: 15vw;
+    height: 22vh;
+    border-radius: 10px;
+}
+
+.container__pizza:hover {
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.informacion {
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
+
+    text-align: center;
+
+    opacity: 0;
+    background-color: beige;
+    width: 100%;
+    height: 81%;
+
+
+}
+
+.informacion:hover {
+    border-radius: 9px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    opacity: 80%;
+
+
+}
+
+.title {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.info__text {
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.precio {
+    text-align: center;
+    font-weight: bold;
+}
+
+/*---------------|Pizzas|---------------*/
+
+.pecado {
+    background-image: url(../img/pizza/pecado.png);
+    background-position: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+
+.napolitana {
+    background-image: url(../img/pizza/napolitana.png);
+    background-position: center;
+    background-position-y: 2vh;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+
+.barbonara {
+    background-image: url(../img/pizza/barbonara.png);
+    background-position: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 60%;}
+
+.queso4 {
+    background-image: url(../img/pizza/4queso.png);
+    background-position: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 60%;}
+
+.bolonesa {
+    background-image: url(../img/pizza/bolonesa.png);
+    background-position: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 60%;}
+
+.marinera {
+    background-image: url(../img/pizza/marinera.png);
+    background-position: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 60%;}
+
+.hawaiana {
+    background-image: url(../img/pizza/hawaiana.png);
+    background-position: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 60%;}
+
+.peperoni {
+    background-image: url(../img/pizza/peperoni.png);
+    background-position: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 60%;}
+
+.vegetariana {
+    background-image: url(../img/pizza/vegetariana.png);
+    background-position: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 60%;}
+
+.pesto {
+    background-image: url(../img/pizza/pesto.png);
+    background-position: center;
+    background-position-y:  2vh;
+    background-repeat: no-repeat;
+    background-size: 70%;}
+
+.tuscan {
+    background-image: url(../img/pizza/tuscan.png);
+    background-position: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 60%;}
+
+.carbonara {
+    background-image: url(../img/pizza/carbonara.png);
+    background-position: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 60%;}
+
+.button__select {
+    background-color: var(--amarillo);
+    background-image: url(../img/select-verde.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    width: 100%;
+    align-items: center;
+}
+
+.button__select:hover {
+    background-color: var(--verde);
+    background-image: url(../img/select-amarillo.png);
+}
+
+
+button[type="submit"] {
+    appearance: none;
+    border: none;
+}
