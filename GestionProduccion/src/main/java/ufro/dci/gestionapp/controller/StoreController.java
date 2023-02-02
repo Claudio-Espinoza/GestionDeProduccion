@@ -47,13 +47,17 @@ public class StoreController {
         return "employee/production/register";}
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @PostMapping("/employee/make-line")
-    public String viewMakeLine(String name, String phone, String meansDelivery, String commentary){
+    public String saveUser(String name, String phone, String meansDelivery, String commentary){
         shooperService.createObject(name, phone, meansDelivery, commentary);
         return "employee/production/make-line";
     }
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @PostMapping("/employee/drinks")
-    public String viewMakeLine(){
+    public String viewMakeLine() {
         return "employee/production/drinks";
+    }
+    @PostMapping("/employee/save-pizza")
+    public String savePizza(){
+        return "employee/production/make-line";
     }
 }
