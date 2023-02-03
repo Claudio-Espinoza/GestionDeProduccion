@@ -33,4 +33,13 @@ public class PizzaService {
         return pizzaRepository.findAllByShooper(shooperService.getShooperByLastId());
     }
 
+    private int getLastIdPizza(){
+        List<Pizza> lastId=pizzaRepository.findAll();
+        return lastId.get(lastId.size()-1).getId();
+    }
+
+    public void deleteByIdPizza(){
+        pizzaRepository.deleteById(getLastIdPizza());
+    }
+
 }

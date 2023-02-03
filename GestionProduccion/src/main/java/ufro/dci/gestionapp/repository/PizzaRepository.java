@@ -10,5 +10,8 @@ import java.util.List;
 @Repository
 public interface PizzaRepository  extends CrudRepository<Pizza, Integer> {
     List<Pizza> findAllByShooper(Shooper shooper);
+    List<Pizza> findAll();
+    Pizza findById(int id);
 
+    void deleteById(int id);
 }

@@ -193,12 +193,13 @@
 
             <div class="container__list">
                 <div class="container__list--tr">
-                    <tr th:each="pizzas:${pizza}">
-                        <p class="card-text"><span th:text="${pizzas.name}"></span></p>
+                    <tr  th:each="pizzas:${pizza}">
+                        <p class="container__name--pizza"><span th:text="${pizzas.name}"></span></p>
                     </tr>
 
                 </div>
                 <div class="container__button">
+                    <a href="#" class="btn" th:href="@{/delete/pizza}">Delete</a>
                     <a  class="menssage--submit" th:href="@{/employee/drinks}">  </a>
                 </div>
 
