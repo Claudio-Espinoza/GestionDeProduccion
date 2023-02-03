@@ -2,7 +2,9 @@ package ufro.dci.gestionapp.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ufro.dci.gestionapp.service.PizzaService;
 import ufro.dci.gestionapp.service.ShooperService;
@@ -57,7 +59,7 @@ public class StoreController {
         return "employee/production/make-line";
     }
     @PreAuthorize("hasAuthority('EMPLOYEE')")
-    @GetMapping("/employee/drinks")
+    @PostMapping("/employee/drinks")
     public String viewMakeLine() {
 
         //Guardar los consumibles
@@ -66,9 +68,11 @@ public class StoreController {
 
         return "employee/production/drinks"; //Cambiar
     }
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
     @PostMapping("/employee/save-pizza")
-    public String savePizza(String name){
+    public String savePizza(String name,  Model model){
         pizzaService.createObject(name, shooperService.getShooperByLastId());
+        model.addAttribute("pizza", pizzaService.getListPizza());
         return "employee/production/make-line";
     }
 }

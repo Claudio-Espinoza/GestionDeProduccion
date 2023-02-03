@@ -16,7 +16,7 @@ public class Pizza {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "name_pizza", length =10, nullable = false)
+    @Column(name = "name_pizza", length =20, nullable = false)
     private String name;
     @ManyToOne
     @JoinColumn(name = "shopper_id")
