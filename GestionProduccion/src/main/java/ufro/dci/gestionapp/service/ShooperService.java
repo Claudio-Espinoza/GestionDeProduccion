@@ -1,6 +1,5 @@
 package ufro.dci.gestionapp.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ufro.dci.gestionapp.model.shooper.Shooper;
 import ufro.dci.gestionapp.repository.ShooperRepository;
@@ -15,7 +14,6 @@ public class ShooperService {
         this.shooperRepository = shooperRepository;
     }
 
-
     public void createObject(String name, String phone, String meansDelivery, String commentary){
         Shooper shooper = new Shooper(name, phone, meansDelivery, commentary);
         saveObjeto(shooper);
@@ -24,7 +22,13 @@ public class ShooperService {
         shooperRepository.save(shooper);
     }
 
-    public void getLastId(){
-        Iterable<Shooper> shooperIterable =shooperRepository.findAll();
+    private int getLastId(){
+        List<Shooper> lastId=shooperRepository.findAll();
+        return lastId.get(lastId.size()-1).getId();
+    }
+
+    public Shooper getShooperByLastId(){
+        int lastId=getLastId();
+        return shooperRepository.findById(lastId);
     }
 }

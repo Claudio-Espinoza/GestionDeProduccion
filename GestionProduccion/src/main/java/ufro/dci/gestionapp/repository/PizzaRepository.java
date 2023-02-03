@@ -6,6 +6,4 @@ import ufro.dci.gestionapp.model.production.Pizza;
 
 @Repository
 public interface PizzaRepository  extends CrudRepository<Pizza, Integer> {
-    @Override
-    Iterable<Pizza> findAll();
 }
