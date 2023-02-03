@@ -155,7 +155,12 @@ input[type="radio"] {
     background-color: var(--verde);
     width: 50%;
     height: 90%;
-    margin: 9%;
+    margin: 10%;
+}
+
+.input--size:hover {
+    background-color: var(--amarillo);
+
 }
 
 .input--size:checked {
@@ -183,38 +188,47 @@ input[type="radio"] {
 
 .Small {
     border-radius: 10px;
-    background-image: url("../img/bebida-amarillo.png");
+    background-image: url("../img/drinks/bebida-amarillo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 40%;
 }
+.Small:hover {
+    background-image: url("../img/drinks/bebida-verde.png");
+}
 
 .Small:checked {
-    background-image: url("../img/bebida-verde.png");
+    background-image: url("../img/drinks/bebida-verde.png");
 }
 
 .Medium {
     border-radius: 10px;
-    background-image: url("../img/bebida-amarillo.png");
+    background-image: url("../img/drinks/bebida-amarillo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
 }
 
 .Medium:checked {
-    background-image: url("../img/bebida-verde.png");
+    background-image: url("../img/drinks/bebida-verde.png");
+}
+.Medium:hover {
+    background-image: url("../img/drinks/bebida-verde.png");
 }
 
 .Large {
     border-radius: 10px;
-    background-image: url("../img/bebida-amarillo.png");
+    background-image: url("../img/drinks/bebida-amarillo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 55%;
 }
 
 .Large:checked {
-    background-image: url("../img/bebida-verde.png");
+    background-image: url("../img/drinks/bebida-verde.png");
+}
+.Large:hover {
+    background-image: url("../img/drinks/bebida-verde.png");
 }
 /*--|Sabor bebida|--------------------------------------------------------------------------*/
 .container__flavor {
@@ -229,42 +243,41 @@ input[type="radio"] {
 }
 
 .Cola {
-    border-radius: 10px;
-    background-image: url("../img/cola.png");
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+    background-image: url("../img/drinks/cola.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 40%;
 }
 .Pineapple {
-    border-radius: 10px;
-    background-image: url("../img/pineapple.png");
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+    background-image: url("../img/drinks/pineapple.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 40%;
 }
 .Coconut {
-    border-radius: 10px;
-    background-image: url("../img/coconut.png");
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+    background-image: url("../img/drinks/coconut.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 40%;
 }
 .Soda {
-    border-radius: 10px;
-    background-image: url("../img/soda.png");
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+    background-image: url("../img/drinks/soda.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 40%;
 }
 .Water {
-    border-radius: 10px;
-    background-image: url("../img/mineral-water.png");
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+    background-image: url("../img/drinks/mineral-water.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 25%;
 }
 .container__input--flavor {
-    margin-left: 0%;
     width: 100%;
     height: 80%;
     display: flex;
@@ -273,6 +286,7 @@ input[type="radio"] {
 }
 .input__flavor--size {
     border-radius: 5%;
+    border-color: transparent;
     width: 50%;
     height: 150%;
     margin-bottom: 3%;
@@ -281,7 +295,9 @@ input[type="radio"] {
 }
 .input__flavor--size:checked {
     background-color: var(--amarillo);
-
+}
+.input__flavor--size:hover {
+    background-color: var(--amarillo);
 }
 
 .message--submit {
