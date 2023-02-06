@@ -245,6 +245,7 @@ input[type="radio"] {
     border-radius: 15px;
 
     display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 .Cola {
@@ -285,6 +286,8 @@ input[type="radio"] {
 .container__input--flavor {
     width: 100%;
     height: 80%;
+    border-radius: 15px;
+
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -294,7 +297,7 @@ input[type="radio"] {
     border-color: transparent;
     width: 50%;
     height: 150%;
-    margin-bottom: 3%;
+    margin-top: 4%;
     margin-right: 3%;
     margin-left: 3%;
 }
@@ -312,10 +315,10 @@ input[type="radio"] {
     color: var(--amarillo);
     text-align: center;
 
-    margin-top: 2.8%;
+    margin-top: 5%;
     margin-left: 35%;
     width: 30%;
-    height: 60%;
+    height: 50%;
     background-image: url("../img/avanzar-amarillo.png");
     background-position: center;
     background-repeat: no-repeat;

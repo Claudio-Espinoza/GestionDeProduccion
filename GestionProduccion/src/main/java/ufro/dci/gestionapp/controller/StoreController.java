@@ -100,7 +100,7 @@ public class StoreController {
         return "employee/production/drinks"; //Cambiar
     }
     @PreAuthorize("hasAuthority('EMPLOYEE')")
-    @GetMapping("/employee/paid")
+    @PostMapping("/employee/paid")
     public String viewPaid() {
 
         //Guardar panes

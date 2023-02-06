@@ -124,17 +124,17 @@ section {
 /*---------------|Pan|---------------*/
 .container__breads {
     width: 90%;
-    height: 100%;
+    height: 90%;
 
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2.5fr 1fr;
 }
 /*---|Tipo pan|--------------------------------- */
 .bread--selection {
     background-color: var(--blanco);
     width: 90%;
-    height: 90%;
-    margin: 4% 0 0 10%;
+    height: 100%;
+    margin: 1% 0 0 10%;
     box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
     border-radius: 15px;
     align-items: center;
@@ -144,28 +144,28 @@ section {
     background-image: url("../img/breads/white.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: 60%;
 }
 .Salt {
     box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
     background-image: url("../img/breads/Salt.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 60%;
 }
 .Croissant {
     box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
     background-image: url("../img/breads/croissant.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 50%;
 }
 .No-bread {
     box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
     background-image: url("../img/cross.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 70%;
 }
 /*---|Title|--------------------------------- */
 .title--principal {
@@ -195,8 +195,9 @@ input[type="radio"] {
 .input--size {
     border: none;
     background-color: var(--blanco);
-    width: 50%;
-    height: 60%;
+    width: 40%;
+    height: 80%;
+    border-radius: 15px;
     box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -212,7 +213,7 @@ input[type="radio"] {
 
 .container__input {
     margin-left: 18%;
-    margin-top: 15%;
+    margin-top: 3%;
     width: 90%;
     height: 70%;
     display: grid;
@@ -224,7 +225,7 @@ input[type="radio"] {
     background-color: var(--blanco);
     width: 90%;
     height: 90%;
-    margin: 8% 0 0 10%;
+    margin: 5% 0 0 10%;
     box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
     border-radius: 15px;
 
@@ -238,10 +239,10 @@ input[type="radio"] {
     color: var(--amarillo);
     text-align: center;
 
-    margin-top: 10%;
-    margin-left: 10%;
-    width: 80%;
-    height: 10%;
+    margin-top: 7%;
+    margin-left: 32%;
+    width: 40%;
+    height: 40%;
     background-image: url("../img/avanzar-amarillo.png");
     background-position: center;
     background-repeat: no-repeat;
