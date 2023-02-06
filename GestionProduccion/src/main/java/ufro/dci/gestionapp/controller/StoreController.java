@@ -97,7 +97,16 @@ public class StoreController {
         //Guardar los consumibles
         //Necesita saber la id del usuario comprador
 
-
         return "employee/production/drinks"; //Cambiar
+    }
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @GetMapping("/employee/paid")
+    public String viewPaid() {
+
+        //Guardar panes
+        //Necesita saber la id del usuario comprador
+        //realizar el calculo del precio total y mostrarlo en vistas
+
+        return "employee/production/paid"; //Cambiar
     }
 }

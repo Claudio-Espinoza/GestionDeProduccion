@@ -37,10 +37,9 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-.options--drinks{
-    background: var(--amarillo);
-    border-radius: 15px;
+.options--register {
+    border-radius: 10px;
+    background-color: var(--amarillo);
 }
 
 .options--register {
@@ -51,7 +50,10 @@ body {
     background-repeat: no-repeat;
     background-size: 50%;
 }
-
+.options--maker {
+    border-radius: 10px;
+    background-color: var(--amarillo);
+}
 .options--maker {
     width: 90%;
     height: 90%;
@@ -60,7 +62,10 @@ body {
     background-repeat: no-repeat;
     background-size: 50%;
 }
-
+.options--drinks {
+    background: var(--amarillo);
+    border-radius: 10px;
+}
 .options--drinks {
     width: 90%;
     height: 90%;

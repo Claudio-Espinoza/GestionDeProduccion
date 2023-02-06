@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" th:href="@{/styles/style-breads.css}">
-  <title>Brads</title>
+  <title>Breads</title>
 </head>
 <body>
 <div class="container">
@@ -28,23 +28,20 @@
     </div>
   </nav>
   <main>
-    <form th:action="@{/employee/breads}" method="post" class="form-content">
-      <section id="drinks" class="drinks">
+    <form th:action="@{/employee/paid}" method="post" class="form-content">
+      <section id="breads" class="breads">
         <div class="container__breads">
           <div class="bread--selection">
             <h2 class="title--principal ">Selección de pan</h2>
             <div class="container__input">
-
-              <input class="input--size White" type="radio" id="bread1" name="breadSize" value="white" required>
-              <input  class="input--size Croissant" type="radio" id="bread2" name="breadSize" value="croissant" required>
-              <input class="input--size Salt"  type="radio" id="bread3" name="breadSize" value="salt" required>
-              <input class="input--size No-bread"  type="radio" id="bread4" name="breadSize" value="no-bread" required>
+              <input class="input--size White" type="radio" id="bread1" name="bread" value="white" required>
+              <input  class="input--size Croissant" type="radio" id="bread2" name="bread" value="croissant" required>
+              <input class="input--size Salt"  type="radio" id="bread3" name="bread" value="salt" required>
+              <input class="input--size No-bread"  type="radio" id="bread4" name="bread" value="no-bread" required>
             </div>
-            <div class="container__label">
-              <h2 class="label--size">Pequeña </h2>
-              <h2 class="label--size">Mediana </h2>
-              <h2 class="label--size">Grande </h2>
-            </div>
+          </div>
+          <div class="container__submit">
+            <button class="message--submit" href="#maker" type="submit"></button>
           </div>
         </div>
       </section>
