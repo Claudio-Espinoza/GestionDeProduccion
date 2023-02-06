@@ -166,6 +166,7 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 70%;
+    margin-left: 100%;
 }
 /*---|Title|--------------------------------- */
 .title--principal {
@@ -212,12 +213,12 @@ input[type="radio"] {
 }
 
 .container__input {
-    margin-left: 18%;
+    margin-left: 15%;
     margin-top: 3%;
     width: 90%;
     height: 70%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 /*---| submit button|--------------------------------- */
 
@@ -239,8 +240,8 @@ input[type="radio"] {
     color: var(--amarillo);
     text-align: center;
 
-    margin-top: 7%;
-    margin-left: 32%;
+    margin-top: 5.5%;
+    margin-left: 30%;
     width: 40%;
     height: 40%;
     background-image: url("../img/avanzar-amarillo.png");
