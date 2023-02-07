@@ -1,8 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Paid</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/style-paid.css}">
+
+    <title>Register</title>
 </head>
 <body>
 <div class="container">
@@ -55,6 +60,28 @@
             </div>
         </section>
     </main>
+=======
+
+    <nav class="navbar">
+        <div class="navbar__container ">
+            <a href="#register" class="options--register"></a>
+        </div>
+        <div class="navbar__container">
+            <a href="#maker" class="options--maker"></a>
+        </div>
+        <div class="navbar__container">
+            <a href="#drinks" class="options--drinks"></a>
+        </div>
+        <div class="navbar__container">
+            <a href="#breads" class="options--breads "></a>
+        </div>
+        <div class="navbar__container ">
+            <a href="#paid" class="options--paid"></a>
+        </div>
+        <div class="navbar__container ">
+            <a th:href="@{/employee/breads}" class="options--back"></a>
+        </div>
+    </nav>
 
 </div>
 </body>

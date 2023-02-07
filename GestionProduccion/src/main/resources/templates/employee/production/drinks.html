@@ -26,7 +26,12 @@
             <div class="navbar__container">
                 <a th:href="@{/employee/home}" class="options--back"></a>
             </div>
+
+            <div class="navbar__container ">
+                <a th:href="@{/employee/make-line}" class="options--back"></a>
+            </div>
         </nav>
+
         <main>
             <form th:action="@{/employee/save-drinks}" method="post" class="form-content">
                 <section id="drinks" class="drinks">

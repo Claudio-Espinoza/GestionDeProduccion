@@ -40,7 +40,19 @@ body {
 
 .options--breads{
     background: var(--amarillo);
-    border-radius: 15px;
+    border-radius: 10px;
+}
+.options--register {
+    border-radius: 10px;
+    background-color: var(--amarillo);
+}
+.options--maker {
+    border-radius: 10px;
+    background-color: var(--amarillo);
+}
+.options--drinks {
+    background: var(--amarillo);
+    border-radius: 10px;
 }
 
 .options--register {
@@ -115,19 +127,48 @@ section {
     height: 90%;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2.5fr 1fr;
 }
 /*---|Tipo pan|--------------------------------- */
 .bread--selection {
     background-color: var(--blanco);
     width: 90%;
-    height: 90%;
+    height: 100%;
     margin: 1% 0 0 10%;
     box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
     border-radius: 15px;
     align-items: center;
 }
-
+.White {
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+    background-image: url("../img/breads/white.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+.Salt {
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+    background-image: url("../img/breads/Salt.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+.Croissant {
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+    background-image: url("../img/breads/croissant.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+.No-bread {
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+    background-image: url("../img/cross.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    margin-left: 100%;
+}
+/*---|Title|--------------------------------- */
 .title--principal {
     text-align: center;
     color: var(--verde);
@@ -135,6 +176,7 @@ section {
     font-size: 2.5vw;
     font-weight: bolder;
 }
+/*---|Input|--------------------------------- */
 
 input::placeholder {
     background: none;
@@ -152,27 +194,65 @@ input[type="radio"] {
 }
 
 .input--size {
+    border: none;
     background-color: var(--blanco);
-    width: 50%;
-    height: 90%;
-    margin: 9%;
-    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+    width: 40%;
+    height: 80%;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .input--size:hover {
-    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+    background-color: var(--amarillo);
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .input--size:checked {
     background-color: var(--amarillo);
-    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .container__input {
-    margin-left: 10%;
-    margin-top: 5%;
-    width: 80%;
-    height: 35%;
+    margin-left: 15%;
+    margin-top: 3%;
+    width: 90%;
+    height: 70%;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+/*---| submit button|--------------------------------- */
+
+.container__submit {
+    background-color: var(--blanco);
+    width: 90%;
+    height: 90%;
+    margin: 5% 0 0 10%;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+
+    display: grid;
+    grid-template-rows: 1fr;
+}
+.message--submit {
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: xx-large;
+    color: var(--amarillo);
+    text-align: center;
+
+    margin-top: 5.5%;
+    margin-left: 30%;
+    width: 40%;
+    height: 40%;
+    background-image: url("../img/avanzar-amarillo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--verde);
+}
+
+.message--submit:hover {
+    background-image: url("../img/avanzar-verde.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--amarillo);
 }

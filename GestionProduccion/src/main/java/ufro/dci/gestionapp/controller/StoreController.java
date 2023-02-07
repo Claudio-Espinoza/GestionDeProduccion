@@ -92,6 +92,26 @@ public class StoreController {
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @PostMapping("/employee/save-drinks")
     public String SaveDrinks() {
+        return "employee/production/breads";
+    }
+
+    @GetMapping("/employee/drinks")
+    public String viewMakeLine() {
+
+        //Guardar los consumibles
+        //Necesita saber la id del usuario comprador
+
         return "employee/production/drinks"; //Cambiar
+    }
+
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @PostMapping("/employee/paid")
+    public String viewPaid() {
+
+        //Guardar panes
+        //Necesita saber la id del usuario comprador
+        //realizar el calculo del precio total y mostrarlo en vistas
+
+        return "employee/production/paid"; //Cambiar
     }
 }
