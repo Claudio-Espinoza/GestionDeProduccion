@@ -1,10 +1,13 @@
 package ufro.dci.gestionapp.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import ufro.dci.gestionapp.service.BreadService;
+import ufro.dci.gestionapp.service.DrinkService;
 import ufro.dci.gestionapp.service.PizzaService;
 import ufro.dci.gestionapp.service.ShooperService;
 
@@ -17,43 +20,62 @@ public class StoreController {
 
     private final ShooperService shooperService;
     private final PizzaService pizzaService;
+    private final DrinkService drinkService;
+    private final BreadService breadService;
 
-    public StoreController(ShooperService shooperService, PizzaService pizzaService) {
+    public StoreController(ShooperService shooperService, PizzaService pizzaService, DrinkService drinkService, BreadService breadService) {
         this.shooperService = shooperService;
         this.pizzaService = pizzaService;
+        this.drinkService = drinkService;
+        this.breadService = breadService;
     }
 
     @GetMapping("")
-    public String viewIndex(){
+    public String viewIndex() {
         return "index";
     }
 
     @GetMapping("/login")
-    public String viewManagerLogin(){
+    public String viewManagerLogin() {
         return "login/access-login";
     }
 
     @GetMapping("/logout")
-    public String logout(){
+    public String logout() {
         return "index";
     }
 
     @PreAuthorize("hasAuthority('MANAGER')")
     @GetMapping("/manager/home")
-    public String viewManagerHome(){
+    public String viewManagerHome() {
         return "manager/menu/manager-home";
     }
 
+
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @GetMapping("/employee/home")
-    public String viewEmployeeHome(){
+    public String viewEmployeeHome() {
         return "employee/menu/employee-home";
     }
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @GetMapping("/employee/register")
-    public String viewRegister(){
-        return "employee/production/register";}
+    public String viewRegister() {
+        return "employee/production/register";
+    }
+
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @GetMapping("/employee/register/back")
+    public String deleteRegisterShooper() throws Exception {
+        shooperService.deleteShooperForBack();
+        return "employee/production/register";
+    }
+
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @GetMapping("/employee/make-line/back")
+    public String viewMakeLineBack() {
+        return "employee/production/make-line";
+    }
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @PostMapping("/employee/make-line")
@@ -64,10 +86,6 @@ public class StoreController {
     }
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
-    @PostMapping("/employee/drinks")
-    public String viewDrinks() {
-        return "employee/production/drinks";
-    }
     @PostMapping("/employee/save-pizza")
     public String savePizza(String name,  Model model){
         pizzaService.createObject(name, shooperService.getShooperByLastId());
@@ -84,28 +102,34 @@ public class StoreController {
     }
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
-    @PostMapping("/employee/breads")
+    @GetMapping("/employee/breads")
     public String viewBreads() {
         return "employee/production/breads";
     }
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @PostMapping("/employee/save-bread")
+    public String SaveBread(String name) {
+        breadService.createObjectOfBread(name, shooperService.getShooperByLastId());
+        return "employee/production/paid";
+    }
+
+
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
     @PostMapping("/employee/save-drinks")
-    public String SaveDrinks() {
+    public String SaveDrinks(String drinkFlavor, String drinkSize) {
+        drinkService.createObjectOfDrink( drinkFlavor, drinkSize,  shooperService.getShooperByLastId());
         return "employee/production/breads";
     }
 
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
     @GetMapping("/employee/drinks")
-    public String viewMakeLine() {
-
-        //Guardar los consumibles
-        //Necesita saber la id del usuario comprador
-
-        return "employee/production/drinks"; //Cambiar
+    public String viewDrinks() {
+        return "employee/production/drinks";
     }
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
-    @PostMapping("/employee/paid")
+    @GetMapping("/employee/paid")
     public String viewPaid() {
 
         //Guardar panes
@@ -114,4 +138,6 @@ public class StoreController {
 
         return "employee/production/paid"; //Cambiar
     }
+
+
 }

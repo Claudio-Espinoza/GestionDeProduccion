@@ -9,6 +9,5 @@ import ufro.dci.gestionapp.model.employee.Employee;
 //Comportamiento que emula una colección de objetos.
 @Repository                                           //Name Clase/ Tipo de dato de la clave primaria
 public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
-
     Employee findByRut(String rut);
 }

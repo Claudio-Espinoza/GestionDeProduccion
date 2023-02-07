@@ -31,4 +31,9 @@ public class ShooperService {
         int lastId=getLastId();
         return shooperRepository.findById(lastId);
     }
+
+    public void deleteShooperForBack() throws Exception{
+            shooperRepository.deleteById(getLastId());
+
+    }
 }

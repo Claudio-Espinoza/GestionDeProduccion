@@ -1,0 +1,9 @@
+package ufro.dci.gestionapp.repository;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import ufro.dci.gestionapp.model.production.Drink;
+
+@Repository
+public interface DrinkRepository extends CrudRepository<Drink, Integer> {
+}
