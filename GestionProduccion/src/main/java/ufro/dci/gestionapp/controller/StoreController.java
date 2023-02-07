@@ -3,9 +3,7 @@ package ufro.dci.gestionapp.controller;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ufro.dci.gestionapp.service.PizzaService;
 import ufro.dci.gestionapp.service.ShooperService;
@@ -76,11 +74,6 @@ public class StoreController {
         model.addAttribute("pizza", pizzaService.getListPizza());
         return "employee/production/make-line";
     }
-    @PreAuthorize("hasAuthority('EMPLOYEE')")
-    @PostMapping("/employee/breads")
-    public String viewBreads() {
-        return "employee/production/breads";
-    }
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @GetMapping("/delete/pizza")
@@ -91,13 +84,14 @@ public class StoreController {
     }
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
-    @GetMapping("/employee/drinks")
-    public String viewMakeLine() {
+    @PostMapping("/employee/breads")
+    public String viewBreads() {
+        return "employee/production/breads";
+    }
 
-        //Guardar los consumibles
-        //Necesita saber la id del usuario comprador
-
-
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @PostMapping("/employee/save-drinks")
+    public String SaveDrinks() {
         return "employee/production/drinks"; //Cambiar
     }
 }
