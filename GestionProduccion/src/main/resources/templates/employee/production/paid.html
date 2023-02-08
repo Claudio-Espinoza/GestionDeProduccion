@@ -41,7 +41,16 @@
             <div class="container__paid">
                 <h1>Detalles de Compra</h1>
                 <div class="item__paid">
-
+                    <tr  th:each="pizzas:${pizza}">
+                        <p class="container__name--shooper">Pizza: <span th:text="${pizzas.name}"></span></p>
+                    </tr>
+                    <tr  th:each="breads:${bread}">
+                        <p class="container__name--shooper">Pan: <span th:text="${breads.name}"></span></p>
+                    </tr>
+                    <tr  th:each="drinks:${drink}">
+                        <p class="container__name--shooper">Sabor: <span th:text="${drinks.drinkFlavor}"></span></p>
+                        <p class="container__name--shooper">Tamaño: <span th:text="${drinks.drinkSize}"></span></p>
+                    </tr>
 
                 </div>
 
@@ -49,37 +58,16 @@
             <div class="container__details">
                 <h1>Cliente</h1>
                 <div class="item__details">
-                    <tr  th:each="pizzas:${pizza}">
-                        <p class="container__name--pizza"><span th:text="${pizzas.name}"></span></p>
+                    <tr  th:each="shoopers:${shooper}">
+                        <p class="container__name--shooper">Nombre: <span th:text="${shoopers.name}"></span></p>
+                        <p class="container__name--shooper">Telefono: <span th:text="${shoopers.phone}"></span></p>
+                        <p class="container__name--shooper">Tipo de servicio: <span th:text="${shoopers.meansDelivery}"></span></p>
                     </tr>
 
                 </div>
             </div>
         </section>
     </main>
-=======
-
-    <nav class="navbar">
-        <div class="navbar__container ">
-            <a href="#register" class="options--register"></a>
-        </div>
-        <div class="navbar__container">
-            <a href="#maker" class="options--maker"></a>
-        </div>
-        <div class="navbar__container">
-            <a href="#drinks" class="options--drinks"></a>
-        </div>
-        <div class="navbar__container">
-            <a href="#breads" class="options--breads "></a>
-        </div>
-        <div class="navbar__container ">
-            <a href="#paid" class="options--paid"></a>
-        </div>
-        <div class="navbar__container ">
-            <a th:href="@{/employee/breads}" class="options--back"></a>
-        </div>
-    </nav>
-
 </div>
 </body>
 </html>

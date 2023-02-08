@@ -25,6 +25,7 @@ public class GestionProduccionApplication {
 			employeeRepository.save(new Employee("200000003", "Elva","Ginon","Marco","Full-Time",passwordEncoder.encode("1234"), Role.MANAGER));
 		};
 	}
-	
+
  */
+
 }

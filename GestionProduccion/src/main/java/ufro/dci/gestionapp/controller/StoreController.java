@@ -109,8 +109,14 @@ public class StoreController {
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @PostMapping("/employee/save-bread")
-    public String SaveBread(String name) {
+    public String SaveBread(String name, Model model) {
         breadService.createObjectOfBread(name, shooperService.getShooperByLastId());
+
+        model.addAttribute("shooper", shooperService.getListShooper());
+        model.addAttribute("pizza", pizzaService.getListPizza());
+        model.addAttribute("bread", breadService.getListBread());
+        model.addAttribute("drink", drinkService.getListDrink());
+
         return "employee/production/paid";
     }
 
@@ -130,11 +136,12 @@ public class StoreController {
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @GetMapping("/employee/paid")
-    public String viewPaid() {
+    public String viewPaid(Model model) {
 
-        //Guardar panes
-        //Necesita saber la id del usuario comprador
-        //realizar el calculo del precio total y mostrarlo en vistas
+        model.addAttribute("shooper", shooperService.getListShooper());
+        model.addAttribute("pizza", pizzaService.getListPizza());
+        model.addAttribute("bread", breadService.getListBread());
+        model.addAttribute("drink", drinkService.getListDrink());
 
         return "employee/production/paid"; //Cambiar
     }

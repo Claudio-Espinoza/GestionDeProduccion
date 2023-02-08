@@ -1,6 +1,7 @@
 package ufro.dci.gestionapp.service;
 
 import org.springframework.stereotype.Service;
+import ufro.dci.gestionapp.model.production.Drink;
 import ufro.dci.gestionapp.model.shooper.Shooper;
 import ufro.dci.gestionapp.repository.ShooperRepository;
 
@@ -31,6 +32,11 @@ public class ShooperService {
         int lastId=getLastId();
         return shooperRepository.findById(lastId);
     }
+
+    public List<Shooper> getListShooper(){
+        return shooperRepository.findAllById(getLastId());
+    }
+
 
     public void deleteShooperForBack() throws Exception{
             shooperRepository.deleteById(getLastId());
