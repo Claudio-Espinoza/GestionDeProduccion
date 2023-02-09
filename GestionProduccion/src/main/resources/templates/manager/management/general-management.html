@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/management-style.css}">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <div class="navbar__container--top ">
+            <div class="icon--manager">
+
+            </div>
+            <div class="data--order">
+                <div class="admin--icon">
+                    <img th:src="@{/img/management/admin.png}" alt="*image not found">
+                </div>
+                <div class="admin--data">
+                    <h4>Manager:</h4>
+                    <p th:text="${nombre}"></p>
+                    <p th:text="${apellido}"></p>
+                </div>
+            </div>
+        </div>
+        <div class="navbar__container--bottom ">
+            <a th:href="@{/logout}" class="logout"> Log-out</a>
+        </div>
+    </nav>
+        <section>
+            <div class="container__options">
+                <a th:href="@{/manager/clients}" class="container--input management--clients">
+                    <h2>Clientes</h2>
+                </a>
+                <a th:href="@{/manager/pizzas}" class="container--input management--pizzas">
+                    <h2>Pizzas Vendidas</h2>
+                </a>
+                <a th:href="@{/manager/drinks}" class="container--input management--drinks">
+                    <h2>Bebidas Vendidas</h2>
+                </a>
+                <a th:href="@{/manager/bakery}" class="container--input management--bakery">
+                    <h2>Reposteria Vendida</h2>
+                </a>
+                <a th:href="@{/manager/orders}" class="container--input management--orders">
+                    <h2>Ordenes</h2>
+                </a>
+            </div>
+        </section>
+
+
+</div>
+</body>
+</html>

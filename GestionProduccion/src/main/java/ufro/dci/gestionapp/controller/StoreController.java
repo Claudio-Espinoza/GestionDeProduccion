@@ -34,6 +34,7 @@ public class StoreController {
     public String viewIndex() {
         return "index";
     }
+    /*----|LOGIN / LOGOUT|---------------------------------------*/
 
     @GetMapping("/login")
     public String viewManagerLogin() {
@@ -50,6 +51,7 @@ public class StoreController {
     public String viewManagerHome() {
         return "manager/menu/manager-home";
     }
+
 
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
@@ -84,7 +86,6 @@ public class StoreController {
 
         return "employee/production/make-line";
     }
-
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @PostMapping("/employee/save-pizza")
     public String savePizza(String name,  Model model){
@@ -145,6 +146,5 @@ public class StoreController {
 
         return "employee/production/paid"; //Cambiar
     }
-
 
 }
