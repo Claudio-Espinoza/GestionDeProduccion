@@ -1,0 +1,100 @@
+/*--|Generales|-----------------------------------------------------------------------------------------------------*/
+:root {
+    --azul: #1d3159;
+    --celeste: #45648c;
+    --blanco: #f0f2f2;
+    --verde: #31591d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--azul);
+    overflow-y: hidden;
+}
+
+/*--|Barra de navegacion|------------------------------------------------------------------------------------------ */
+
+.navbar {
+    width: 14.5vw;
+    position: fixed;
+    margin-left: 1%;
+    height: 97%;
+    display: grid;
+    background-color: var(--blanco);
+    border-radius: 0.5%;
+
+
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar__container--top {
+    display: flex;
+    justify-content: center;
+
+}
+
+.data--order{
+    margin-top: 5%;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+.admin--icon{
+    display:flex;
+    align-items:center;
+    box-shadow: 0 0 6px 0.1px var(--celeste);
+
+}
+.admin--data{
+    margin-top: 10%;
+}
+
+.navbar__container--bottom {
+    display: flex;
+    align-items:flex-end;
+}
+/*--|Logout|------------------------------------------------------------------------------------------ */
+.logout{
+    margin-left:15%;
+    margin-bottom: 20%;
+    border-radius: 10%;
+    box-shadow: 1px 5px 30px 3px rgba(0, 0, 0, 0.3);
+
+    background-color: var(--celeste);
+    text-decoration: none;
+    color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 70%;
+    height: 10%;
+
+}
+.logout:hover{
+    background-color: var(--azul);
+}
+/*--|Section|------------------------------------------------------------------------------------------ */
+section {
+    height: 100vh;
+    width: 90vw;
+    left: 10vw;
+    position: relative;
+}
+.container__items{
+    width: 90%;
+    height: 97%;
+    margin-left: 7%;
+    margin-top: 1%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
+    border-radius: 0.3%;
+
+    background-color: var(--blanco);
+}
+

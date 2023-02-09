@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/style-view-clients.css}">
+    <title>Gestión de clientela | Gestor de producción</title>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <div class="navbar__container--top ">
+            <div class="icon--manager">
+
+            </div>
+            <div class="data--order">
+                <div class="admin--icon">
+                    <img th:src="@{/img/management/admin.png}" alt="*image not found">
+                </div>
+                <div class="admin--data">
+                    <h4>Manager:</h4>
+                    <p th:text="${nombre}"></p>
+                    <p th:text="${apellido}"></p>
+                </div>
+            </div>
+        </div>
+        <div class="navbar__container--bottom ">
+            <a th:href="@{/logout}" class="logout"> Log-out</a>
+        </div>
+    </nav>
+    <section>
+        <div class="container--items">
+            <div class="container--table">
+
+            </div>
+            <div class="container--actions">
+
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
+<!-----|REFERENCIA DE HACER TABLA|-------------------------------------------
+
+<div class="table--title">
+                <h2>Clientes</h2>
+            </div>
+            <div class="table--content">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="client : ${clients}">
+                        <td th:text="${client.name}"></td>
+                        <td th:text="${client.lastName}"></td>
+                        <td th:text="${client.email}"></td>
+                        <td th:text="${client.phone}"></td>
+                        <td>
+                            <a th:href="@{/manager/management/clients/{id}(id=${client.id})}" class="btn--edit">Editar</a>
+                            <a th:href="@{/manager/management/clients/delete/{id}(id=${client.id})}" class="btn--delete">Eliminar</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        -->

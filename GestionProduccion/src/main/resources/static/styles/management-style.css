@@ -20,7 +20,7 @@ body {
 /*--|Barra de navegacion|------------------------------------------------------------------------------------------ */
 
 .navbar {
-    width: 12vw;
+    width: 14.5vw;
     position: fixed;
     margin-left: 1%;
     height: 97%;
@@ -97,7 +97,7 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    border-radius: 0.5%;
+    border-radius: 0.3%;
 
     background-color: var(--blanco);
 }
