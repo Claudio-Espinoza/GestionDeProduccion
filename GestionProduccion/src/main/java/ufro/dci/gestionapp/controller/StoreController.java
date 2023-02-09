@@ -1,6 +1,5 @@
 package ufro.dci.gestionapp.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +16,9 @@ import ufro.dci.gestionapp.service.ShooperService;
 //Ver mas (Oficial): https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Controller.html
 @Controller
 public class StoreController {
-
+//-|Constructor de la clase|-----------------------------------------------------------------------------------------//
+    //Es una forma de inyeccion de dependecia recomendada por la documentacion de Spring Boot. Dentro de las recomendaciones
+    //tambien se encuentra una estructura de getter y setter pero en este caso era mas estable el uso de un constructor
     private final ShooperService shooperService;
     private final PizzaService pizzaService;
     private final DrinkService drinkService;
@@ -30,11 +31,11 @@ public class StoreController {
         this.breadService = breadService;
     }
 
+    //-|Mapping / Login-Logout|--------------------------------------------------------------------------------------//
     @GetMapping("")
     public String viewIndex() {
         return "index";
     }
-    /*----|LOGIN / LOGOUT|---------------------------------------*/
 
     @GetMapping("/login")
     public String viewManagerLogin() {
@@ -46,14 +47,7 @@ public class StoreController {
         return "index";
     }
 
-    @PreAuthorize("hasAuthority('MANAGER')")
-    @GetMapping("/manager/home")
-    public String viewManagerHome() {
-        return "manager/menu/manager-home";
-    }
-
-
-
+    //-|Mapping / Get|-----------------------------------------------------------------------------------------------//
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @GetMapping("/employee/home")
     public String viewEmployeeHome() {
@@ -80,6 +74,31 @@ public class StoreController {
     }
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @GetMapping("/employee/breads")
+    public String viewBreads() {
+        return "employee/production/breads";
+    }
+
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @GetMapping("/employee/drinks")
+    public String viewDrinks() {
+        return "employee/production/drinks";
+    }
+
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @GetMapping("/employee/paid")
+    public String viewPaid(Model model) {
+
+        model.addAttribute("shooper", shooperService.getListShooper());
+        model.addAttribute("pizza", pizzaService.getListPizza());
+        model.addAttribute("bread", breadService.getListBread());
+        model.addAttribute("drink", drinkService.getListDrink());
+
+        return "employee/production/paid"; //Cambiar
+    }
+
+    //-|Mapping / Post|----------------------------------------------------------------------------------------------//
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
     @PostMapping("/employee/make-line")
     public String saveUser(String name, String phone, String meansDelivery, String commentary){
         shooperService.createObject(name, phone, meansDelivery, commentary);
@@ -99,13 +118,7 @@ public class StoreController {
     public String deletePizza(Model model){
         pizzaService.deleteByIdPizza();
         model.addAttribute("pizza", pizzaService.getListPizza());
-        return "employee/production/make-line";
-    }
-
-    @PreAuthorize("hasAuthority('EMPLOYEE')")
-    @GetMapping("/employee/breads")
-    public String viewBreads() {
-        return "employee/production/breads";
+        return "employee/production/register";
     }
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
@@ -127,24 +140,6 @@ public class StoreController {
     public String SaveDrinks(String drinkFlavor, String drinkSize) {
         drinkService.createObjectOfDrink( drinkFlavor, drinkSize,  shooperService.getShooperByLastId());
         return "employee/production/breads";
-    }
-
-    @PreAuthorize("hasAuthority('EMPLOYEE')")
-    @GetMapping("/employee/drinks")
-    public String viewDrinks() {
-        return "employee/production/drinks";
-    }
-
-    @PreAuthorize("hasAuthority('EMPLOYEE')")
-    @GetMapping("/employee/paid")
-    public String viewPaid(Model model) {
-
-        model.addAttribute("shooper", shooperService.getListShooper());
-        model.addAttribute("pizza", pizzaService.getListPizza());
-        model.addAttribute("bread", breadService.getListBread());
-        model.addAttribute("drink", drinkService.getListDrink());
-
-        return "employee/production/paid"; //Cambiar
     }
 
 }

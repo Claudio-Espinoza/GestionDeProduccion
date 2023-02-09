@@ -154,6 +154,20 @@ section {
 
 }
 
+.item__paid{
+    width: 90%;
+    height: 90%;
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.container__text{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+
+
 .container__details {
     position: relative;
     right: 30%;
@@ -166,6 +180,5 @@ section {
     display: grid;
     grid-template-rows: 0.5fr 4fr;
     place-items: center;
-=======
->>>>>>> 391f3518bbf01b1b18804d92234fad1384e5cf5c
+
 }

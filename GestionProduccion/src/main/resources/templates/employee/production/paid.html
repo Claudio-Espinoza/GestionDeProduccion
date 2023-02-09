@@ -31,7 +31,7 @@
             <a th:href="@{/employee/paid}" class="options--paid"></a>
         </div>
         <div class="navbar__container ">
-            <a th:href="@{/employee/drinks}" class="options--back"></a>
+            <a th:href="@{/employee/home}" class="options--back"></a>
         </div>
 
     </nav>
@@ -41,16 +41,18 @@
             <div class="container__paid">
                 <h1>Detalles de Compra</h1>
                 <div class="item__paid">
-                    <tr  th:each="pizzas:${pizza}">
-                        <p class="container__name--shooper">Pizza: <span th:text="${pizzas.name}"></span></p>
-                    </tr>
-                    <tr  th:each="breads:${bread}">
-                        <p class="container__name--shooper">Pan: <span th:text="${breads.name}"></span></p>
-                    </tr>
-                    <tr  th:each="drinks:${drink}">
-                        <p class="container__name--shooper">Sabor: <span th:text="${drinks.drinkFlavor}"></span></p>
-                        <p class="container__name--shooper">Tamaño: <span th:text="${drinks.drinkSize}"></span></p>
-                    </tr>
+                    <div class="container__text" th:each="pizzas:${pizza}">
+                        <p class="container__list">Pizza: <span th:text="${pizzas.name}"></span></p>
+                    </div>
+
+                    <div class="container__text" th:each="breads:${bread}">
+                        <p class="container__list">Pan: <span th:text="${breads.name}"></span></p>
+                    </div>
+
+                    <div class="container__text" th:each="drinks:${drink}">
+                        <p class="container__list">Sabor: <span th:text="${drinks.drinkFlavor}"></span></p>
+                        <p class="container__list">Tamaño: <span th:text="${drinks.drinkSize}"></span></p>
+                    </div>
 
                 </div>
 
@@ -59,9 +61,9 @@
                 <h1>Cliente</h1>
                 <div class="item__details">
                     <tr  th:each="shoopers:${shooper}">
-                        <p class="container__name--shooper">Nombre: <span th:text="${shoopers.name}"></span></p>
-                        <p class="container__name--shooper">Telefono: <span th:text="${shoopers.phone}"></span></p>
-                        <p class="container__name--shooper">Tipo de servicio: <span th:text="${shoopers.meansDelivery}"></span></p>
+                        <p class="container__name">Nombre: <span th:text="${shoopers.name}"></span></p>
+                        <p class="container__name">Telefono: <span th:text="${shoopers.phone}"></span></p>
+                        <p class="container__name">Tipo de servicio: <span th:text="${shoopers.meansDelivery}"></span></p>
                     </tr>
 
                 </div>

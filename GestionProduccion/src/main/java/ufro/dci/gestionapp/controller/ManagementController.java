@@ -17,17 +17,10 @@ public class ManagementController {
 
     @PreAuthorize("hasAuthority('MANAGER')")
     @GetMapping("/manager/home")
-    public String viewManagerHome(){
+    public String viewManagerHome(Model model){
+        model.addAttribute("nombre", managerService.getEmployeeName());
+        model.addAttribute("apellido", managerService.getEmployeeLastName());
         return "manager/management/general-management";
-    }
-
-    @GetMapping("/")
-    public String showManagerData(Model model){
-        String nombre = managerService.getEmployeeName();
-        String apellido = managerService.getEmployeeLastName();
-        model.addAttribute("nombre", nombre);
-        model.addAttribute("apellido", apellido);
-        return "/manager/management/general-management";
     }
 
 
