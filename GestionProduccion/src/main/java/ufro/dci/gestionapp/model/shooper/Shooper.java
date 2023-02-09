@@ -34,6 +34,8 @@ public class Shooper {
     private String meansDelivery;
     @Column(name = "commentary", length =200, nullable = false)
     private String commentary;
+    @Column(name = "paid")
+    private int paid;
 
     @OneToMany(mappedBy="shooper")
     private List<Pizza> pizzaList;

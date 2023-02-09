@@ -2,15 +2,14 @@ package ufro.dci.gestionapp.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import ufro.dci.gestionapp.model.production.Bread;
+import ufro.dci.gestionapp.model.production.Drink;
 import ufro.dci.gestionapp.model.shooper.Shooper;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
-public interface ShooperRepository extends CrudRepository<Shooper, Integer> {
-    List<Shooper> findAll();
-    Shooper findById(int id);
+public interface BreadRepository extends CrudRepository<Bread, Integer> {
+    List<Bread> findAllByShooper(Shooper shooper);
 
-    List<Shooper> findAllById(int id);
 }

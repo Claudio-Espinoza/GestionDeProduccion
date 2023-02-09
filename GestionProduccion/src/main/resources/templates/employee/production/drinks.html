@@ -23,12 +23,15 @@
             <div class="navbar__container ">
                 <a th:href="@{/employee/paid}" class="options--paid"></a>
             </div>
+
+
             <div class="navbar__container ">
-                <a th:href="@{/employee/make-line}" class="options--back"></a>
+                <a th:href="@{/employee/make-line/back}" class="options--back"></a>
             </div>
         </nav>
+
         <main>
-            <form th:action="@{/employee/breads}" method="post" class="form-content">
+            <form th:action="@{/employee/save-drinks}" method="post" class="form-content">
                 <section id="drinks" class="drinks">
                     <div class="container__drinks">
 

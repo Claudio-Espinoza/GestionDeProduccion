@@ -6,29 +6,37 @@
     --verde: #2D402E;
 }
 
+input[type="radio"] {
+    appearance: none;
+}
+
+h2 {
+    font-size: 200%;
+    font-weight: 400;
+}
+
 * {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    color: var(--verde);
+
 }
 
 body {
     background-color: var(--verde);
     overflow-y: hidden;
 }
-
-
 /*--|Barra de navegacion|------------------------------------------------------------------------------------------ */
 
 .navbar {
     margin: 1% 1% 1% 1.5%;
     border-radius: 15px;
+    background-color: var(--blanco);
     width: 8vw;
     position: fixed;
     height: 95%;
     display: grid;
-    background-color: var(--blanco);
-
     box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -38,25 +46,20 @@ body {
     justify-content: center;
 }
 
-.options--breads{
-    background: var(--amarillo);
-    border-radius: 10px;
+.options--back:hover,
+.options--paid:hover,
+.options--breads:hover,
+.options--drinks:hover,
+.options--register:hover {
+    border-radius: 5%;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
 }
-.options--register {
-    border-radius: 10px;
+
+.options--maker,
+.options--register,
+.options--paid{
+    border-radius: 15px;
     background-color: var(--amarillo);
-}
-.options--maker {
-    border-radius: 10px;
-    background-color: var(--amarillo);
-}
-.options--drinks {
-    background: var(--amarillo);
-    border-radius: 10px;
-}
-.options--paid {
-    background: var(--amarillo);
-    border-radius: 10px;
 }
 
 .options--register {
@@ -98,11 +101,15 @@ body {
 .options--paid {
     width: 90%;
     height: 90%;
+
+
     background-image: url("../img/paid.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
 }
+
+
 .options--back {
     width: 90%;
     height: 90%;
@@ -111,6 +118,7 @@ body {
     background-repeat: no-repeat;
     background-size: 50%;
 }
+
 .options--back:hover{
     border-radius: 5%;
     box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
@@ -124,4 +132,53 @@ section {
     width: 90vw;
     left: 10vw;
     position: relative;
+}
+
+/*---------------|container|---------------*/
+.paid {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    place-items: center;
+}
+
+.container__paid {
+    border-radius: 15px;
+    width: 80%;
+    height: 90%;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+    background-color: var(--blanco);
+
+    display: grid;
+    grid-template-rows: 0.5fr 4fr;
+    place-items: center;
+
+}
+
+.item__paid{
+    width: 90%;
+    height: 90%;
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.container__text{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+
+
+.container__details {
+    position: relative;
+    right: 30%;
+    border-radius: 15px;
+    width: 90%;
+    height: 90%;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+    background-color: var(--blanco);
+
+    display: grid;
+    grid-template-rows: 0.5fr 4fr;
+    place-items: center;
+
 }
