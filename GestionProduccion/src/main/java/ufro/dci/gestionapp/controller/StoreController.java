@@ -29,6 +29,7 @@ public class StoreController {
     public String viewIndex(){
         return "index";
     }
+    /*----|LOGIN / LOGOUT|---------------------------------------*/
 
     @GetMapping("/login")
     public String viewManagerLogin(){
@@ -40,11 +41,7 @@ public class StoreController {
         return "index";
     }
 
-    @PreAuthorize("hasAuthority('MANAGER')")
-    @GetMapping("/manager/home")
-    public String viewManagerHome(){
-        return "manager/menu/manager-home";
-    }
+     /*-------------------------------------------------------------*/
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @GetMapping("/employee/home")
@@ -64,7 +61,6 @@ public class StoreController {
 
         return "employee/production/make-line";
     }
-
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @PostMapping("/employee/drinks")
     public String viewDrinks() {
@@ -109,4 +105,5 @@ public class StoreController {
 
         return "employee/production/paid"; //Cambiar
     }
+
 }
