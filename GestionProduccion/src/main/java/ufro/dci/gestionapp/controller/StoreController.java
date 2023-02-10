@@ -37,6 +37,15 @@ public class StoreController {
         return "index";
     }
 
+    @GetMapping("/login")
+    public String viewManagerLogin() {
+        return "login/access-login";
+    }
+
+    @GetMapping("/logout")
+    public String logout() {
+        return "index";
+    }
     //-|Mapping / Get|-----------------------------------------------------------------------------------------------//
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @GetMapping("/employee/home")

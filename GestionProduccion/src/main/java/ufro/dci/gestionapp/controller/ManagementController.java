@@ -4,6 +4,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import ufro.dci.gestionapp.service.ManagerService;
 
 @Controller
@@ -14,24 +15,12 @@ public class ManagementController {
     public ManagementController(ManagerService managerService) {
         this.managerService = managerService;
     }
-    /*----- |Login/Logout|----------------------------------------------------*/
-
-    @GetMapping("/login")
-    public String viewManagerLogin(String rut) {
-        //managerService.createObject(rut);
-        return "login/access-login";
-    }
-
-    @GetMapping("/logout")
-    public String logout() {
-        return "index";
-    }
 
     /*----- |Mostrar nombre manager|----------------------------------------------------*/
     @PreAuthorize("hasAuthority('MANAGER')")
     @GetMapping("/manager/home")
     public String viewManagerHome(Model model){
-        //model.addAttribute("nombre", managerService.getManagerName());
+        model.addAttribute("nombre", managerService.getManagerName());
         return "manager/management/general-management";
     }
 
