@@ -38,25 +38,25 @@
 
     <main>
         <section id="paid" class="paid">
+
             <div class="container__paid">
                 <h1>Detalles de Compra</h1>
                 <div class="item__paid">
-                    <div class="container__text" th:each="pizzas:${pizza}">
+                    <tr  th:each="pizzas:${pizza}">
                         <p class="container__list">Pizza: <span th:text="${pizzas.name}"></span></p>
-                    </div>
+                    </tr>
 
-                    <div class="container__text" th:each="breads:${bread}">
+                    <tr  th:each="breads:${bread}">
                         <p class="container__list">Pan: <span th:text="${breads.name}"></span></p>
-                    </div>
+                    </tr>
 
-                    <div class="container__text" th:each="drinks:${drink}">
-                        <p class="container__list">Sabor: <span th:text="${drinks.drinkFlavor}"></span></p>
-                        <p class="container__list">Tamaño: <span th:text="${drinks.drinkSize}"></span></p>
-                    </div>
-
+                    <tr  th:each="drinks:${drink}">
+                        <p class="container__list">Bebida(Sabor): <span th:text="${drinks.drinkFlavor}"></span></p>
+                        <p class="container__list">Bebida(Tamaño): <span th:text="${drinks.drinkSize}"></span></p>
+                    </tr>
                 </div>
-
             </div>
+
             <div class="container__details">
                 <h1>Cliente</h1>
                 <div class="item__details">
@@ -65,8 +65,12 @@
                         <p class="container__name">Telefono: <span th:text="${shoopers.phone}"></span></p>
                         <p class="container__name">Tipo de servicio: <span th:text="${shoopers.meansDelivery}"></span></p>
                     </tr>
+                </div>
+                <div class="item__details--pago">
+
 
                 </div>
+
             </div>
         </section>
     </main>
