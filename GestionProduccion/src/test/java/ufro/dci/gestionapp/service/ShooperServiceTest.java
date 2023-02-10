@@ -19,9 +19,4 @@ class ShooperServiceTest {
 
     @Autowired
     ShooperService shooperService;
-    @Test
-    void getLastId() {
-        var a =  pizzaRepository.findAllByShooper(shooperService.getShooperByLastId());
-        System.out.println(a);
-    }
 }

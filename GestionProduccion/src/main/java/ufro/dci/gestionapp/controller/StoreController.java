@@ -31,19 +31,9 @@ public class StoreController {
         this.breadService = breadService;
     }
 
-    //-|Mapping / Login-Logout|--------------------------------------------------------------------------------------//
+    //-|Mapping|--------------------------------------------------------------------------------------//
     @GetMapping("")
     public String viewIndex() {
-        return "index";
-    }
-
-    @GetMapping("/login")
-    public String viewManagerLogin() {
-        return "login/access-login";
-    }
-
-    @GetMapping("/logout")
-    public String logout() {
         return "index";
     }
 
