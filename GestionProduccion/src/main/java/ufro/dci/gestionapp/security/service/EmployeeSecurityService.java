@@ -23,7 +23,7 @@ public class EmployeeSecurityService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Employee employee = employeeRepository.findByRut(username);
         if (employee == null) {
-            throw new UsernameNotFoundException("No user found with the given email");
+            throw new UsernameNotFoundException("No Rut");
         }
         managerService.createObject(employee.getRut()); //Crea el objeto que sera posteriormente guardado
         return new EmployeeSecurity(employee);
