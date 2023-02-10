@@ -14,22 +14,28 @@ public class ManagementController {
     public ManagementController(ManagerService managerService) {
         this.managerService = managerService;
     }
+    /*----- |Login/Logout|----------------------------------------------------*/
 
+    @GetMapping("/login")
+    public String viewManagerLogin(String rut) {
+        //managerService.createObject(rut);
+        return "login/access-login";
+    }
+
+    @GetMapping("/logout")
+    public String logout() {
+        return "index";
+    }
+
+    /*----- |Mostrar nombre manager|----------------------------------------------------*/
     @PreAuthorize("hasAuthority('MANAGER')")
     @GetMapping("/manager/home")
     public String viewManagerHome(Model model){
-        model.addAttribute("nombre", managerService.getEmployeeName());
-        model.addAttribute("apellido", managerService.getEmployeeLastName());
+        //model.addAttribute("nombre", managerService.getManagerName());
         return "manager/management/general-management";
     }
-    @GetMapping("/manager/info")
-    public String showManagerData(Model model){
-        String nombre = managerService.getEmployeeName();
-        String apellido = managerService.getEmployeeLastName();
-        model.addAttribute("nombre", nombre);
-        model.addAttribute("apellido", apellido);
-        return "/manager/management/general-management";
-    }
+
+    /*----- |Mostrar vistas|----------------------------------------------------*/
     @PreAuthorize("hasAuthority('MANAGER')")
     @GetMapping("/manager/clients")
     public String viewClients(){
