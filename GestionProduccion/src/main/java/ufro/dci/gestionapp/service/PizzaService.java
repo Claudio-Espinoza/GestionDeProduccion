@@ -1,8 +1,8 @@
 package ufro.dci.gestionapp.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ufro.dci.gestionapp.model.production.Pizza;
+import ufro.dci.gestionapp.model.production.enumerations.PriceEnum;
 import ufro.dci.gestionapp.model.shooper.Shooper;
 import ufro.dci.gestionapp.repository.PizzaRepository;
 
@@ -21,7 +21,7 @@ public class PizzaService {
     }
 
     public void createObject(String name, Shooper shooper){
-        Pizza pizza = new Pizza(name, shooper);
+        Pizza pizza = new Pizza(name, PriceEnum.PRICE_5.getPrice(), shooper);
         saveObjectPizza(pizza);
     }
 

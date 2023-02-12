@@ -18,12 +18,15 @@ public class Pizza {
     private Integer id;
     @Column(name = "name_pizza", length =20, nullable = false)
     private String name;
+    @Column(name = "price", nullable = false)
+    private int price;
     @ManyToOne
     @JoinColumn(name = "shopper_id")
     private Shooper shooper;
 
-    public Pizza(String name, Shooper shooper) {
+    public Pizza(String name, int price, Shooper shooper) {
         this.name = name;
+        this.price = price;
         this.shooper = shooper;
     }
 }

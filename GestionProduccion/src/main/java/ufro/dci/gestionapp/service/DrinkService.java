@@ -1,13 +1,16 @@
 package ufro.dci.gestionapp.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ufro.dci.gestionapp.model.production.Bread;
 import ufro.dci.gestionapp.model.production.Drink;
+import ufro.dci.gestionapp.model.production.enumerations.DrinkEnum;
+import ufro.dci.gestionapp.model.production.enumerations.PriceEnum;
 import ufro.dci.gestionapp.model.shooper.Shooper;
 import ufro.dci.gestionapp.repository.DrinkRepository;
 
+import java.util.HashMap;
 import java.util.List;
+
+import static java.lang.String.valueOf;
 
 @Service
 public class DrinkService {
@@ -19,8 +22,22 @@ public class DrinkService {
         this.shooperService = shooperService;
     }
 
+    private HashMap<String, Integer> createPriceDrink(){
+        HashMap<String, Integer> drinkPrice = new HashMap<>();
+        drinkPrice.put(DrinkEnum.SMALL.getSize(), PriceEnum.PRICE_1.getPrice());
+        drinkPrice.put(DrinkEnum.MEDIUM.getSize(), PriceEnum.PRICE_2.getPrice());
+        drinkPrice.put(DrinkEnum.LARGE.getSize(), PriceEnum.PRICE_3.getPrice());
+
+        return drinkPrice;
+    }
+
+    private int selectPriceDrink(String size){
+        HashMap<String, Integer> drinkPrice= createPriceDrink();
+        return drinkPrice.get(size);
+    }
+
     public void createObjectOfDrink(String drinkFlavor, String drinkSize, Shooper shooper) {
-        Drink drink = new Drink(drinkFlavor, drinkSize, shooper);
+        Drink drink = new Drink(drinkFlavor, selectPriceDrink(drinkSize) ,drinkSize, shooper);
         saveObjectDrink(drink);
     }
 
