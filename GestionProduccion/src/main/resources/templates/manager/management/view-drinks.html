@@ -44,7 +44,25 @@
     </nav>
     <section>
         <div class="container__items">
-            tabla xd
+            <div class="container__table">
+                Lista de bebestibles vendidos:
+                <table>
+                    <tr class="row--table">
+                        <td>Id bebida:</td>
+                        <td>Sabor:</td>
+                        <td>Tamaño:</td>
+                        <td>Precio:</td>
+                        <td>Id cliente:</td>
+                    </tr>
+                    <tr class="row--table"  th:each="drinks:${drink}">
+                        <td class="item--table" th:text="${drinks.getId()}"></td>
+                        <td class="item--table" th:text="${drinks.getDrinkFlavor()}"></td>
+                        <td class="item--table" th:text="${drinks.getDrinkSize()}"></td>
+                        <td class="item--table" th:text="${drinks.getPrice()}"></td>
+                        <td class="item--table" th:text="${drinks.getShooper().getId()}"></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </section>
 

@@ -44,7 +44,27 @@
     </nav>
     <section>
         <div class="container__items">
-            tabla xd
+            <div class="container__table">
+                Lista de clientes:
+                <table>
+                    <tr class="row--table">
+                        <td>Id cliente:</td>
+                        <td>Nombre:</td>
+                        <td>Telédono:</td>
+                        <td>Forma retiro:</td>
+                        <td>Forma pago:</td>
+                        <td>Comentario:</td>
+                    </tr>
+                    <tr class="row--table"  th:each="shoopers:${shooper}">
+                        <td class="item--table" th:text="${shoopers.getId()}"></td>
+                        <td class="item--table" th:text="${shoopers.getName()}"></td>
+                        <td class="item--table" th:text="${shoopers.getPhone()}"></td>
+                        <td class="item--table" th:text="${shoopers.getMeansDelivery()}"></td>
+                        <td class="item--table" th:text="${shoopers.getPaid()}"></td>
+                        <td class="item--table" th:text="${shoopers.getCommentary()}"></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </section>
 

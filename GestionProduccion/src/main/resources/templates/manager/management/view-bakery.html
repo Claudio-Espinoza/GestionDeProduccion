@@ -45,17 +45,19 @@
     <section>
         <div class="container__items">
             <div class="container__table">
-                Lista de panes vendidos
+                Lista de panes vendidos:
                 <table>
                     <tr class="row--table">
-                        <td>Id cliente:</td>
+                        <td>Id Pan:</td>
                         <td>Nombre:</td>
                         <td>Precio:</td>
+                        <td>Id Cliente</td>
                     </tr>
                     <tr class="row--table"  th:each="breads:${bread}">
+                        <td class="item--table" th:text="${breads.getId()}"></td>
+                        <td class="item--table" th:text="${breads.getName()}"></td>
+                        <td class="item--table" th:text="${breads.getPrice()}"></td>
                         <td class="item--table" th:text="${breads.getShooper().getId()}"></td>
-                        <td class="item--table" th:text="${breads.getName()}"></td>
-                        <td class="item--table" th:text="${breads.getName()}"></td>
                     </tr>
                 </table>
             </div>

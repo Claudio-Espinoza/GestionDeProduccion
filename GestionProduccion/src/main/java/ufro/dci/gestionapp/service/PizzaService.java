@@ -33,6 +33,10 @@ public class PizzaService {
         return pizzaRepository.findAllByShooper(shooperService.getShooperByLastId());
     }
 
+    public List<Pizza> getAllPizza(){
+        return pizzaRepository.findAll();
+    }
+
     private int getLastIdPizza(){
         List<Pizza> lastId=pizzaRepository.findAll();
         return lastId.get(lastId.size()-1).getId();

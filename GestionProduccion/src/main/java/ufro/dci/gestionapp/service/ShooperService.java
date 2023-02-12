@@ -36,7 +36,9 @@ public class ShooperService {
         return shooperRepository.findAllById(getLastId());
     }
 
-
+    public List<Shooper> getAllShooper(){
+        return shooperRepository.findAll();
+    }
     public void deleteShooperForBack() throws Exception{
             shooperRepository.deleteById(getLastId());
 

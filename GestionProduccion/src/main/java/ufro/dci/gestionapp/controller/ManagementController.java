@@ -4,18 +4,23 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import ufro.dci.gestionapp.service.BreadService;
-import ufro.dci.gestionapp.service.ManagerService;
+import ufro.dci.gestionapp.service.*;
 
 @Controller
 public class ManagementController {
 
     private final ManagerService managerService;
     private final BreadService breadService;
+    private final PizzaService pizzaService;
+    private final ShooperService shooperService;
+    private final DrinkService drinkService;
 
-    public ManagementController(ManagerService managerService, BreadService breadService) {
+    public ManagementController(ManagerService managerService, BreadService breadService, PizzaService pizzaService, ShooperService shooperService, DrinkService drinkService) {
         this.managerService = managerService;
         this.breadService = breadService;
+        this.pizzaService = pizzaService;
+        this.shooperService = shooperService;
+        this.drinkService = drinkService;
     }
 
     /*----- |Mostrar nombre manager|----------------------------------------------------*/
@@ -31,6 +36,7 @@ public class ManagementController {
     @GetMapping("/manager/clients")
     public String viewClients(Model model){
         model.addAttribute("nombre", managerService.getManagerName());
+        model.addAttribute("shooper", shooperService.getAllShooper());
         return "manager/management/view-clients";
     }
 
@@ -38,6 +44,7 @@ public class ManagementController {
     @GetMapping("/manager/pizzas")
     public String viewPizzas(Model model){
         model.addAttribute("nombre", managerService.getManagerName());
+        model.addAttribute("pizza", pizzaService.getAllPizza());
         return "manager/management/view-pizzas";
     }
 
@@ -45,6 +52,7 @@ public class ManagementController {
     @GetMapping("/manager/drinks")
     public String viewDrinks(Model model){
         model.addAttribute("nombre", managerService.getManagerName());
+        model.addAttribute("drink", drinkService.getAllDrink());
 
         return "manager/management/view-drinks";
     }

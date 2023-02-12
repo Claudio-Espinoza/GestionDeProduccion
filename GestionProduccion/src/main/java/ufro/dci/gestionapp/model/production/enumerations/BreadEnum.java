@@ -1,7 +1,7 @@
 package ufro.dci.gestionapp.model.production.enumerations;
 
 public enum BreadEnum {
-    WHITE("Write"), CROISSANT("Croissant") ,SALT("Salt") , NO("No");
+    WHITE("White"), CROISSANT("Croissant") ,SALT("Salt") , NO("No");
 
     private final String name;
 

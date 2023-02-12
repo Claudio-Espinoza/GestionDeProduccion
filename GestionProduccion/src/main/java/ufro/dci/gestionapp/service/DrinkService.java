@@ -49,4 +49,8 @@ public class DrinkService {
         return drinkRepository.findAllByShooper(shooperService.getShooperByLastId());
     }
 
+    public List<Drink> getAllDrink(){
+        return drinkRepository.findAll();
+    }
+
 }
