@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" th:href="@{/styles/style-view-bakery.css}">
-    <title>Gestión de panadería | Gestor de producción</title>
+    <title>Manager home | Gestor de producción</title>
 </head>
 <body>
 <div class="container">
     <nav class="navbar">
         <div class="navbar__container--top ">
             <div class="icon--manager">
-
             </div>
             <div class="data--order">
                 <div class="admin--icon">
@@ -19,18 +18,51 @@
                 <div class="admin--data">
                     <h4>Manager:</h4>
                     <p th:text="${nombre}"></p>
-                    <p th:text="${apellido}"></p>
                 </div>
             </div>
         </div>
+
+        <div class="container__options">
+            <a th:href="@{/manager/clients}" class="option--buttons"> Clientes </a>
+        </div>
+        <div class="container__options">
+            <a th:href="@{/manager/pizzas}" class="option--buttons"> Pizzas </a>
+        </div>
+        <div class="container__options">
+            <a th:href="@{/manager/drinks}" class="option--buttons"> Bebestibles </a>
+        </div>
+        <div class="container__options breads">
+            <a th:href="@{/manager/bakery}" class="option--buttons label--style"> Panaderia</a>
+        </div>
+        <div class="container__options">
+            <a th:href="@{/manager/orders}" class="option--buttons"> Ordenes</a>
+        </div>
+
         <div class="navbar__container--bottom ">
             <a th:href="@{/logout}" class="logout"> Log-out</a>
         </div>
     </nav>
     <section>
-
+        <div class="container__items">
+            <div class="container__table">
+                Lista de panes vendidos
+                <table>
+                    <tr class="row--table">
+                        <td>Id cliente:</td>
+                        <td>Nombre:</td>
+                        <td>Precio:</td>
+                    </tr>
+                    <tr class="row--table"  th:each="breads:${bread}">
+                        <td class="item--table" th:text="${breads.getShooper().getId()}"></td>
+                        <td class="item--table" th:text="${breads.getName()}"></td>
+                        <td class="item--table" th:text="${breads.getName()}"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </section>
-</div>
 
+
+</div>
 </body>
 </html>

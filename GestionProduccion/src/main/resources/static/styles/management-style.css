@@ -25,7 +25,6 @@ body {
     margin-left: 1%;
     height: 97%;
     display: grid;
-    grid-template-rows: 1fr 1fr;
     background-color: var(--blanco);
     border-radius: 0.5%;
 
@@ -34,19 +33,14 @@ body {
 }
 
 .navbar__container--top {
-    display: flex;
-    justify-content: center;
-
+    display:flex;
+    justify-content:center;
 }
 
 .data--order{
     margin-top: 5%;
-    display: grid;
-    grid-template-rows: 1fr 2fr;
 }
 .admin--icon{
-    display:flex;
-    align-items:center;
     box-shadow: 0 0 6px 0.1px var(--celeste);
 
 }
@@ -75,7 +69,7 @@ body {
     justify-content: center;
 
     width: 70%;
-    height: 10%;
+    height: 12.3%;
 
 }
 .logout:hover{
@@ -164,4 +158,7 @@ section {
 }
 h2{
     margin-bottom: 3%;
+}
+a{
+    font-weight: bold;
 }

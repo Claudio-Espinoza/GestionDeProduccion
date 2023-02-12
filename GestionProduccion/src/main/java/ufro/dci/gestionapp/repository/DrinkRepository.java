@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface DrinkRepository extends CrudRepository<Drink, Integer> {
     List<Drink> findAllByShooper(Shooper shooper);
+    List<Drink> findAll();
 }

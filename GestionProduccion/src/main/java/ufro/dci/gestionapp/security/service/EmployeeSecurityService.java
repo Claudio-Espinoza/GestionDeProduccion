@@ -25,6 +25,7 @@ public class EmployeeSecurityService implements UserDetailsService {
         if (employee == null) {
             throw new UsernameNotFoundException("No user found with the given email");
         }
+
         managerService.createObject(employee.getRut()); //Crea el objeto que sera posteriormente guardado
         return new EmployeeSecurity(employee);
     }

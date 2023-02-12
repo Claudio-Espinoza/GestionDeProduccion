@@ -11,4 +11,6 @@ import java.util.List;
 public interface BreadRepository extends CrudRepository<Bread, Integer> {
     List<Bread> findAllByShooper(Shooper shooper);
 
+    List<Bread> findAll();
+
 }
