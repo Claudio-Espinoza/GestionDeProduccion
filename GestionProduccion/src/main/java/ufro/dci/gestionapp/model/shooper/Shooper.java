@@ -36,7 +36,8 @@ public class Shooper {
     private String commentary;
     @Column(name = "paid")
     private int paid;
-
+    @Column(name = "typePaid", length = 15)
+    private String typePaid;
     @OneToMany(mappedBy="shooper")
     private List<Pizza> pizzaList;
 
