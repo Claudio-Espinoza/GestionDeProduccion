@@ -45,20 +45,31 @@
     <section>
         <div class="container__items">
             <div class="container__table">
-                Lista de pizzas vendidas:
+                <h1>
+                    Lista de pizzas vendidas:
+                </h1>
                 <table>
-                    <tr class="row--table">
-                        <td>Id Pizza:</td>
-                        <td>Nombre:</td>
-                        <td>Precio:</td>
-                        <td>Id Cliente:</td>
+                    <thead class="head--table">
+                    <tr>
+                        <td class="item--table">Id Pizza:</td>
+                        <td class="item--table">Nombre:</td>
+                        <td class="item--table">Precio:</td>
+                        <td class="item--table">Id Cliente:</td>
+                        <td class="item--table">Edit/Delete:</td>
                     </tr>
-                    <tr class="row--table"  th:each="pizzas:${pizza}">
-                        <td class="item--table" th:text="${pizzas.getId()}"></td>
-                        <td class="item--table" th:text="${pizzas.getName()}"></td>
-                        <td class="item--table" th:text="${pizzas.getPrice()}"></td>
-                        <td class="item--table" th:text="${pizzas.getShooper().getId()}"></td>
-                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row--table"  th:each="pizzas:${pizza}">
+                            <td class="item--table" th:text="${pizzas.getId()}"></td>
+                            <td class="item--table" th:text="${pizzas.getName()}"></td>
+                            <td class="item--table" th:text="${pizzas.getPrice()}"></td>
+                            <td class="item--table" th:text="${pizzas.getShooper().getId()}"></td>
+                            <td class="item--btn">
+                                <button th:href="@{/editPizza}" class="btn-edit Edit">Editar</button>
+                                <button th:href="@{/deletePizza}" class="btn-delete Delete">Borrar</button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

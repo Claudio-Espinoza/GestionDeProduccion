@@ -4,6 +4,7 @@
     --celeste: #45648c;
     --blanco: #f0f2f2;
     --verde: #31591d;
+    --rojo: #ad1b1b;
 }
 
 * {
@@ -134,3 +135,214 @@ a:hover{
     color: var(--blanco);
 }
 
+/*--|Generales|-----------------------------------------------------------------------------------------------------*/
+:root {
+    --azul: #1d3159;
+    --celeste: #45648c;
+    --blanco: #f0f2f2;
+    --verde: #31591d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--azul);
+    overflow-y: hidden;
+}
+
+/*--|Barra de navegacion|------------------------------------------------------------------------------------------ */
+
+.navbar {
+    width: 14.5vw;
+    position: fixed;
+    margin-left: 1%;
+    height: 97%;
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1.5fr;
+    background-color: var(--blanco);
+    border-radius: 0.5%;
+
+
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar__container--top {
+    display:flex;
+    justify-content:center;
+
+}
+
+.data--order{
+    margin-top: 5%;
+}
+.admin--icon{
+    box-shadow: 0 0 6px 0.1px var(--celeste);
+
+}
+.admin--data{
+    margin-top: 10%;
+}
+
+.navbar__container--bottom {
+    display: flex;
+    align-items:flex-end;
+}
+/*--|Logout|------------------------------------------------------------------------------------------ */
+.logout{
+    margin-left:15%;
+    margin-bottom: 20%;
+    border-radius: 10%;
+    box-shadow: 1px 5px 30px 3px rgba(0, 0, 0, 0.3);
+
+    background-color: var(--celeste);
+    text-decoration: none;
+    color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 70%;
+    height: 30%;
+
+}
+.logout:hover{
+    background-color: var(--azul);
+}
+/*--|Section|------------------------------------------------------------------------------------------ */
+section {
+    height: 100vh;
+    width: 82vw;
+    left: 16.3vw;
+    position: relative;
+}
+.container__items{
+    height: 97%;
+    margin-top: 1%;
+    display: grid;
+    grid-template-columns: 3.5fr 1fr;
+
+    background-color:var(--blanco);
+
+    border-radius: 0.3%;
+}
+
+a{
+    text-decoration: none;
+    color: var(--azul);
+    font-size: 17px;
+    font-weight: bold;
+}
+a:hover{
+    color: var(--blanco);
+}
+
+.container__options{
+    margin-left: 2%;
+    width: 96%;
+    height: 60%;
+    border-radius: 3%;
+    background-color:rgba(0, 0, 0, 0.01);
+
+
+    box-shadow: 1px 5px 30px 3px rgba(0, 0, 0, 0.3);
+
+}
+.option--buttons{
+    display:flex;
+    align-items: center;
+
+    margin-left: 5%;
+
+    width:100%;
+    height:100%;
+}
+.container__options:hover{
+    background-color: var(--celeste);
+}
+.client{
+    color: var(--blanco);
+    background-color: var(--azul);
+}
+.label--style{
+    color: var(--blanco);
+}
+
+/*--|Table|------------------------------------------------------------------------------------------ */
+.container__items {
+    margin-left: 2%;
+    width: 96%;
+    height: 97%;
+    border-radius: 0.3%;
+    background-color: var(--blanco);
+
+    display: grid;
+    grid-template-columns: 3.5fr 1fr;
+}
+.container__table{
+    margin-left: 2%;
+    margin-top: 4%;
+    width: 100%;
+    height: 90%;
+    background-color: var(--blanco);
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    border-right: 0.5px solid var(--azul);
+}
+table{
+    width: 98%;
+    height: 0%;
+    text-align: left;
+    border-collapse: collapse;
+    background-color: var(--blanco);
+}
+h1{
+    margin-top: 5%;
+}
+.item--table{
+    border: 1px solid var(--azul);
+    padding: 15px;
+}
+.head--table{
+    background-color:rgba(0, 0, 0, 0.1);
+    font-size:20px;
+}
+.action--buttons {
+    width:70%;
+    height:36%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+.Edit {
+    color: transparent;
+    width:100%;
+    background-color: #59A1FF;
+    margin-right:2px;
+    background-image: url("../img/management/edit-button.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 23%;
+}
+.Delete{
+    color: transparent;
+    width:100%;
+    background-color: #E63939;
+    background-image: url("../img/management/delete-button.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30%;
+}
+.Edit:hover{
+    background-color: var(--celeste);
+}
+.Delete:hover{
+    background-color: var(--rojo);
+}
+.item--btn{
+    height: 100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}

@@ -45,20 +45,31 @@
     <section>
         <div class="container__items">
             <div class="container__table">
-                Lista de panes vendidos:
+                <h1>
+                    Lista de panes vendidos:
+                </h1>
                 <table>
-                    <tr class="row--table">
-                        <td>Id Pan:</td>
-                        <td>Nombre:</td>
-                        <td>Precio:</td>
-                        <td>Id Cliente</td>
+                    <thead class="head--table">
+                    <tr>
+                        <td class="item--table">Id Pan:</td>
+                        <td class="item--table">Nombre:</td>
+                        <td class="item--table">Precio:</td>
+                        <td class="item--table">Id Cliente</td>
+                        <td class="item--table">Edit/Delete:</td>
                     </tr>
+                    </thead>
+                    <tbody>
                     <tr class="row--table"  th:each="breads:${bread}">
                         <td class="item--table" th:text="${breads.getId()}"></td>
                         <td class="item--table" th:text="${breads.getName()}"></td>
                         <td class="item--table" th:text="${breads.getPrice()}"></td>
                         <td class="item--table" th:text="${breads.getShooper().getId()}"></td>
+                        <td class="item--btn">
+                            <button th:href="@{/editBread}" class="btn-edit Edit">Editar</button>
+                            <button th:href="@{/deleteBread}" class="btn-delete Delete">Borrar</button>
+                        </td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

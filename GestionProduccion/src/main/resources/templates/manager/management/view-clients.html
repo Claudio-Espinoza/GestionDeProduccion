@@ -45,24 +45,35 @@
     <section>
         <div class="container__items">
             <div class="container__table">
-                Lista de clientes:
+                <h1>
+                    Lista de clientes:
+                </h1>
                 <table>
-                    <tr class="row--table">
-                        <td>Id cliente:</td>
-                        <td>Nombre:</td>
-                        <td>Telédono:</td>
-                        <td>Forma retiro:</td>
-                        <td>Forma pago:</td>
-                        <td>Comentario:</td>
-                    </tr>
-                    <tr class="row--table"  th:each="shoopers:${shooper}">
-                        <td class="item--table" th:text="${shoopers.getId()}"></td>
-                        <td class="item--table" th:text="${shoopers.getName()}"></td>
-                        <td class="item--table" th:text="${shoopers.getPhone()}"></td>
-                        <td class="item--table" th:text="${shoopers.getMeansDelivery()}"></td>
-                        <td class="item--table" th:text="${shoopers.getPaid()}"></td>
-                        <td class="item--table" th:text="${shoopers.getCommentary()}"></td>
-                    </tr>
+                    <thead class="head--table">
+                        <tr>
+                            <td class="item--table">Id cliente:</td>
+                            <td class="item--table">Nombre:</td>
+                            <td class="item--table">Teléfono:</td>
+                            <td class="item--table">Forma retiro:</td>
+                            <td class="item--table">Forma pago:</td>
+                            <td class="item--table">Comentario:</td>
+                            <td class="item--table">Edit/Delete:</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row--table"  th:each="shoopers:${shooper}">
+                            <td class="item--table" th:text="${shoopers.getId()}"></td>
+                            <td class="item--table" th:text="${shoopers.getName()}"></td>
+                            <td class="item--table" th:text="${shoopers.getPhone()}"></td>
+                            <td class="item--table" th:text="${shoopers.getMeansDelivery()}"></td>
+                            <td class="item--table" th:text="${shoopers.getPaid()}"></td>
+                            <td class="item--table" th:text="${shoopers.getCommentary()}"></td>
+                            <td class="item--btn">
+                                <button th:href="@{/editShooper}" class="btn-edit Edit">Editar</button>
+                                <button th:href="@{/deleteShooper}" class="btn-delete Delete">Borrar</button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

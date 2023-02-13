@@ -45,28 +45,37 @@
     <section>
         <div class="container__items">
             <div class="container__table">
-                Lista de bebestibles vendidos:
+                <h1>
+                    Lista de bebestibles vendidos:
+                </h1>
                 <table>
-                    <tr class="row--table">
-                        <td>Id bebida:</td>
-                        <td>Sabor:</td>
-                        <td>Tamaño:</td>
-                        <td>Precio:</td>
-                        <td>Id cliente:</td>
+                    <thead class="head--table">
+                    <tr>
+                        <td class="item--table">Id bebida:</td>
+                        <td class="item--table">Sabor:</td>
+                        <td class="item--table">Tamaño:</td>
+                        <td class="item--table">Precio:</td>
+                        <td class="item--table">Id cliente:</td>
+                        <td class="item--table">Edit/Delete:</td>
                     </tr>
-                    <tr class="row--table"  th:each="drinks:${drink}">
-                        <td class="item--table" th:text="${drinks.getId()}"></td>
-                        <td class="item--table" th:text="${drinks.getDrinkFlavor()}"></td>
-                        <td class="item--table" th:text="${drinks.getDrinkSize()}"></td>
-                        <td class="item--table" th:text="${drinks.getPrice()}"></td>
-                        <td class="item--table" th:text="${drinks.getShooper().getId()}"></td>
-                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row--table"  th:each="drinks:${drink}">
+                            <td class="item--table" th:text="${drinks.getId()}"></td>
+                            <td class="item--table" th:text="${drinks.getDrinkFlavor()}"></td>
+                            <td class="item--table" th:text="${drinks.getDrinkSize()}"></td>
+                            <td class="item--table" th:text="${drinks.getPrice()}"></td>
+                            <td class="item--table" th:text="${drinks.getShooper().getId()}"></td>
+                            <td class="item--btn">
+                                <button th:href="@{/editDrink}" class="btn-edit Edit">Editar</button>
+                                <button th:href="@{/deleteDrink}" class="btn-delete Delete">Borrar</button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
     </section>
-
-
 </div>
 </body>
 </html>
