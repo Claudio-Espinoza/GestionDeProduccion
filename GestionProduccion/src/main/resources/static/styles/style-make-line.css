@@ -60,7 +60,7 @@ body {
 .options--register {
     width: 90%;
     height: 90%;
-    background-image: url(../img/agregar-verde.png);
+    background-image: url(../img/gadget/agregar-verde.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -72,7 +72,7 @@ body {
 .options--maker {
     width: 90%;
     height: 90%;
-    background-image: url(../img/pizza.png);
+    background-image: url(../img/gadget/pizza.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -82,7 +82,7 @@ body {
 .options--drinks {
     width: 90%;
     height: 90%;
-    background-image: url(../img/soda-verde.png);
+    background-image: url(../img/gadget/soda-verde.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -91,7 +91,7 @@ body {
 .options--breads {
     width: 90%;
     height: 90%;
-    background-image: url(../img/bread.png);
+    background-image: url(../img/gadget/bread.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -100,7 +100,7 @@ body {
 .options--paid {
     width: 90%;
     height: 90%;
-    background-image: url(../img/paid.png);
+    background-image: url(../img/gadget/paid.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -109,7 +109,7 @@ body {
 .options--back {
     width: 90%;
     height: 90%;
-    background-image: url(../img/back.png);
+    background-image: url(../img/gadget/back.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -312,7 +312,7 @@ section {
 
 .button__select {
     background-color: var(--amarillo);
-    background-image: url(../img/select-verde.png);
+    background-image: url(../img/gadget/select-verde.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -323,7 +323,7 @@ section {
 
 .button__select:hover {
     background-color: var(--verde);
-    background-image: url(../img/select-amarillo.png);
+    background-image: url(../img/gadget/select-amarillo.png);
 }
 
 
@@ -355,14 +355,14 @@ button[type="submit"] {
     margin-top: 1%;
     margin-left: 10%;
     height: 60%;
-    background-image: url("../img/avanzar-amarillo.png");
+    background-image: url("../img/gadget/avanzar-amarillo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--verde);
 }
 
 .menssage--submit:hover {
-    background-image: url("../img/avanzar-verde.png");
+    background-image: url("../img/gadget/avanzar-verde.png");
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--amarillo);

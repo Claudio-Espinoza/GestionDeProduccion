@@ -27,6 +27,7 @@ body {
     background-color: var(--verde);
     overflow-y: hidden;
 }
+
 /*--|Barra de navegacion|------------------------------------------------------------------------------------------ */
 
 .navbar {
@@ -57,7 +58,7 @@ body {
 
 .options--maker,
 .options--register,
-.options--paid{
+.options--paid {
     border-radius: 15px;
     background-color: var(--amarillo);
 }
@@ -65,7 +66,7 @@ body {
 .options--register {
     width: 90%;
     height: 90%;
-    background-image: url("../img/agregar-verde.png");
+    background-image: url("../img/gadget/agregar-verde.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -74,7 +75,7 @@ body {
 .options--maker {
     width: 90%;
     height: 90%;
-    background-image: url("../img/pizza.png");
+    background-image: url("../img/gadget/pizza.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -83,7 +84,7 @@ body {
 .options--drinks {
     width: 90%;
     height: 90%;
-    background-image: url("../img/soda-verde.png");
+    background-image: url("../img/gadget/soda-verde.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -92,7 +93,7 @@ body {
 .options--breads {
     width: 90%;
     height: 90%;
-    background-image: url("../img/bread.png");
+    background-image: url("../img/gadget/bread.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -103,7 +104,7 @@ body {
     height: 90%;
 
 
-    background-image: url("../img/paid.png");
+    background-image: url("../img/gadget/paid.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -113,13 +114,13 @@ body {
 .options--back {
     width: 90%;
     height: 90%;
-    background-image: url("../img/back.png");
+    background-image: url("../img/gadget/back.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
 }
 
-.options--back:hover{
+.options--back:hover {
     border-radius: 5%;
     box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
 
@@ -155,21 +156,6 @@ section {
 }
 
 
-.container__details {
-    position: relative;
-    right: 30%;
-    border-radius: 15px;
-    width: 90%;
-    height: 90%;
-    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
-    background-color: var(--blanco);
-
-    display: grid;
-    grid-template-rows: 0.5fr 4fr;
-    place-items: center;
-
-}
-
 /*-----------------------------------------------------------------------------------------------------------------*/
 .item__paid {
     width: 100%;
@@ -193,4 +179,90 @@ section {
     height: 15%;
     margin-bottom: 2%;
     border-radius: 10px;
+}
+
+.item__details--pago {
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
+    width: 70%;
+    height: 70%;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    place-items: center;
+}
+
+.container__paid--input {
+    width: 50%;
+    height: 70%;
+    border-radius: 10px;
+    background-color: var(--verde);
+
+}
+
+.container__name {
+    margin-top: 3%;
+    margin-left: 4%;
+}
+
+input[type="submit"]{
+    appearance: none;
+    color: transparent;
+    text-decoration: none;
+    border: none;
+}
+
+.container__name--paid {
+    background-color: #2D402E;
+    color: transparent;
+    display: grid;
+    place-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.item__details {
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    height: 70%;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+}
+
+.container__details {
+    position: relative;
+    right: 30%;
+    border-radius: 15px;
+    width: 90%;
+    height: 90%;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+    background-color: var(--blanco);
+
+    display: grid;
+    grid-template-rows: 0.5fr 2fr 2fr;
+    place-items: center;
+}
+
+.debito{
+    background-image: url("../img/gadget/visa-verde.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.credito{
+    background-image: url("../img/gadget/credit-verde.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.efectivo{
+    background-image: url("../img/gadget/efectivo-amarillo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }

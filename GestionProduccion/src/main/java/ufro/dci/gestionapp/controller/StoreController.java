@@ -141,4 +141,11 @@ public class StoreController {
         return "employee/production/breads";
     }
 
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @PostMapping("/employee/paid-save")
+    public String viewPaid(String typePaid) {
+        System.out.println(typePaid);
+        return "employee/production/drinks";
+    }
+
 }

@@ -56,7 +56,7 @@ body {
 .options--register {
     width: 90%;
     height: 90%;
-    background-image: url("../img/agregar-verde.png");
+    background-image: url("../img/gadget/agregar-verde.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -65,7 +65,7 @@ body {
 .options--maker {
     width: 90%;
     height: 90%;
-    background-image: url("../img/pizza.png");
+    background-image: url("../img/gadget/pizza.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -74,7 +74,7 @@ body {
 .options--drinks {
     width: 90%;
     height: 90%;
-    background-image: url("../img/soda-verde.png");
+    background-image: url("../img/gadget/soda-verde.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -83,7 +83,7 @@ body {
 .options--breads {
     width: 90%;
     height: 90%;
-    background-image: url("../img/bread.png");
+    background-image: url("../img/gadget/bread.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -92,7 +92,7 @@ body {
 .options--paid {
     width: 90%;
     height: 90%;
-    background-image: url("../img/paid.png");
+    background-image: url("../img/gadget/paid.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -101,7 +101,7 @@ body {
 .options--back {
     width: 90%;
     height: 90%;
-    background-image: url("../img/back.png");
+    background-image: url("../img/gadget/back.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -203,38 +203,38 @@ input[type="radio"] {
 
 .Dine {
     border-radius: 10px;
-    background-image: url("../img/cubiertos-amarillos.png");
+    background-image: url("../img/gadget/cubiertos-amarillos.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 70%;
 }
 
 .Dine:checked {
-    background-image: url("../img/cubiertos-verdes.png");
+    background-image: url("../img/gadget/cubiertos-verdes.png");
 }
 
 .Carry {
     border-radius: 10px;
-    background-image: url("../img/recoger-amarillo.png");
+    background-image: url("../img/gadget/recoger-amarillo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 70%;
 }
 
 .Carry:checked {
-    background-image: url("../img/recoger-verde.png");
+    background-image: url("../img/gadget/recoger-verde.png");
 }
 
 .Delivery {
     border-radius: 10px;
-    background-image: url("../img/repartidor-verde.png");
+    background-image: url("../img/gadget/repartidor-verde.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 70%;
 }
 
 .Delivery:checked {
-    background-image: url("../img/repartidor-amarillo.png");
+    background-image: url("../img/gadget/repartidor-amarillo.png");
 }
 
 .container__input {
@@ -278,14 +278,14 @@ input[type="radio"] {
     margin-left: 35%;
     width: 30%;
     height: 60%;
-    background-image: url("../img/avanzar-amarillo.png");
+    background-image: url("../img/gadget/avanzar-amarillo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--verde);
 }
 
 .message--submit:hover {
-    background-image: url("../img/avanzar-verde.png");
+    background-image: url("../img/gadget/avanzar-verde.png");
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--amarillo);

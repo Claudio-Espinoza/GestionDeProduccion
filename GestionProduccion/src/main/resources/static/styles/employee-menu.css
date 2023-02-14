@@ -43,7 +43,7 @@
     background-color: #BF4141;
     margin: 8vh 1.5vw 8vh 1.5vw;
 
-    background-image: url("../img/mas-blanco.png");
+    background-image: url("../img/gadget/mas-blanco.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
@@ -51,7 +51,7 @@
 
 .options--MakeLine:hover {
     background-color: #FFDB4F;
-    background-image: url("../img/mas-verde.png");
+    background-image: url("../img/gadget/mas-verde.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
@@ -62,7 +62,7 @@
     background-color: #BF4141;
     margin: 8vh 0 8vh 0;
     height: 83.5vh;
-    background-image: url("../img/buscar-blanco.png");
+    background-image: url("../img/gadget/buscar-blanco.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
@@ -70,7 +70,7 @@
 
 .options--list:hover {
     background-color: #FFDB4F;
-    background-image: url("../img/buscar-verde.png");
+    background-image: url("../img/gadget/buscar-verde.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;

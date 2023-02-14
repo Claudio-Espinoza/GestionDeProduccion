@@ -59,21 +59,27 @@
 
             <div class="container__details">
                 <h1>Cliente</h1>
+
                 <div class="item__details">
-                    <tr  th:each="shoopers:${shooper}">
+                    <tr th:each="shoopers:${shooper}">
                         <p class="container__name">Nombre: <span th:text="${shoopers.name}"></span></p>
                         <p class="container__name">Telefono: <span th:text="${shoopers.phone}"></span></p>
                         <p class="container__name">Tipo de servicio: <span th:text="${shoopers.meansDelivery}"></span></p>
+                        <p class="container__name--paid">$  <span th:text="${shoopers.paid}"></span></p>
+
                     </tr>
                 </div>
-                <div class="item__details--pago">
+                <form class="item__details--pago" th:action="@{/employee/paid-save}" method="post">
 
-
-                </div>
+                    <input class="container__paid--input debito" type="submit" name="typePaid" value="Debito">
+                    <input class="container__paid--input credito" type="submit" name="typePaid" value="Credito">
+                    <input class="container__paid--input efectivo" type="submit" name="typePaid" value="Efectivo">
+                </form>
 
             </div>
         </section>
     </main>
+
 </div>
 </body>
 </html>
