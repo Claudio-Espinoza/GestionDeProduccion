@@ -48,7 +48,7 @@
                 <h1>
                     Lista de panes vendidos:
                 </h1>
-                <table>
+                <table class="body--table">
                     <thead class="head--table">
                     <tr>
                         <td class="item--table">Id Pan:</td>
@@ -58,7 +58,7 @@
                         <td class="item--table">Edit/Delete:</td>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="body--overflow">
                     <tr class="row--table"  th:each="breads:${bread}">
                         <td class="item--table" th:text="${breads.getId()}"></td>
                         <td class="item--table" th:text="${breads.getName()}"></td>

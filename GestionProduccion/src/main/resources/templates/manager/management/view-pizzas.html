@@ -48,15 +48,15 @@
                 <h1>
                     Lista de pizzas vendidas:
                 </h1>
-                <table>
+                <table class="body--table">
                     <thead class="head--table">
-                    <tr>
-                        <td class="item--table">Id Pizza:</td>
-                        <td class="item--table">Nombre:</td>
-                        <td class="item--table">Precio:</td>
-                        <td class="item--table">Id Cliente:</td>
-                        <td class="item--table">Edit/Delete:</td>
-                    </tr>
+                        <tr>
+                            <td class="item--table">Id Pizza:</td>
+                            <td class="item--table">Nombre:</td>
+                            <td class="item--table">Precio:</td>
+                            <td class="item--table">Id Cliente:</td>
+                            <td class="item--table">Edit/Delete:</td>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr class="row--table"  th:each="pizzas:${pizza}">
