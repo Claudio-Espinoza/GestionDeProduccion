@@ -1,18 +1,15 @@
 package ufro.dci.gestionapp.model.shooper;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
-
+import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "orders")
 public class Order {
     @Id
@@ -25,7 +22,7 @@ public class Order {
     @Column(name = "type_paid", length = 15, nullable = false)
     private String typePaid;
     @Column(name = "date", nullable = false)
-    private Date date;
+    private LocalDateTime date;
     @Column(name = "num_pizza")
     private int numPizza;
     @Column(name = "num_drink")
@@ -33,7 +30,7 @@ public class Order {
     @Column(name = "num_bread")
     private int numBread;
 
-    public Order(String nameShooper, int paid, String typePaid, Date date, int numPizza, int numDrink, int numBread) {
+    public Order(String nameShooper, int paid, String typePaid, LocalDateTime date, int numPizza, int numDrink, int numBread) {
         this.nameShooper = nameShooper;
         this.paid = paid;
         this.typePaid = typePaid;

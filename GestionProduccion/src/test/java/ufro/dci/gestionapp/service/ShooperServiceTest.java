@@ -18,10 +18,6 @@ class ShooperServiceTest {
     @Autowired
     ShooperService shooperService;
 
-    @Test
-    void name() {
-        Shooper shooper =  shooperService.getShooperByLastId();
-        orderService.calculateCost(shooper);
-    }
+
 }
 

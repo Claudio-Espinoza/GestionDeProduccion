@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import ufro.dci.gestionapp.model.shooper.Shooper;
 import ufro.dci.gestionapp.service.*;
 
 //Esta anotación sirve como una especialización de @Component, permitiendo que las clases de
@@ -20,7 +21,6 @@ public class StoreController {
     private final PizzaService pizzaService;
     private final DrinkService drinkService;
     private final BreadService breadService;
-
     private final OrderService orderService;
     public StoreController(ShooperService shooperService, PizzaService pizzaService, DrinkService drinkService, BreadService breadService, OrderService orderService) {
         this.shooperService = shooperService;
@@ -60,7 +60,7 @@ public class StoreController {
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @GetMapping("/employee/register/back")
-    public String deleteRegisterShooper() throws Exception {
+    public String deleteRegisterShooper() {
         shooperService.deleteShooperForBack();
         return "employee/production/register";
     }
@@ -87,16 +87,18 @@ public class StoreController {
     @GetMapping("/employee/paid")
     public String viewPaid(Model model) {
 
-
+        Shooper shooper = shooperService.getShooperByLastId();
 
         model.addAttribute("shooper", shooperService.getListShooper());
-        model.addAttribute("pizza", pizzaService.getListPizza(shooperService.getShooperByLastId()));
-        model.addAttribute("bread", breadService.getListBread(shooperService.getShooperByLastId()));
-        model.addAttribute("drink", drinkService.getListDrink(shooperService.getShooperByLastId()));
-
-        orderService.calculateCost(shooperService.getShooperByLastId());
-
-        return "employee/production/paid"; //Cambiar
+        model.addAttribute("cost",  orderService.calculateCost(
+                pizzaService.getCostPizzaOfOrder(shooper),
+                breadService.calculateCostBread(shooper),
+                drinkService.calculateCostDrink(shooper))
+        );
+        model.addAttribute("pizza", pizzaService.getListPizza(shooper));
+        model.addAttribute("bread", breadService.getListBread(shooper));
+        model.addAttribute("drink", drinkService.getListDrink(shooper));
+        return "employee/production/paid";
     }
 
     //-|Mapping / Post|----------------------------------------------------------------------------------------------//
@@ -147,11 +149,23 @@ public class StoreController {
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @PostMapping("/employee/paid-save")
     public String viewPaid(String typePaid) {
+        Shooper shooper = shooperService.getShooperByLastId();
 
+        int cost = orderService.calculateCost(
+                pizzaService.getCostPizzaOfOrder(shooper),
+                drinkService.calculateCostDrink(shooper),
+                breadService.calculateCostBread(shooper)
+                );
 
+        orderService.createOrderObject(
+                cost,
+                shooperService.getNameShooper(shooper),
+                typePaid,
+                pizzaService.getListPizza(shooper).size(),
+                breadService.getListBread(shooper).size(),
+                drinkService.getListDrink(shooper).size());
 
-
-        return "employee/production/drinks";
+        return "employee/menu/employee-home";
     }
 
 }

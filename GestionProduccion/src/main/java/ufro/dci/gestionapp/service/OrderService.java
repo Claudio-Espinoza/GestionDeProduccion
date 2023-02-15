@@ -1,25 +1,43 @@
 package ufro.dci.gestionapp.service;
 
 import org.springframework.stereotype.Service;
-import ufro.dci.gestionapp.model.shooper.Shooper;
+import ufro.dci.gestionapp.model.shooper.Order;
+import ufro.dci.gestionapp.repository.OrderRepository;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class OrderService {
-    final PizzaService pizzaService;
-    final DrinkService drinkService;
-    final BreadService breadService;
+    final
+    OrderRepository orderRepository;
 
-    public OrderService(PizzaService pizzaService, DrinkService drinkService, BreadService breadService) {
-        this.pizzaService = pizzaService;
-        this.drinkService = drinkService;
-        this.breadService = breadService;
+    public OrderService(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
     }
 
-    public void calculateCost( Shooper shooper){
-        int pizzaCost = pizzaService.getCostPizzaOfOrder(shooper);
-        int breadCost = breadService.calculateCostBread(shooper);
-        int drinkCost = drinkService.calculateCostDrink(shooper);
-
-        System.out.println("Pizza: " + pizzaCost + "Bread: " + breadCost  +"Drink: "+ drinkCost);
+    public void createOrderObject(int cost, String name,String typePaid, int sizePizza, int sizeBread, int sizeDrink) {
+        Order order = new Order( name,cost, typePaid , generateDate() ,sizePizza, sizeDrink, sizeBread);
+        saveOrder(order);
     }
+
+    private void saveOrder(Order order) {
+        orderRepository.save(order);
+    }
+
+    public int calculateCost(int pizzaCost, int drinkCost, int breadCost) {
+        return pizzaCost+ drinkCost+ breadCost;
+    }
+
+    public LocalDateTime generateDate() {
+        return LocalDateTime.now();
+    }
+
+    //Esta funcion creara una lista de todas las ordenes, por si quieres usarla
+    /*
+    public List<Order> getListOfOrder(){
+        return orderRepository.findAll();
+    }
+
+     */
 }

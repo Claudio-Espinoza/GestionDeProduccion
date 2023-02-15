@@ -12,4 +12,6 @@ public interface ShooperRepository extends CrudRepository<Shooper, Integer> {
     Shooper findById(int id);
 
     List<Shooper> findAllById(int id);
+
+
 }

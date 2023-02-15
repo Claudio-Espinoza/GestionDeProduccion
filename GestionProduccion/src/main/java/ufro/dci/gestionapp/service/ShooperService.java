@@ -42,13 +42,7 @@ public class ShooperService {
             shooperRepository.deleteById(getLastId());
     }
 
-    //-||Calcular costos||--------------------------------------------------------------------------------------------//
-
-
-    //Calcular pizza
-
-
-    //Calcular Bread
-
-
+    public String getNameShooper(Shooper shooper){
+        return shooper.getName();
+    }
 }

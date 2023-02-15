@@ -10,8 +10,6 @@ import java.util.List;
 public interface RegisterRepository extends CrudRepository<UserRegister, Integer> {
 
     List<UserRegister> findAll();
-    UserRegister findByRut(String rut);
-
     UserRegister findById(int id);
 
 }

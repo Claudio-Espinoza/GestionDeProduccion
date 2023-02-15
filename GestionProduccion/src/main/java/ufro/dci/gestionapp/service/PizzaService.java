@@ -25,7 +25,7 @@ public class PizzaService {
         saveObjectPizza(pizza);
     }
 
-    public void saveObjectPizza(Pizza pizza){
+    private void saveObjectPizza(Pizza pizza){
         pizzaRepository.save(pizza);
     }
 
