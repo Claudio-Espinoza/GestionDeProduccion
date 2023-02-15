@@ -12,20 +12,18 @@ import java.util.List;
 
 @Service
 public class BreadService {
-    final ShooperService shooperService;
     final BreadRepository breadRepository;
 
-    public BreadService(BreadRepository breadRepository, ShooperService shooperService) {
+    public BreadService(BreadRepository breadRepository) {
         this.breadRepository = breadRepository;
-        this.shooperService = shooperService;
     }
 
     private HashMap<String, Integer> createPriceBread(){
         HashMap<String, Integer> breadPrice = new HashMap<>();
         breadPrice.put(BreadEnum.NO.getName(), PriceEnum.PRICE_0.getPrice());
-        breadPrice.put(BreadEnum.SALT.getName(), PriceEnum.PRICE_5.getPrice());
-        breadPrice.put(BreadEnum.CROISSANT.getName(), PriceEnum.PRICE_2.getPrice());
-        breadPrice.put(BreadEnum.WHITE.getName(), PriceEnum.PRICE_1.getPrice());
+        breadPrice.put(BreadEnum.SALT.getName(), PriceEnum.PRICE_2.getPrice());
+        breadPrice.put(BreadEnum.CROISSANT.getName(), PriceEnum.PRICE_3.getPrice());
+        breadPrice.put(BreadEnum.WHITE.getName(), PriceEnum.PRICE_4.getPrice());
 
         return breadPrice;
     }
@@ -44,7 +42,16 @@ public class BreadService {
         breadRepository.save(bread);
     }
 
-    public List<Bread> getListBread(){
-        return breadRepository.findAllByShooper(shooperService.getShooperByLastId());
+    public List<Bread> getListBread(Shooper shooper){
+        return breadRepository.findAllByShooper(shooper);
+    }
+
+    public int calculateCostBread(Shooper shooper){
+        List<Bread> breadList = getListBread(shooper);
+        int contPric=0;
+        for(Bread bread : breadList){
+            contPric = bread.getPrice();
+        }
+        return contPric;
     }
 }

@@ -5,10 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import ufro.dci.gestionapp.service.BreadService;
-import ufro.dci.gestionapp.service.DrinkService;
-import ufro.dci.gestionapp.service.PizzaService;
-import ufro.dci.gestionapp.service.ShooperService;
+import ufro.dci.gestionapp.service.*;
 
 //Esta anotación sirve como una especialización de @Component, permitiendo que las clases de
 //implementación se detecten automáticamente a través del análisis de rutas de clase.
@@ -24,11 +21,13 @@ public class StoreController {
     private final DrinkService drinkService;
     private final BreadService breadService;
 
-    public StoreController(ShooperService shooperService, PizzaService pizzaService, DrinkService drinkService, BreadService breadService) {
+    private final OrderService orderService;
+    public StoreController(ShooperService shooperService, PizzaService pizzaService, DrinkService drinkService, BreadService breadService, OrderService orderService) {
         this.shooperService = shooperService;
         this.pizzaService = pizzaService;
         this.drinkService = drinkService;
         this.breadService = breadService;
+        this.orderService = orderService;
     }
 
     //-|Mapping|--------------------------------------------------------------------------------------//
@@ -88,10 +87,14 @@ public class StoreController {
     @GetMapping("/employee/paid")
     public String viewPaid(Model model) {
 
+
+
         model.addAttribute("shooper", shooperService.getListShooper());
-        model.addAttribute("pizza", pizzaService.getListPizza());
-        model.addAttribute("bread", breadService.getListBread());
-        model.addAttribute("drink", drinkService.getListDrink());
+        model.addAttribute("pizza", pizzaService.getListPizza(shooperService.getShooperByLastId()));
+        model.addAttribute("bread", breadService.getListBread(shooperService.getShooperByLastId()));
+        model.addAttribute("drink", drinkService.getListDrink(shooperService.getShooperByLastId()));
+
+        orderService.calculateCost(shooperService.getShooperByLastId());
 
         return "employee/production/paid"; //Cambiar
     }
@@ -108,7 +111,7 @@ public class StoreController {
     @PostMapping("/employee/save-pizza")
     public String savePizza(String name,  Model model){
         pizzaService.createObject(name, shooperService.getShooperByLastId());
-        model.addAttribute("pizza", pizzaService.getListPizza());
+        model.addAttribute("pizza", pizzaService.getListPizza(shooperService.getShooperByLastId()));
         return "employee/production/make-line";
     }
 
@@ -116,7 +119,7 @@ public class StoreController {
     @GetMapping("/delete/pizza")
     public String deletePizza(Model model){
         pizzaService.deleteByIdPizza();
-        model.addAttribute("pizza", pizzaService.getListPizza());
+        model.addAttribute("pizza", pizzaService.getListPizza(shooperService.getShooperByLastId()));
         return "employee/production/register";
     }
 
@@ -126,9 +129,9 @@ public class StoreController {
         breadService.createObjectOfBread(name, shooperService.getShooperByLastId());
 
         model.addAttribute("shooper", shooperService.getListShooper());
-        model.addAttribute("pizza", pizzaService.getListPizza());
-        model.addAttribute("bread", breadService.getListBread());
-        model.addAttribute("drink", drinkService.getListDrink());
+        model.addAttribute("pizza", pizzaService.getListPizza(shooperService.getShooperByLastId()));
+        model.addAttribute("bread", breadService.getListBread(shooperService.getShooperByLastId()));
+        model.addAttribute("drink", drinkService.getListDrink(shooperService.getShooperByLastId()));
 
         return "employee/production/paid";
     }
@@ -144,7 +147,10 @@ public class StoreController {
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @PostMapping("/employee/paid-save")
     public String viewPaid(String typePaid) {
-        System.out.println(typePaid);
+
+
+
+
         return "employee/production/drinks";
     }
 

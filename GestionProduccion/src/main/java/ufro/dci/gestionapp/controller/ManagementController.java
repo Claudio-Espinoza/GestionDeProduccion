@@ -61,7 +61,7 @@ public class ManagementController {
     @GetMapping("/manager/bakery")
     public String viewBakery(Model model){
         model.addAttribute("nombre", managerService.getManagerName());
-        model.addAttribute("bread", breadService.getListBread());
+        model.addAttribute("bread", breadService.getListBread(shooperService.getShooperByLastId()));
         return "manager/management/view-bakery";
     }
 

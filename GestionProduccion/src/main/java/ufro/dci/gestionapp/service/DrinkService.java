@@ -10,16 +10,13 @@ import ufro.dci.gestionapp.repository.DrinkRepository;
 import java.util.HashMap;
 import java.util.List;
 
-import static java.lang.String.valueOf;
 
 @Service
 public class DrinkService {
-    final ShooperService shooperService;
     final DrinkRepository drinkRepository;
 
-    public DrinkService(DrinkRepository drinkRepository, ShooperService shooperService) {
+    public DrinkService(DrinkRepository drinkRepository) {
         this.drinkRepository = drinkRepository;
-        this.shooperService = shooperService;
     }
 
     private HashMap<String, Integer> createPriceDrink(){
@@ -45,12 +42,20 @@ public class DrinkService {
         drinkRepository.save(drink);
     }
 
-    public List<Drink> getListDrink(){
-        return drinkRepository.findAllByShooper(shooperService.getShooperByLastId());
+    public List<Drink> getListDrink(Shooper shooper){
+        return drinkRepository.findAllByShooper(shooper);
     }
 
     public List<Drink> getAllDrink(){
         return drinkRepository.findAll();
     }
 
+    public int calculateCostDrink(Shooper shooper){
+        List<Drink> drinkList = getListDrink(shooper);
+        int contPric=0;
+        for(Drink drink : drinkList){
+            contPric = drink.getPrice();
+        }
+        return contPric;
+    }
 }

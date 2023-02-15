@@ -29,8 +29,8 @@ public class PizzaService {
         pizzaRepository.save(pizza);
     }
 
-    public List<Pizza> getListPizza(){
-        return pizzaRepository.findAllByShooper(shooperService.getShooperByLastId());
+    public List<Pizza> getListPizza(Shooper shooper){
+        return pizzaRepository.findAllByShooper(shooper);
     }
 
     public List<Pizza> getAllPizza(){
@@ -46,4 +46,11 @@ public class PizzaService {
         pizzaRepository.deleteById(getLastIdPizza());
     }
 
+    public int getCostPizzaOfOrder(Shooper shooper) {
+        int numPizza = getSizeOfList(getListPizza(shooper));
+        return numPizza * PriceEnum.PRICE_5.getPrice();
+    }
+    public int getSizeOfList(List<?> list){
+        return list.size();
+    }
 }

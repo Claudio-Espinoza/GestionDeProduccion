@@ -1,6 +1,8 @@
 package ufro.dci.gestionapp.service;
 
 import org.springframework.stereotype.Service;
+import ufro.dci.gestionapp.model.production.Bread;
+import ufro.dci.gestionapp.model.production.enumerations.PriceEnum;
 import ufro.dci.gestionapp.model.shooper.Shooper;
 import ufro.dci.gestionapp.repository.ShooperRepository;
 
@@ -8,9 +10,10 @@ import java.util.List;
 
 @Service
 public class ShooperService {
-    final
-    ShooperRepository shooperRepository;
-    public ShooperService(ShooperRepository shooperRepository) {
+
+    final ShooperRepository shooperRepository;
+    public ShooperService( ShooperRepository shooperRepository) {
+
         this.shooperRepository = shooperRepository;
     }
 
@@ -21,26 +24,31 @@ public class ShooperService {
     private void saveObjeto(Shooper shooper){
         shooperRepository.save(shooper);
     }
-
     private int getLastId(){
         List<Shooper> lastId=shooperRepository.findAll();
         return lastId.get(lastId.size()-1).getId();
     }
-
     public Shooper getShooperByLastId(){
         int lastId=getLastId();
         return shooperRepository.findById(lastId);
     }
-
     public List<Shooper> getListShooper(){
         return shooperRepository.findAllById(getLastId());
     }
-
     public List<Shooper> getAllShooper(){
         return shooperRepository.findAll();
     }
-    public void deleteShooperForBack() throws Exception{
+    public void deleteShooperForBack(){
             shooperRepository.deleteById(getLastId());
-
     }
+
+    //-||Calcular costos||--------------------------------------------------------------------------------------------//
+
+
+    //Calcular pizza
+
+
+    //Calcular Bread
+
+
 }

@@ -34,9 +34,7 @@ public class Shooper {
     private String meansDelivery;
     @Column(name = "commentary", length =200, nullable = false)
     private String commentary;
-    @Column(name = "paid")
-    private int paid;
-    @Column(name = "typePaid", length = 15)
+    @Column(name = "type_paid", length = 15)
     private String typePaid;
     @OneToMany(mappedBy="shooper")
     private List<Pizza> pizzaList;
