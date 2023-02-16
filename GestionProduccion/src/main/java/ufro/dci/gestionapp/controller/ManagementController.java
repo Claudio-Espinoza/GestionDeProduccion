@@ -14,13 +14,15 @@ public class ManagementController {
     private final PizzaService pizzaService;
     private final ShooperService shooperService;
     private final DrinkService drinkService;
+    private final OrderService orderService;
 
-    public ManagementController(ManagerService managerService, BreadService breadService, PizzaService pizzaService, ShooperService shooperService, DrinkService drinkService) {
+    public ManagementController(ManagerService managerService, BreadService breadService, PizzaService pizzaService, ShooperService shooperService, DrinkService drinkService, OrderService orderService) {
         this.managerService = managerService;
         this.breadService = breadService;
         this.pizzaService = pizzaService;
         this.shooperService = shooperService;
         this.drinkService = drinkService;
+        this.orderService = orderService;
     }
 
     /*----- |Mostrar nombre manager|----------------------------------------------------*/
@@ -69,7 +71,7 @@ public class ManagementController {
     @GetMapping("/manager/orders")
     public String viewOrders(Model model){
         model.addAttribute("nombre", managerService.getManagerName());
-
+        model.addAttribute("order", orderService.getListOfOrder());
         return "manager/management/view-orders";
     }
 
