@@ -44,7 +44,38 @@
   </nav>
   <section>
     <div class="container__items">
-      tabla xd
+      <div class="container__table">
+        <h1>
+          Lista de ordenes:
+        </h1>
+        <table class="body--table">
+          <thead class="head--table">
+          <tr>
+            <td class="item--table">Id orden:</td>
+            <td class="item--table">Nombre comprador:</td>
+            <td class="item--table">Fecha compra:</td>
+            <td class="item--table">N° Pizzas:</td>
+            <td class="item--table">N° Bebestibles:</td>
+            <td class="item--table">N° Panes:</td>
+            <td class="item--table">Edit/Delete:</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="row--table"  th:each="orders:${order}">
+            <td class="item--table" th:text="${orders.getId()}"></td>
+            <td class="item--table" th:text="${orders.getNameShooper()}"></td>
+            <td class="item--table" th:text="${orders.getDate()}"></td>
+            <td class="item--table" th:text="${orders.getNumPizza()}"></td>
+            <td class="item--table" th:text="${orders.getNumDrink()}"></td>
+            <td class="item--table" th:text="${orders.getNumBread()}"></td>
+            <td class="item--btn">
+              <button th:href="@{/editPizza}" class="btn-edit Edit">Editar</button>
+              <button th:href="@{/deletePizza}" class="btn-delete Delete">Borrar</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 

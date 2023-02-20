@@ -35,11 +35,8 @@ public class OrderService {
         return LocalDateTime.now();
     }
 
-    //Esta funcion creara una lista de todas las ordenes, por si quieres usarla
-    /*
+
     public List<Order> getListOfOrder(){
         return orderRepository.findAll();
     }
-
-     */
 }
