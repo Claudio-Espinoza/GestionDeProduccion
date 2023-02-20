@@ -26,7 +26,9 @@ public class OrderService {
     }
 
     public int calculateCost(int pizzaCost, int drinkCost, int breadCost) {
+        System.out.println("Costo \"----------------------------------------------------\"" +  pizzaCost+ drinkCost+ breadCost );
         return pizzaCost+ drinkCost+ breadCost;
+
     }
 
     public LocalDateTime generateDate() {

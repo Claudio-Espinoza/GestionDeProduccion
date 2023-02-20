@@ -12,4 +12,5 @@ public interface RegisterRepository extends CrudRepository<UserRegister, Integer
     List<UserRegister> findAll();
     UserRegister findById(int id);
 
+
 }
