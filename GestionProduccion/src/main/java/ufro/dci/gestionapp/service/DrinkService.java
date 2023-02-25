@@ -2,8 +2,8 @@ package ufro.dci.gestionapp.service;
 
 import org.springframework.stereotype.Service;
 import ufro.dci.gestionapp.model.production.Drink;
-import ufro.dci.gestionapp.model.production.enumerations.DrinkEnum;
-import ufro.dci.gestionapp.model.production.enumerations.PriceEnum;
+import ufro.dci.gestionapp.model.production.enumerations.Size;
+import ufro.dci.gestionapp.model.production.enumerations.Price;
 import ufro.dci.gestionapp.model.shooper.Shooper;
 import ufro.dci.gestionapp.repository.DrinkRepository;
 
@@ -21,9 +21,9 @@ public class DrinkService {
 
     private HashMap<String, Integer> createPriceDrink(){
         HashMap<String, Integer> drinkPrice = new HashMap<>();
-        drinkPrice.put(DrinkEnum.SMALL.getSize(), PriceEnum.PRICE_1.getPrice());
-        drinkPrice.put(DrinkEnum.MEDIUM.getSize(), PriceEnum.PRICE_2.getPrice());
-        drinkPrice.put(DrinkEnum.LARGE.getSize(), PriceEnum.PRICE_3.getPrice());
+        drinkPrice.put(Size.SMALL.getSize(), Price.PRICE_1.getPrice());
+        drinkPrice.put(Size.MEDIUM.getSize(), Price.PRICE_2.getPrice());
+        drinkPrice.put(Size.LARGE.getSize(), Price.PRICE_3.getPrice());
 
         return drinkPrice;
     }

@@ -1,8 +1,6 @@
 package ufro.dci.gestionapp.service;
 
 import org.springframework.stereotype.Service;
-import ufro.dci.gestionapp.model.production.Bread;
-import ufro.dci.gestionapp.model.production.enumerations.PriceEnum;
 import ufro.dci.gestionapp.model.shooper.Shooper;
 import ufro.dci.gestionapp.repository.ShooperRepository;
 

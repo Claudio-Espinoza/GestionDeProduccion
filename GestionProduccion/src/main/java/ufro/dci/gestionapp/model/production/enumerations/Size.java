@@ -1,11 +1,11 @@
 package ufro.dci.gestionapp.model.production.enumerations;
 
-public enum DrinkEnum {
+public enum Size {
     SMALL("Small"), MEDIUM("Medium") ,LARGE("Large");
 
     private final String size;
 
-    DrinkEnum(String size) {
+    Size(String size) {
         this.size = size;
     }
 

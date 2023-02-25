@@ -173,7 +173,9 @@ public class StoreController {
                 typePaid,
                 pizzaService.getListPizza(shooper).size(),
                 breadService.getListBread(shooper).size(),
-                drinkService.getListDrink(shooper).size());
+                drinkService.getListDrink(shooper).size(),
+                shooper
+        );
 
 
         return "employee/menu/employee-home";

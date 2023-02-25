@@ -30,7 +30,10 @@ public class Order {
     @Column(name = "num_bread")
     private int numBread;
 
-    public Order(String nameShooper, int paid, String typePaid, LocalDateTime date, int numPizza, int numDrink, int numBread) {
+    @OneToOne
+    private Shooper shooper;
+
+    public Order(String nameShooper, int paid, String typePaid, LocalDateTime date, int numPizza, int numDrink, int numBread, Shooper shooper) {
         this.nameShooper = nameShooper;
         this.paid = paid;
         this.typePaid = typePaid;
@@ -38,5 +41,6 @@ public class Order {
         this.numPizza = numPizza;
         this.numDrink = numDrink;
         this.numBread = numBread;
+        this.shooper = shooper;
     }
 }
