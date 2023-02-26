@@ -2,6 +2,7 @@ package ufro.dci.gestionapp.service;
 
 import org.springframework.stereotype.Service;
 import ufro.dci.gestionapp.model.shooper.Order;
+import ufro.dci.gestionapp.model.shooper.Shooper;
 import ufro.dci.gestionapp.repository.OrderRepository;
 
 import java.time.LocalDateTime;
@@ -16,8 +17,8 @@ public class OrderService {
         this.orderRepository = orderRepository;
     }
 
-    public void createOrderObject(int cost, String name,String typePaid, int sizePizza, int sizeBread, int sizeDrink) {
-        Order order = new Order( name,cost, typePaid , generateDate() ,sizePizza, sizeDrink, sizeBread);
+    public void createOrderObject(int cost, String name,String typePaid, int sizePizza, int sizeBread, int sizeDrink, Shooper shooper) {
+        Order order = new Order( name,cost, typePaid , generateDate() ,sizePizza, sizeDrink, sizeBread, shooper);
         saveOrder(order);
     }
 
@@ -26,7 +27,9 @@ public class OrderService {
     }
 
     public int calculateCost(int pizzaCost, int drinkCost, int breadCost) {
+        System.out.println("Costo \"----------------------------------------------------\"" +  pizzaCost+ drinkCost+ breadCost );
         return pizzaCost+ drinkCost+ breadCost;
+
     }
 
     public LocalDateTime generateDate() {

@@ -2,8 +2,8 @@ package ufro.dci.gestionapp.service;
 
 import org.springframework.stereotype.Service;
 import ufro.dci.gestionapp.model.production.Bread;
-import ufro.dci.gestionapp.model.production.enumerations.BreadEnum;
-import ufro.dci.gestionapp.model.production.enumerations.PriceEnum;
+import ufro.dci.gestionapp.model.production.enumerations.Type;
+import ufro.dci.gestionapp.model.production.enumerations.Price;
 import ufro.dci.gestionapp.model.shooper.Shooper;
 import ufro.dci.gestionapp.repository.BreadRepository;
 
@@ -20,10 +20,10 @@ public class BreadService {
 
     private HashMap<String, Integer> createPriceBread(){
         HashMap<String, Integer> breadPrice = new HashMap<>();
-        breadPrice.put(BreadEnum.NO.getName(), PriceEnum.PRICE_0.getPrice());
-        breadPrice.put(BreadEnum.SALT.getName(), PriceEnum.PRICE_2.getPrice());
-        breadPrice.put(BreadEnum.CROISSANT.getName(), PriceEnum.PRICE_3.getPrice());
-        breadPrice.put(BreadEnum.WHITE.getName(), PriceEnum.PRICE_4.getPrice());
+        breadPrice.put(Type.NO.getName(), Price.PRICE_0.getPrice());
+        breadPrice.put(Type.SALT.getName(), Price.PRICE_2.getPrice());
+        breadPrice.put(Type.CROISSANT.getName(), Price.PRICE_3.getPrice());
+        breadPrice.put(Type.WHITE.getName(), Price.PRICE_4.getPrice());
 
         return breadPrice;
     }

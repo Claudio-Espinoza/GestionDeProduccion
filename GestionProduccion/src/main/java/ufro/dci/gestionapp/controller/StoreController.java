@@ -86,15 +86,15 @@ public class StoreController {
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @GetMapping("/employee/paid")
     public String viewPaid(Model model) {
-
         Shooper shooper = shooperService.getShooperByLastId();
 
-        model.addAttribute("shooper", shooperService.getListShooper());
-        model.addAttribute("cost",  orderService.calculateCost(
+        int cost = orderService.calculateCost(
                 pizzaService.getCostPizzaOfOrder(shooper),
                 breadService.calculateCostBread(shooper),
-                drinkService.calculateCostDrink(shooper))
-        );
+                drinkService.calculateCostDrink(shooper));
+
+        model.addAttribute("shooper", shooperService.getListShooper());
+        model.addAttribute("cost", cost);
         model.addAttribute("pizza", pizzaService.getListPizza(shooper));
         model.addAttribute("bread", breadService.getListBread(shooper));
         model.addAttribute("drink", drinkService.getListDrink(shooper));
@@ -128,12 +128,22 @@ public class StoreController {
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @PostMapping("/employee/save-bread")
     public String SaveBread(String name, Model model) {
-        breadService.createObjectOfBread(name, shooperService.getShooperByLastId());
+        Shooper shooper = shooperService.getShooperByLastId();
 
-        model.addAttribute("shooper", shooperService.getListShooper());
-        model.addAttribute("pizza", pizzaService.getListPizza(shooperService.getShooperByLastId()));
-        model.addAttribute("bread", breadService.getListBread(shooperService.getShooperByLastId()));
-        model.addAttribute("drink", drinkService.getListDrink(shooperService.getShooperByLastId()));
+        breadService.createObjectOfBread(name, shooper);
+
+        int cost = orderService.calculateCost(
+                pizzaService.getCostPizzaOfOrder(shooper),
+                breadService.calculateCostBread(shooper),
+                drinkService.calculateCostDrink(shooper));
+
+        model.addAttribute("shooper", shooper);
+        model.addAttribute("cost", cost);
+        model.addAttribute("pizza", pizzaService.getListPizza(shooper));
+        model.addAttribute("bread", breadService.getListBread(shooper));
+        model.addAttribute("drink", drinkService.getListDrink(shooper));
+
+
 
         return "employee/production/paid";
     }
@@ -163,7 +173,10 @@ public class StoreController {
                 typePaid,
                 pizzaService.getListPizza(shooper).size(),
                 breadService.getListBread(shooper).size(),
-                drinkService.getListDrink(shooper).size());
+                drinkService.getListDrink(shooper).size(),
+                shooper
+        );
+
 
         return "employee/menu/employee-home";
     }

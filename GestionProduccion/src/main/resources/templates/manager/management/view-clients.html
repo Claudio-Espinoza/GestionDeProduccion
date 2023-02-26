@@ -55,7 +55,6 @@
                             <td class="item--table">Nombre:</td>
                             <td class="item--table">Teléfono:</td>
                             <td class="item--table">Forma retiro:</td>
-                            <td class="item--table">Forma pago:</td>
                             <td class="item--table">Comentario:</td>
                             <td class="item--table">Delete:</td>
                         </tr>
@@ -66,7 +65,6 @@
                             <td class="item--table" th:text="${shoopers.getName()}"></td>
                             <td class="item--table" th:text="${shoopers.getPhone()}"></td>
                             <td class="item--table" th:text="${shoopers.getMeansDelivery()}"></td>
-                            <td class="item--table" th:text="${shoopers.getTypePaid()}"></td>
                             <td class="item--table" th:text="${shoopers.getCommentary()}"></td>
                             <td class="item--btn">
                                 <button th:href="@{/deleteShooper}" class="btn-delete Delete">Borrar</button>

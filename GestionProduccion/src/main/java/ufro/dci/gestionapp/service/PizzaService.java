@@ -2,7 +2,7 @@ package ufro.dci.gestionapp.service;
 
 import org.springframework.stereotype.Service;
 import ufro.dci.gestionapp.model.production.Pizza;
-import ufro.dci.gestionapp.model.production.enumerations.PriceEnum;
+import ufro.dci.gestionapp.model.production.enumerations.Price;
 import ufro.dci.gestionapp.model.shooper.Shooper;
 import ufro.dci.gestionapp.repository.PizzaRepository;
 
@@ -21,7 +21,7 @@ public class PizzaService {
     }
 
     public void createObject(String name, Shooper shooper){
-        Pizza pizza = new Pizza(name, PriceEnum.PRICE_5.getPrice(), shooper);
+        Pizza pizza = new Pizza(name, Price.PRICE_5.getPrice(), shooper);
         saveObjectPizza(pizza);
     }
 
@@ -48,7 +48,7 @@ public class PizzaService {
 
     public int getCostPizzaOfOrder(Shooper shooper) {
         int numPizza = getSizeOfList(getListPizza(shooper));
-        return numPizza * PriceEnum.PRICE_5.getPrice();
+        return numPizza * Price.PRICE_5.getPrice();
     }
     public int getSizeOfList(List<?> list){
         return list.size();
