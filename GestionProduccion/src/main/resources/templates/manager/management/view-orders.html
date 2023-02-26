@@ -57,7 +57,7 @@
             <td class="item--table">N° Pizzas:</td>
             <td class="item--table">N° Bebestibles:</td>
             <td class="item--table">N° Panes:</td>
-            <td class="item--table">Edit/Delete:</td>
+            <td class="item--table">Delete:</td>
           </tr>
           </thead>
           <tbody>
@@ -69,7 +69,6 @@
             <td class="item--table" th:text="${orders.getNumDrink()}"></td>
             <td class="item--table" th:text="${orders.getNumBread()}"></td>
             <td class="item--btn">
-              <button th:href="@{/editPizza}" class="btn-edit Edit">Editar</button>
               <button th:href="@{/deletePizza}" class="btn-delete Delete">Borrar</button>
             </td>
           </tr>

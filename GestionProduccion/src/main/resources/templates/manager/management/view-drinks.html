@@ -56,7 +56,7 @@
                         <td class="item--table">Tamaño:</td>
                         <td class="item--table">Precio:</td>
                         <td class="item--table">Id cliente:</td>
-                        <td class="item--table">Edit/Delete:</td>
+                        <td class="item--table">Delete:</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -67,7 +67,6 @@
                             <td class="item--table" th:text="${drinks.getPrice()}"></td>
                             <td class="item--table" th:text="${drinks.getShooper().getId()}"></td>
                             <td class="item--btn">
-                                <button th:href="@{/editDrink}" class="btn-edit Edit">Editar</button>
                                 <button th:href="@{/deleteDrink}" class="btn-delete Delete">Borrar</button>
                             </td>
                         </tr>

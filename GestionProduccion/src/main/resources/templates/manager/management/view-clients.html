@@ -57,7 +57,7 @@
                             <td class="item--table">Forma retiro:</td>
                             <td class="item--table">Forma pago:</td>
                             <td class="item--table">Comentario:</td>
-                            <td class="item--table">Edit/Delete:</td>
+                            <td class="item--table">Delete:</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,7 +69,6 @@
                             <td class="item--table" th:text="${shoopers.getTypePaid()}"></td>
                             <td class="item--table" th:text="${shoopers.getCommentary()}"></td>
                             <td class="item--btn">
-                                <button th:href="@{/editShooper}" class="btn-edit Edit">Editar</button>
                                 <button th:href="@{/deleteShooper}" class="btn-delete Delete">Borrar</button>
                             </td>
                         </tr>

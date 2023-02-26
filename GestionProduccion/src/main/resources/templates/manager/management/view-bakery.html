@@ -55,7 +55,7 @@
                         <td class="item--table">Nombre:</td>
                         <td class="item--table">Precio:</td>
                         <td class="item--table">Id Cliente</td>
-                        <td class="item--table">Edit/Delete:</td>
+                        <td class="item--table">Delete:</td>
                     </tr>
                     </thead>
                     <tbody class="body--overflow">
@@ -65,7 +65,6 @@
                         <td class="item--table" th:text="${breads.getPrice()}"></td>
                         <td class="item--table" th:text="${breads.getShooper().getId()}"></td>
                         <td class="item--btn">
-                            <button th:href="@{/editBread}" class="btn-edit Edit">Editar</button>
                             <button th:href="@{/deleteBread}" class="btn-delete Delete">Borrar</button>
                         </td>
                     </tr>
@@ -74,8 +73,6 @@
             </div>
         </div>
     </section>
-
-
 </div>
 </body>
 </html>
