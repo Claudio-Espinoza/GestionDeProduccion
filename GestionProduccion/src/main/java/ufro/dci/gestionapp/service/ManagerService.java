@@ -1,5 +1,6 @@
 package ufro.dci.gestionapp.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ufro.dci.gestionapp.model.employee.register.UserRegister;
 import ufro.dci.gestionapp.repository.EmployeeRepository;
@@ -10,9 +11,8 @@ import java.util.List;
 @Service
 public class ManagerService {
 
-    final RegisterRepository registerRepository;
-    final EmployeeRepository employeeRepository;
-
+    final private RegisterRepository registerRepository;
+    final private EmployeeRepository employeeRepository;
 
     public ManagerService(RegisterRepository registerRepository, EmployeeRepository employeeRepository) {
         this.registerRepository = registerRepository;
