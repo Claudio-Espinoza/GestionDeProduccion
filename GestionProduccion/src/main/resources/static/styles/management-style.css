@@ -76,6 +76,12 @@ body {
 .logout:hover{
     background-color: var(--azul);
 }
+input{
+    background: transparent;
+    border:none;
+    color:white;
+    font-size: 17px;
+}
 /*--|Section|------------------------------------------------------------------------------------------ */
 section {
     height: 100vh;
@@ -162,10 +168,4 @@ h2{
 }
 a{
     font-weight: bold;
-}
-input{
-    background: transparent;
-    border:none;
-    color:white;
-    font-size: 17px;
 }

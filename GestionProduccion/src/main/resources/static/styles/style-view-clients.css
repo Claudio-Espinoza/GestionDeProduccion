@@ -206,11 +206,17 @@ body {
     justify-content: center;
 
     width: 70%;
-    height: 30%;
+    height: 7%;
 
 }
 .logout:hover{
     background-color: var(--azul);
+}
+input{
+    background: transparent;
+    border:none;
+    color:white;
+    font-size: 17px;
 }
 /*--|Section|------------------------------------------------------------------------------------------ */
 section {

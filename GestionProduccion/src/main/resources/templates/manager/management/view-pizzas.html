@@ -38,9 +38,9 @@
             <a th:href="@{/manager/orders}" class="option--buttons"> Ordenes</a>
         </div>
 
-        <div class="navbar__container--bottom ">
-            <a th:href="@{/logout}" class="logout"> Log-out</a>
-        </div>
+        <form class="navbar__container--bottom logout" th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout">
+        </form>
     </nav>
     <section>
         <div class="container__items">
@@ -64,9 +64,6 @@
                             <td class="item--table" th:text="${pizzas.getName()}"></td>
                             <td class="item--table" th:text="${pizzas.getPrice()}"></td>
                             <td class="item--table" th:text="${pizzas.getShooper().getId()}"></td>
-                            <td class="item--btn">
-                                <a th:href="@{/deletePizza/{id}(id = ${pizzas.getId()})}" class="btn-delete Delete">Borrar</a>
-                            </td>
                         </tr>
                     </tbody>
                 </table>

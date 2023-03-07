@@ -4,7 +4,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import ufro.dci.gestionapp.service.*;
 
 @Controller
@@ -75,37 +74,5 @@ public class ManagementController {
         model.addAttribute("order", orderService.getListOfOrder());
         return "manager/management/view-orders";
     }
-
-    @PreAuthorize("hasAuthority('MANAGER')")
-    @GetMapping("/deletePizza/{id}")
-    public String deletePizza(@PathVariable int id){
-        pizzaService.deleteByIdPizza(id);
-        return "manager/management/view-pizzas";
-    }
-    @PreAuthorize("hasAuthority('MANAGER')")
-    @GetMapping("/deleteBread/{id}")
-    public String deleteBread(@PathVariable int id){
-        breadService.deleteByIdBread(id);
-        return "manager/management/view-bakery";
-    }
-    @PreAuthorize("hasAuthority('MANAGER')")
-    @GetMapping("/deleteOrder/{id}")
-    public String deleteOrder(@PathVariable int id){
-        orderService.deleteByIdOrder(id);
-        return "manager/management/view-orders";
-    }
-    @PreAuthorize("hasAuthority('MANAGER')")
-    @GetMapping("/deleteshooper/{id}")
-    public String deleteShooper(@PathVariable int id){
-        shooperService.deleteShooperById(id);
-        return "manager/management/view-clients";
-    }
-    @PreAuthorize("hasAuthority('MANAGER')")
-    @GetMapping("/deleteDrink/{id}")
-    public String deleteDrink(@PathVariable int id){
-        drinkService.deleteByIdDrink(id);
-        return "manager/management/view-drinks";
-    }
-
 
 }
