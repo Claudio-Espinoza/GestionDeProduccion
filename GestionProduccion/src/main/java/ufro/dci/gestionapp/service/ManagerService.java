@@ -1,6 +1,5 @@
 package ufro.dci.gestionapp.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ufro.dci.gestionapp.model.employee.register.UserRegister;
 import ufro.dci.gestionapp.repository.EmployeeRepository;
