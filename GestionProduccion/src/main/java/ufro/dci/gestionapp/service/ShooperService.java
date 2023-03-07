@@ -39,6 +39,9 @@ public class ShooperService {
     public void deleteShooperForBack(){
             shooperRepository.deleteById(getLastId());
     }
+    public void deleteShooperById(int id){
+        shooperRepository.deleteById(id);
+    }
 
     public String getNameShooper(Shooper shooper){
         return shooper.getName();

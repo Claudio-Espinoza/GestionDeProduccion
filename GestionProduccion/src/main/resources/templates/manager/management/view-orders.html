@@ -69,7 +69,7 @@
             <td class="item--table" th:text="${orders.getNumDrink()}"></td>
             <td class="item--table" th:text="${orders.getNumBread()}"></td>
             <td class="item--btn">
-              <button th:href="@{/deletePizza}" class="btn-delete Delete">Borrar</button>
+              <button th:href="@{/deleteOrder/{id}(id = ${orders.getId()})}" class="btn-delete Delete">Borrar</button>
             </td>
           </tr>
           </tbody>

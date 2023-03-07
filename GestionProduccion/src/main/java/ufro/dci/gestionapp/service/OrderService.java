@@ -31,6 +31,9 @@ public class OrderService {
         return pizzaCost+ drinkCost+ breadCost;
 
     }
+    public void deleteByIdOrder(int id){
+        orderRepository.deleteById(id);
+    }
 
     public LocalDateTime generateDate() {
         return LocalDateTime.now();

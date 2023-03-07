@@ -120,7 +120,7 @@ public class StoreController {
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @GetMapping("/delete/pizza")
     public String deletePizza(Model model){
-        pizzaService.deleteByIdPizza();
+        pizzaService.deleteLastIdPizza();
         model.addAttribute("pizza", pizzaService.getListPizza(shooperService.getShooperByLastId()));
         return "employee/production/register";
     }

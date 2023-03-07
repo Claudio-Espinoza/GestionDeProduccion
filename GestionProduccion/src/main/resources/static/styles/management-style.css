@@ -51,6 +51,7 @@ body {
 .navbar__container--bottom {
     display: flex;
     align-items:flex-end;
+    margin-top: 60vh;
 }
 /*--|Logout|------------------------------------------------------------------------------------------ */
 
@@ -69,7 +70,7 @@ body {
     justify-content: center;
 
     width: 70%;
-    height: 12.3%;
+    height: 7%;
 
 }
 .logout:hover{
@@ -161,4 +162,10 @@ h2{
 }
 a{
     font-weight: bold;
+}
+input{
+    background: transparent;
+    border:none;
+    color:white;
+    font-size: 17px;
 }

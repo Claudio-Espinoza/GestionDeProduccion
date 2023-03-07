@@ -42,8 +42,11 @@ public class PizzaService {
         return lastId.get(lastId.size()-1).getId();
     }
 
-    public void deleteByIdPizza(){
+    public void deleteLastIdPizza(){
         pizzaRepository.deleteById(getLastIdPizza());
+    }
+    public void deleteByIdPizza(int id){
+        pizzaRepository.deleteById(id);
     }
 
     public int getCostPizzaOfOrder(Shooper shooper) {
