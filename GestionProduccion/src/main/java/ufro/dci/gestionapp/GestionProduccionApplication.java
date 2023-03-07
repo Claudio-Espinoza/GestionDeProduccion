@@ -16,7 +16,7 @@ public class GestionProduccionApplication {
 		SpringApplication.run(GestionProduccionApplication.class, args);
 	}
 
-/*
+	/*
 	@Bean
 	CommandLineRunner commandLineRunner(EmployeeRepository employeeRepository, PasswordEncoder passwordEncoder){
 		return args -> {
@@ -25,7 +25,5 @@ public class GestionProduccionApplication {
 			employeeRepository.save(new Employee("200000003", "Elva","Ginon","Marco","Full-Time",passwordEncoder.encode("1234"), Role.MANAGER));
 		};
 	}
-
-
  */
 }
