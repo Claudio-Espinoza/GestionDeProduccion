@@ -10,8 +10,7 @@ import java.util.List;
 
 @Service
 public class OrderService {
-    final
-    OrderRepository orderRepository;
+    final private OrderRepository orderRepository;
 
     public OrderService(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;

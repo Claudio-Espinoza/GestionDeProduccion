@@ -12,12 +12,15 @@ import java.util.List;
 
 @Service
 public class BreadService {
-    final BreadRepository breadRepository;
+    //-|Atributos|-------------------------------------------------------------------------------------------//
+    final private BreadRepository breadRepository;
 
+    //-|Constructor|----------------------------------------------------------------------------------------//
     public BreadService(BreadRepository breadRepository) {
         this.breadRepository = breadRepository;
     }
 
+    //-|Funciones|------------------------------------------------------------------------------------------//
     private HashMap<String, Integer> createPriceBread(){
         HashMap<String, Integer> breadPrice = new HashMap<>();
         breadPrice.put(Type.NO.getName(), Price.PRICE_0.getPrice());

@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class ShooperService {
 
-    final ShooperRepository shooperRepository;
+    final private ShooperRepository shooperRepository;
     public ShooperService( ShooperRepository shooperRepository) {
 
         this.shooperRepository = shooperRepository;

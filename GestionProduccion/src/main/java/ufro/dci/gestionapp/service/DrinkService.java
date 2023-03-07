@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service
 public class DrinkService {
-    final DrinkRepository drinkRepository;
+    final private DrinkRepository drinkRepository;
 
     public DrinkService(DrinkRepository drinkRepository) {
         this.drinkRepository = drinkRepository;
