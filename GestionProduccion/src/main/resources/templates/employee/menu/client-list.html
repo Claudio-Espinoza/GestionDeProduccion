@@ -3,8 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" th:href="@{/styles/style-orders.css}">
     <title>Lista clientes | Gestor de producción</title>
 </head>
@@ -39,12 +37,12 @@
             </thead>
 
             <tbody>
-            <tr class="row--table" th:each="shoopers:${shooper}">
-                <td class="item--table" th:text="${shooper.getId()}"></td>
-                <td class="item--table name" th:text="${shooper.getName()}"></td>
-                <td class="item--table" th:text="${shooper.getPhone()}"></td>
-                <td class="item--table" th:text="${shooper.getMeansDelivery()}"></td>
-                <td class="item--table" th:text="${shooper.getCommentary()}"></td>
+            <tr class="row--table"  th:each="shoopers:${shooper}">
+                <td class="item--table" th:text="${shoopers.getId()}"></td>
+                <td class="item--table name" th:text="${shoopers.getName()}"></td>
+                <td class="item--table" th:text="${shoopers.getPhone()}"></td>
+                <td class="item--table" th:text="${shoopers.getMeansDelivery()}"></td>
+                <td class="item--table" th:text="${shoopers.getCommentary()}"></td>
             </tr>
             </tbody>
         </table>
