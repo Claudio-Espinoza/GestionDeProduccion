@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/style-orders.css}">
+    <title>Lista clientes | Gestor de producción</title>
+</head>
+
+<body class="body">
+
+<div class="container__back">
+    <div class="button--exit">
+        <a>Exit</a>
+    </div>
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="final"></div>
+</div>
+
+<div class="container__list">
+    <div class="main">
+
+        <table class="body--table">
+
+            <thead class="head--table">
+            <tr class="column">
+                <td class="item--table">Id cliente</td>
+                <td class="item--table title_name">Nombre</td>
+                <td class="item--table">Telefono</td>
+                <td class="item--table">Forma retiro</td>
+                <td class="item--table">Comentario</td>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr class="row--table" th:each="shoopers:${shooper}">
+                <td class="item--table" th:text="${shooper.getId()}"></td>
+                <td class="item--table name" th:text="${shooper.getName()}"></td>
+                <td class="item--table" th:text="${shooper.getPhone()}"></td>
+                <td class="item--table" th:text="${shooper.getMeansDelivery()}"></td>
+                <td class="item--table" th:text="${shooper.getCommentary()}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="black"></div>
+    <div class="yellow"></div>
+</div>
+
+
+</body>
+
+</html>

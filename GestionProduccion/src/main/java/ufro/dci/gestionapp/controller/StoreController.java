@@ -53,6 +53,13 @@ public class StoreController {
     }
 
     @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @GetMapping("/employee/client-list")
+    public String viewClients(Model model) {
+        model.addAttribute("shooper", shooperService.getAllShooper());
+        return "employee/menu/client-list";
+    }
+
+    @PreAuthorize("hasAuthority('EMPLOYEE')")
     @GetMapping("/employee/register")
     public String viewRegister() {
         return "employee/production/register";
