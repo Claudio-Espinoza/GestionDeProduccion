@@ -41,9 +41,6 @@ public class PizzaService {
     public void deleteLastIdPizza(){
         pizzaRepository.deleteById(getLastIdPizza());
     }
-    public void deleteByIdPizza(int id){
-        pizzaRepository.deleteById(id);
-    }
 
     public int getCostPizzaOfOrder(Shooper shooper) {
         int numPizza = getSizeOfList(getListPizza(shooper));

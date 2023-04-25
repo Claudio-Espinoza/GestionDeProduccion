@@ -3,7 +3,7 @@ package ufro.dci.gestionapp.security.model;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import ufro.dci.gestionapp.model.employee.Employee;
+import ufro.dci.gestionapp.model.Employee;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -34,6 +34,7 @@ public class EmployeeSecurity implements UserDetails {
     public String getUsername() {
         return employee.getRut();
     }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;

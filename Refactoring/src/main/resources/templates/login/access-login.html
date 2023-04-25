@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/login/login-style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/normalize/normalize.css}">
+    <title>Log-In</title>
+</head>
+<body>
+<main class="main">
+    <article class="container">
+        <form class="container" th:action="@{/login}" method="post">
+        <h1 class="title--login">Log-In</h1>
+        <div class="container--error">
+            <p class="error" th:if="${param.error}">Cuenta invalida</p>
+        </div>
+        <input class="item--input" type="text" name="rut" required placeholder="Rut">
+        <input class="item--input" type="password" name="password" required placeholder="Password">
+        <div class="container__options">
+            <button class="button--submit" type="submit" value="login">Ingresar</button>
+            <a class="back" th:href="@{/logout}">Volver</a>
+        </div>
+        </form>
+    </article>
+</main>
+</body>
+
+</html>

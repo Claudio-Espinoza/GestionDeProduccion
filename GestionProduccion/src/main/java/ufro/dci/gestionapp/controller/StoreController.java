@@ -45,6 +45,7 @@ public class StoreController {
     public String logout() {
         return "index";
     }
+
     //-|Mapping / Get|-----------------------------------------------------------------------------------------------//
     @PreAuthorize("hasAuthority('EMPLOYEE')")
     @GetMapping("/employee/home")

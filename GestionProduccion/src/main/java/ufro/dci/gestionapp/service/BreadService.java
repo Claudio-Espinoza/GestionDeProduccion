@@ -57,7 +57,4 @@ public class BreadService {
         }
         return contPric;
     }
-    public void deleteByIdBread(int id){
-        breadRepository.deleteById(id);
-    }
 }

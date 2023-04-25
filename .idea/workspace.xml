@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34807fd-92d0-4697-8aa2-de5993cbb0c6" name="Changes" comment="" />
+    <list default="true" id="b34807fd-92d0-4697-8aa2-de5993cbb0c6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/controller/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/controller/StoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/security/model/EmployeeSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/security/model/EmployeeSecurity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/service/BreadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/service/BreadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/service/DrinkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/service/DrinkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/service/PizzaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/service/PizzaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/service/ShooperService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionProduccion/src/main/java/ufro/dci/gestionapp/service/ShooperService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionProduccion/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/GestionProduccion/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +33,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/marck/Documents/GitHub/GestionDeProduccion/GestionProduccion&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Dev/Java/SpringBoot/GestionDeProduccion&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -56,6 +66,8 @@
       <workItem from="1675807500160" duration="35000" />
       <workItem from="1676493396740" duration="59000" />
       <workItem from="1676509519419" duration="39000" />
+      <workItem from="1680742400251" duration="60000" />
+      <workItem from="1680804739021" duration="109000" />
     </task>
     <servers />
   </component>

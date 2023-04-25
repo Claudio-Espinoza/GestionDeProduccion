@@ -58,7 +58,4 @@ public class DrinkService {
         }
         return contPric;
     }
-    public void deleteByIdDrink(int id){
-        drinkRepository.deleteById(id);
-    }
 }
