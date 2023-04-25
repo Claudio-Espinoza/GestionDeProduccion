@@ -1,0 +1,147 @@
+/*-|General|--------------------------------------------------------------------------------------------------------*/
+:root {
+    --rojo: #BF4141;
+    --amarillo: #FFDB4F;
+    --blanco: #F0F2F2;
+    --verde: #2D402E;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.body {
+    background-color: var(--blanco);
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+
+/*-|navbar|---------------------------------------------------------------------------------------------------------*/
+.container__back {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.point {
+    position: relative;
+    left: 9vh;
+    background-color: #2D402E;
+    width: 0.5vw;
+    height: 70%;
+}
+
+.point:hover {
+    background-color: #FFDB4F;
+}
+
+.button--exit {
+    background-color: #FFDB4F;
+    margin: 12vh 0 5vh 0;
+    display: flex;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+.button--exit:hover {
+    background-color: #2D402E;
+}
+
+a {
+    position: relative;
+    bottom: 4vh;
+    color: #2D402E;
+    font-size: 600%;
+    font-family: monospace;
+    font-weight: bold;
+    padding-bottom: 3vh;
+    width: 15.4vw;
+
+    left: 7%;
+
+    background: none;
+    border: none;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFDB4F;
+}
+
+/*-|content|--------------------------------------------------------------------------------------------------------*/
+
+.container__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main,
+.black,
+.yellow {
+    position: absolute;
+    width: 70%;
+    height: 85%;
+
+}
+
+.yellow {
+    background-color: var(--amarillo);
+    width: 71.6%;
+    height: 88.1%;
+
+    z-index: 0;
+    right: 6.5%;
+    top: 6.1%;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.black {
+    background-color: var(--verde);
+    width: 70%;
+    height: 85%;
+
+    z-index: 1;
+    left: 23.5%;
+    bottom: 9%;
+}
+
+.main {
+    background-color: var(--blanco);
+    z-index: 2;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+/*-|Tabla|----------------------------------------------------------------------------------------------------------*/
+
+.body--table {
+    margin-top: 2.5%;
+    width: 95%;
+    height: 20%;
+    text-align: left;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.head--table {
+    width: 10%;
+    height: 20%;
+    box-shadow: 0px 2px 0px 0 var(--verde);
+}
+
+
+.row--table {
+    width: 10%;
+    height: 20%;
+}
