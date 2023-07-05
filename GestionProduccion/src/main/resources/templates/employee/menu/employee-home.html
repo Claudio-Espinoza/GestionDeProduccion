@@ -1,38 +1,37 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
     <meta charset="ISO-8859-1">
-    <link rel="stylesheet" type="text/css" th:href="@{/styles/employee-menu.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/employee/employee-menu.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/normalize/normalize.css}">
     <title>Menu</title>
 </head>
-<body class="body">
-
-<div class="container__back">
-    <div class="button--exit">
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Logout">
+<body>
+<main class="container">
+    <section class="principal">
+        <div class="informacion">
+            <h1 class="informacion__tittle">Menu</h1>
+            <div class="divisor"></div>
+            <a class="informacion_nombre">Pepito el s</a>
+            <a class="informacion__rut">Rut</a>
+            <div class="divisor"></div>
+        </div>
+        <form class="options" th:action="@{/logout}" method="post">
+            <a class="options--a continue" th:href="@{/employee/register}" href=""></a>
+            <input class="options--a back" type="submit" value="Logout">
         </form>
-    </div>
-    <div class="point"></div>
-    <div class="point"></div>
-    <div class="point"></div>
-    <div class="point"></div>
-    <div class="point"></div>
-    <div class="final"></div>
-</div>
-
-<div class="container__img">
-    <div class="container__img--left">
-        <img class="img" src="/img/gadget/pizza-2.png" alt="">
-    </div>
-    <div class="container__img--right">
-    </div>
-</div>
-
-<div class="container__options">
-    <a  th:href="@{/employee/register}" class="options--MakeLine"></a>
-    <a  th:href="@{/employee/client-list}" class="options--list"></a>
-</div>
-
+    </section>
+    <section class="opciones">
+        <div class="opciones--card">
+            <h2>Opcion 1</h2>
+        </div>
+        <div class="opciones--card">
+            <h2>Opcion 2</h2>
+        </div>
+        <div class="opciones--card">
+            <h2>Opcion 3</h2>
+        </div>
+    </section>
+</main>
 </body>
 </html>

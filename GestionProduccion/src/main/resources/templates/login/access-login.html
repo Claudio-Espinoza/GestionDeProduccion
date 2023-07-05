@@ -1,33 +1,27 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" th:href="@{/styles/login-style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/login/login-style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/normalize/normalize.css}">
     <title>Log-In</title>
 </head>
 <body>
-<main class="container">
-    <form th:action="@{/login}" method="post" class="form-content">
-        <div class="container__items">
-            <h1 class="item__input--titulo">Log-In</h1>
-            <div>
-                <p class="error" th:if="${param.error}">*Cuenta invalida</p>
+<main class="main">
+    <article class="container">
+        <form class="container" th:action="@{/login}" method="post">
+            <h1 class="title--login">Log-In</h1>
+            <div class="container--error">
+                <p class="error" th:if="${param.error}">Cuenta invalida</p>
             </div>
-            <div class="input--info">
-                <input class="item--input" type="text" name="rut"
-                       required placeholder="Rut">
-                <input class="item--input" type="password"
-               name="password" required placeholder="Password">
+            <input class="item--input" type="text" name="rut" required placeholder="Rut">
+            <input class="item--input" type="password" name="password" required placeholder="Password">
+            <div class="container__options">
+                <button class="button--submit" type="submit" value="login">Ingresar</button>
+                <a class="back" th:href="@{/logout}">Volver</a>
             </div>
-
-            <div class="item__button">
-                <button class="item__button--submit" type="submit"
-                value="login">Ingresar</button>
-                <a class="item__button--submit" th:href="@{/logout}">Volver</a>
-            </div>
-        </div>
-    </form>
-
+        </form>
+    </article>
 </main>
 </body>
 

@@ -1,0 +1,108 @@
+:root {
+    --rojo: #BF4141;
+    --blanco: #F0F2F2;
+    --blanco-frio: #ffffff;
+    --negro: #1c1c1c;
+    --sombreado: 12px 17px 51px rgba(0, 0, 0, 0.24);
+    --borde: 0.9rem;
+}
+
+* {
+    font-family: monospace;
+}
+
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--rojo);
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: var(--blanco);
+    width: 40vw;
+    height: 60vh;
+    border-radius: 0.9rem;
+    box-shadow: var(--sombreado);
+
+    display: grid;
+    grid-template-rows: 0.5fr 0.2fr 1fr 1fr 2fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.item--input {
+    width: 24vw;
+    height: 40%;
+    border-bottom: 1px solid #2D402E;
+}
+
+input {
+    appearance: none;
+    border: none;
+    background-color: var(--blanco);
+    font-weight: 200;
+}
+
+input::placeholder {
+    color: #2D402E;
+    font-size: 1.4em;
+    font-weight: 200;
+}
+
+.title--login {
+    display: grid;
+    place-content: center;
+    font-size: 2.5rem;
+}
+
+.container--error {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.error {
+    color: var(--rojo);
+}
+
+
+.button--submit {
+    background-color: var(--negro);
+    color: var(--blanco);
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 40%;
+    height: 30%;
+    appearance: none;
+    cursor: pointer;
+    border: none;
+}
+
+
+.container__options {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+}
+
+
+.back {
+    appearance: none;
+    border: 1px solid var(--negro);
+    color: var(--negro);
+    width: 40%;
+    height: 28%;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
